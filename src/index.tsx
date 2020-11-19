@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+import {Input} from "./Components/Input/Input";
 
 ReactDOM.render(
   <React.StrictMode>
+    <Input placeholder='name' type='text' value='kek' hasError={false} />
   </React.StrictMode>,
   document.getElementById('root')
 );
