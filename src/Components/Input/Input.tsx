@@ -4,11 +4,11 @@ import classNames from 'classnames'
 
 interface Props {
     type: string;
-    placeholder: string;
+    placeholder?: string;
     disabled?: boolean;
     errorMessage?: string;
-    value: string;
-    hasError: boolean;
+    value?: string;
+    hasError?: boolean;
     icon?: string;
     className?: string;
     onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -20,7 +20,6 @@ interface Props {
 export const Input: FC<Props> = ({
     type,
     placeholder,
-    disabled,
     errorMessage,
     hasError,
     icon,
@@ -31,7 +30,7 @@ export const Input: FC<Props> = ({
     onBlur,
     onFocus
 }) => {
-    const renderError: boolean = hasError && !!value
+    const renderError: boolean | undefined = hasError && !!value
     const customClassesContainer: string = classNames('input-container', className);
     const customClassesInput: string = classNames('input-container__input', {'input-container__input_error': renderError});
     return(
@@ -45,7 +44,6 @@ export const Input: FC<Props> = ({
                 onInput={onInput}
                 onBlur={onBlur}
                 value={value}
-                // disabled={disabled}
                 onFocus={onFocus}
             />
             {renderError && <p className='input-container__error'>{errorMessage}</p>}
