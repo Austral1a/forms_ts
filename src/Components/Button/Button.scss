@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.button {
+  width: 75px;
+  height: 25px;
+  background-color: $btn-bg-color;
+  border: 0;
+  border-radius: 4px;
+  transition: all 0.2s linear;
+  &:hover {
+    background-color: darken($btn-bg-color, 20%);
+    transition: all 0.2s linear;
+    cursor: pointer;
+  }
+  &[disabled] {
+    opacity: 0.6;
+  }
+  &[disabled]:hover {
+    background-color: $btn-bg-color;
+  }
+}
