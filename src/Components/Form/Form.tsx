@@ -4,10 +4,10 @@ import './Form.scss';
 
 interface Props {
     className?: string;
-    isValid?: boolean;
+    isValid: boolean;
     action?: string;
-    children?: ReactNode;
-    onSubmit?: FormEventHandler<HTMLFormElement>;
+    children: ReactNode;
+    onSubmit: FormEventHandler<HTMLFormElement>;
 }
 
 export const Form: FC<Props> = ({
