@@ -6,7 +6,7 @@ interface Props {
     text: string;
     disabled?: boolean;
     className?: string;
-    onClick?: MouseEventHandler<HTMLButtonElement>;
+    onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
 export const Button: FC<Props> = ({
