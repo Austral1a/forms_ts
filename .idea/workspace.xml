@@ -2,49 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08be4bf-e568-4d8e-b884-38979dcb4557" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../music-application/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/.idea/music-application.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/src/serviceWorker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-application/src/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/Components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/Components/AuthTemplate/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Components/AuthTemplate/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/Components/AuthTemplate/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Components/AuthTemplate/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/Components/app/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Components/app/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/Components/app/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Components/app/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/Components/userTemplate/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Components/userTemplate/User.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/Layouts/BaseLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Layouts/BaseLayout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/store/actions/constants/action-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/store/actions/constants/action-types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/store/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/store/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/store/reducers/currentUserReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/store/reducers/currentUserReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/store/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/store/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/store/reducers/signInReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/store/reducers/signInReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/styles/UserTemplateStyle/user.css" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/UserTemplateStyle/user.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/styles/UserTemplateStyle/user.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/UserTemplateStyle/user.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/styles/UserTemplateStyle/user.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/UserTemplateStyle/user.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/styles/templatesStyle/auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/templatesStyle/auth.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/styles/templatesStyle/auth.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/templatesStyle/auth.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crm/src/styles/templatesStyle/auth.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/templatesStyle/auth.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/forms_ts.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/forms_ts.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +14,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kWSSTAEkJCJNZlB9PBZC4YcqNS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -75,7 +35,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
-    <property name="ts.external.directory.path" value="C:\Users\Dexter\Desktop\react\forms_ts\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -87,6 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605814854018</updated>
       <workItem from="1605814855331" duration="3392000" />
+      <workItem from="1605856948755" duration="980000" />
     </task>
     <servers />
   </component>
@@ -103,5 +64,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
