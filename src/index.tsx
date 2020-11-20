@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import {Input} from "./Components/Input/Input";
+import {Login} from './Login'
+import './styles/general.scss'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Input placeholder='name' type='text' value='kek' hasError={false} />
+    <Login />
   </React.StrictMode>,
   document.getElementById('root')
 );
