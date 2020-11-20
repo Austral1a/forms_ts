@@ -3,6 +3,7 @@ import classNames from 'classnames/dedupe';
 import './Button.scss';
 
 interface Props {
+    type: "button" | "submit" | "reset" | undefined;
     text: string;
     disabled?: boolean;
     className?: string;
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export const Button: FC<Props> = ({
+    type,
     text,
     onClick,
     disabled,
@@ -17,7 +19,7 @@ export const Button: FC<Props> = ({
 }) => {
     const customClasses: string = classNames('button', className);
     return (
-        <button className={customClasses} onClick={onClick} disabled={disabled}>
+        <button type={type} className={customClasses} onClick={onClick} disabled={disabled}>
             {text}
         </button>
     );

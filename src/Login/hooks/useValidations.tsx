@@ -1,16 +1,20 @@
 import {useInputValidation} from './index'
 import {patternNames} from '../../helpers'
 
-interface Validations {
-    isEmailValid: boolean;
-    isPasswordValid: boolean;
+interface Errors {
+    email: boolean;
+    password: boolean;
 }
 
-export const useValidations = (emailVal: string, passwordVal: string): Validations => {
-    const {email, password} = patternNames;
+interface Values {
+    email: string;
+    password: string;
+}
 
+export const useValidations = (values: Values): Errors => {
+    const {email, password} = patternNames;
     return {
-        isEmailValid: useInputValidation(email, emailVal),
-        isPasswordValid: useInputValidation(password, passwordVal)
-    };
+        email: useInputValidation(email, values.email),
+        password: useInputValidation(password, values.password)
+    }
 }
