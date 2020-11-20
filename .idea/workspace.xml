@@ -26,6 +26,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/node_modules/@types/react/index.d.ts" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -47,7 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605814854018</updated>
       <workItem from="1605814855331" duration="3392000" />
-      <workItem from="1605856948755" duration="980000" />
+      <workItem from="1605856948755" duration="5625000" />
     </task>
     <servers />
   </component>
