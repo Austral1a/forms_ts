@@ -1,6 +1,6 @@
-import React, {FC, ChangeEvent, FocusEvent} from 'react';
+import React, {FC, FormEventHandler, FocusEventHandler} from 'react';
 import classNames from 'classnames'
-// import './Input.scss';
+import './Input.scss';
 
 interface Props {
     type: string;
@@ -11,10 +11,10 @@ interface Props {
     hasError?: boolean;
     icon?: string;
     className?: string;
-    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-    onInput?: (e: ChangeEvent<HTMLInputElement>) => void;
-    onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
-    onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
+    onChange?: FormEventHandler<HTMLInputElement>;
+    onInput?: FormEventHandler<HTMLInputElement>;
+    onBlur?: FocusEventHandler<HTMLInputElement>;
+    onFocus?: FocusEventHandler<HTMLInputElement>;
 }
 
 export const Input: FC<Props> = ({
