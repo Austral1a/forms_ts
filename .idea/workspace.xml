@@ -2,8 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08be4bf-e568-4d8e-b884-38979dcb4557" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/.idea/music-application.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/src/serviceWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../music-application/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/Components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/Components/AuthTemplate/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Components/AuthTemplate/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/Components/AuthTemplate/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Components/AuthTemplate/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/Components/app/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Components/app/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/Components/app/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Components/app/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/Components/userTemplate/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Components/userTemplate/User.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/Layouts/BaseLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/Layouts/BaseLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/store/actions/constants/action-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/store/actions/constants/action-types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/store/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/store/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/store/reducers/currentUserReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/store/reducers/currentUserReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/store/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/store/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/store/reducers/signInReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/store/reducers/signInReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/styles/UserTemplateStyle/user.css" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/UserTemplateStyle/user.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/styles/UserTemplateStyle/user.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/UserTemplateStyle/user.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/styles/UserTemplateStyle/user.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/UserTemplateStyle/user.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/styles/templatesStyle/auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/templatesStyle/auth.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/styles/templatesStyle/auth.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/templatesStyle/auth.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crm/src/styles/templatesStyle/auth.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../crm/src/styles/templatesStyle/auth.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
