@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback } from "react";
 import { Formik, Form, FormikProps } from "formik";
 import { Button } from "../Components";
 import { useValidations } from "./hooks";
@@ -7,6 +7,8 @@ import "../Components/Form/Form.scss";
 import { email } from "../assets";
 import { TextField } from "./index";
 import { usePasswordIconManagement } from "./hooks";
+import { useDispatch } from "react-redux";
+import { loginAction } from "../Store/Login";
 
 interface Values {
   email: string;
@@ -20,6 +22,12 @@ export const Login: FC = () => {
     handlePswdIconMouseUp,
     handlePswdIconMouseDown,
   } = usePasswordIconManagement();
+
+  const dispatch = useDispatch();
+  const dispatchLoginAction = useCallback(
+    (values) => dispatch(loginAction(values.email, values.password)),
+    [dispatch]
+  );
 
   return (
     <Formik
@@ -46,7 +54,7 @@ export const Login: FC = () => {
           <Button
             type="submit"
             text="Login"
-            onClick={() => console.log(props.isValid)}
+            onClick={() => dispatchLoginAction(props.values)}
             disabled={!!props.errors.email || !!props.errors.password}
           />
         </Form>
