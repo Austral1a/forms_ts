@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "employees_positions": [
+      "Manager",
+      "Developer",
+      "QA"
+    ]
+  },
+  "employees": []
+}
