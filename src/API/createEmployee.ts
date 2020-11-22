@@ -1,11 +1,18 @@
 import { home } from "../url";
 
-export const createEmployee = (name: string, position: string): void => {
+export const createEmployee = (
+  firstName: string,
+  lastName: string,
+  email: string,
+  position: string
+): void => {
   const url = `${home}/employees`;
   fetch(url, {
     method: "POST",
     body: JSON.stringify({
-      name,
+      firstName,
+      lastName,
+      email,
       position,
     }),
     headers: {

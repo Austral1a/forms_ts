@@ -10,7 +10,6 @@ const isUserExists = (email: string): Promise<boolean> => {
 
 export const login = (email: string, password: string) => {
   isUserExists(email).then((isExists) => {
-    console.log(isExists, "isExists", email, password);
     if (!isExists) {
       fetch(url, {
         method: "POST",

@@ -6,7 +6,7 @@
   border-radius: 4px;
   display: grid;
   grid-template-columns: 600px;
-  grid-template-rows: 60px repeat(auto-fill, 40px);
+  grid-template-rows: 60px 1fr;
   text-align: center;
   padding: 10px;
   & > * {

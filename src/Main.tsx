@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Login } from "./Login";
 import { Employees } from "./Employees";
@@ -11,20 +11,21 @@ export const Main: FC = () => {
   );
 
   return (
-    <Router>
-      <Route path="/">
-        {isUserLoggedIn ? (
-          <Redirect to="/employees" />
-        ) : (
-          <Redirect to="/login" />
-        )}
-      </Route>
-      <Route path="/login">
-        <Login />
-      </Route>
-      <Route path="/employees">
-        <Employees />
-      </Route>
-    </Router>
+    <Employees />
+    /*<Router>
+    <Route path="/">
+      {isUserLoggedIn ? (
+        <Redirect to="/employees" />
+      ) : (
+        <Redirect to="/login" />
+      )}
+    </Route>
+    <Route path="/login">
+      <Login />
+    </Route>
+    <Route path="/employees">
+      <Employees />
+    </Route>
+  </Router>*/
   );
 };

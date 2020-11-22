@@ -23,7 +23,3 @@ export function* login(action: Action) {
     yield put({ type: LOGIN_FAIL, payload: { errorMessage: e.message } });
   }
 }
-
-export function* loginRequest() {
-  yield takeEvery(LOGIN, login);
-}
