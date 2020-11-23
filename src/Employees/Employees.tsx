@@ -6,12 +6,12 @@ import React, {
   useEffect,
 } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getEmployeesAction } from "../Store/Employees";
+// import { getEmployeesAction } from "../Store/Employees";
 import { Card, Button, Modal } from "../Components";
 import "./Employees.scss";
 import { EmployeeModal } from "./EmployeeModal";
-import { getEmployeeAction, editEmployeeAction } from "../Store/Employees";
-import { useCreateEmployee, useGetEmployees, useGetEmployee } from "./hooks";
+import { getEmployeeAction } from "../Store/Employees";
+import { useCreateEmployee, useGetEmployees, useEditEmployee } from "./hooks";
 
 import { delEmployee } from "../API";
 
@@ -40,7 +40,7 @@ export const Employees: FC = (): ReactElement => {
 
   const createEmployee = useCreateEmployee();
   const getEmployees = useGetEmployees();
-  const getEmployee = useGetEmployee();
+  const editEmployee = useEditEmployee();
 
   const employees = useSelector(
     (state: { getEmployeesReducer: GetEmployeePayload }) =>
@@ -98,7 +98,7 @@ export const Employees: FC = (): ReactElement => {
                       preload: getEmployees,
                       handleClose: () => setIsModalOpen(false),
                       dispatchAction: (values: any) => {
-                        getEmployee(
+                        editEmployee(
                           values.firstName,
                           values.lastName,
                           values.email,

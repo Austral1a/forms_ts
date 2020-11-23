@@ -1,20 +1,21 @@
 import React, { FC, useCallback, useEffect } from "react";
 import { Button, Input, Modal, Form } from "../Components";
-import { email, person } from "../assets";
+import { email as emailSvg, person } from "../assets";
 import { TextField } from "./TextField";
 import { Field, Formik, FormikProps } from "formik";
 import { useValidations } from "./hooks";
+import { Employee } from "../Interfaces/Employees";
 
-interface FormikData {
+export interface FormikData {
   firstName: string;
   lastName: string;
   email: string;
   position: string;
 }
 
-interface Data extends FormikData {
-  modalType: string;
-  preload?: () => void;
+export interface Data extends FormikData {
+  btnText: string;
+  // loadEmployee?: () => void;
   handleClose: () => void;
   dispatchAction: (values: any) => void;
 }
@@ -24,66 +25,70 @@ interface Props {
 }
 
 export const EmployeeModal: FC<Props> = ({ data }) => {
-  useEffect(() => {
-    if (data.preload) {
-      data.preload();
+  /*  useEffect(() => {
+    if (data.loadEmployee) {
+      data.loadEmployee();
     }
-  }, [data]);
+  }, [data]);*/
+
+  const employee: Employee = {
+    firstName: data.firstName,
+    lastName: data.lastName,
+    email: data.email,
+    position: data.position,
+  };
 
   return (
     <Formik
-      initialValues={{
-        firstName: data.firstName,
-        lastName: data.lastName,
-        email: data.email,
-        position: data.position,
-      }}
+      initialValues={employee}
       validate={useValidations}
       onSubmit={() => console.log("")}
     >
-      {(props: FormikProps<FormikData>) => (
-        <Form className="modal-container__modal form ">
-          <Button
-            text="close"
-            type="button"
-            className="modal-container_close"
-            onClick={data.handleClose}
-          />
-          <TextField
-            icon={person}
-            name="firstName"
-            placeholder="First Name"
-            type="text"
-          />
-          <TextField
-            icon={person}
-            name="lastName"
-            placeholder="Last Name"
-            type="text"
-          />
-          <TextField
-            icon={email}
-            name="email"
-            placeholder="Email"
-            type="text"
-          />
-          <Field as="select" name="position">
-            <option value="qa">QA</option>
-            <option value="dev">Developer</option>
-            <option value="manager">Manager</option>
-          </Field>
-          <Button
-            text={data.modalType}
-            onClick={() => data.dispatchAction(props.values)}
-            type="button"
-            disabled={
-              !!props.errors.firstName ||
-              !!props.errors.lastName ||
-              !!props.errors.email
-            }
-          />
-        </Form>
-      )}
+      {(props: FormikProps<FormikData>) => {
+        const {
+          errors: { firstName, lastName, email },
+        } = props;
+        const isBtnDisabled = !!firstName || !!lastName || !!email;
+        return (
+          <Form className="modal-container__modal form ">
+            <Button
+              text="close"
+              type="button"
+              className="modal-container_close"
+              onClick={data.handleClose}
+            />
+            <TextField
+              icon={person}
+              name="firstName"
+              placeholder="First Name"
+              type="text"
+            />
+            <TextField
+              icon={person}
+              name="lastName"
+              placeholder="Last Name"
+              type="text"
+            />
+            <TextField
+              icon={emailSvg}
+              name="email"
+              placeholder="Email"
+              type="text"
+            />
+            <Field as="select" name="position">
+              <option value="qa">QA</option>
+              <option value="dev">Developer</option>
+              <option value="manager">Manager</option>
+            </Field>
+            <Button
+              text={data.btnText}
+              onClick={() => data.dispatchAction(props.values)}
+              type="button"
+              disabled={isBtnDisabled}
+            />
+          </Form>
+        );
+      }}
     </Formik>
   );
 };

@@ -51,13 +51,9 @@ export const getEmployeeAction = (id: number) => ({
   },
 });
 
-export const editEmployeeAction = (
-  firstName: string,
-  lastName: string,
-  email: string,
-  position: string,
-  id: number
-) => ({
-  type: EDIT_EMPLOYEE,
-  payload: { firstName, lastName, email, position, id },
-});
+export const editEmployeeAction = (editedEmployee: GetEmployee) => {
+  return {
+    type: EDIT_EMPLOYEE,
+    payload: editedEmployee,
+  };
+};

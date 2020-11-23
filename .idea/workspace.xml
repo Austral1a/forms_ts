@@ -4,21 +4,11 @@
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Employees/EmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/EmployeeModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Employees/Employees.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Employees.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Employees/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/hooks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/hooks/useGetEmployees.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/Employees/intrefaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Employees/intrefaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Employees/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Employees/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/rootReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/rootReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/rootSaga.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/rootSaga.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/patterns.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/patterns.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/url.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/url.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/hooks/useCreateEmployee.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/hooks/useCreateEmployee.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/hooks/useGetEmployee.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/hooks/useEditEmployee.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +51,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\src\Employees\new" />
+      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Interfaces\Employees" />
+      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Components\Table" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Interfaces\Login" />
       <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\assets" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Interfaces\Employees" />
-      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Components\Table" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -118,6 +109,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606120319795" />
+    <state x="983" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1606145203927">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="983" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606145203927" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
