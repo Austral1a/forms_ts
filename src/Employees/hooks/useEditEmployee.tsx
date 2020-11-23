@@ -5,8 +5,10 @@ import { editEmployeeAction } from "../../Store/Employees";
 export const useEditEmployee = () => {
   const dispatch = useDispatch();
   return useCallback(
-    (firstName, lastName, email, position, id) =>
-      dispatch(editEmployeeAction(firstName, lastName, email, position, id)),
+    ({ firstName, lastName, email, position, id }) =>
+      dispatch(
+        editEmployeeAction({ firstName, lastName, email, position, id })
+      ),
     [dispatch]
   );
 };

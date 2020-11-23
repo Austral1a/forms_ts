@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/EmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/EmployeeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Employees.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Employees.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/hooks/useEditEmployee.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/hooks/useEditEmployee.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Employees/new/ActionsBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/new/ActionsBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/new/EmployeesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/new/EmployeesList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Employees/new/modal/EditEmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/new/modal/EditEmployeeModal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +45,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\node_modules\prettier" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Dexter\AppData\Roaming\npm\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -87,28 +91,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1001" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606133037071">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1001" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606133037071" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1606120285769">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606120285769" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1606127343741">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606127343741" />
-    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1606120319795">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606120319795" />
-    <state x="983" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1606145203927">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="983" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606145203927" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

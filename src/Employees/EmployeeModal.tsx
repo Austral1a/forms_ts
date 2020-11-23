@@ -15,7 +15,6 @@ export interface FormikData {
 
 export interface Data extends FormikData {
   btnText: string;
-  // loadEmployee?: () => void;
   handleClose: () => void;
   dispatchAction: (values: any) => void;
 }
@@ -25,12 +24,6 @@ interface Props {
 }
 
 export const EmployeeModal: FC<Props> = ({ data }) => {
-  /*  useEffect(() => {
-    if (data.loadEmployee) {
-      data.loadEmployee();
-    }
-  }, [data]);*/
-
   const employee: Employee = {
     firstName: data.firstName,
     lastName: data.lastName,
