@@ -1,0 +1,38 @@
+.card-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid black;
+}
+
+.card-body {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(auto-fill, 30px);
+  grid-gap: 10px;
+  align-items: center;
+  justify-items: center;
+  .card-body__employee {
+    display: contents;
+  }
+}
+
+.modal-container__modal {
+  background-color: #8899ac;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, 30px);
+  grid-gap: 20px;
+  justify-items: center;
+  align-content: center;
+  align-self: center;
+  height: 450px;
+  width: 350px;
+  position: relative;
+  
+  .modal-container_close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "employees_positions": [
+      "Manager",
+      "Developer",
+      "QA"
+    ]
+  },
+  "users": [
+    {
+      "email": "asd@asd.com",
+      "password": "123123123",
+      "id": 1
+    }
+  ],
+  "employees": [
+    {
+      "firstName": "daan",
+      "lastName": "dan",
+      "email": "da@d.com",
+      "position": "dev",
+      "id": 1
+    }
+  ]
+}

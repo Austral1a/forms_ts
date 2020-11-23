@@ -1,12 +1,7 @@
 @import '../styles/variables';
 
-.login {
-  background-color: $body-bg-color;
-}
-
 .form-login {
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 90px);
   align-content: center;
 }

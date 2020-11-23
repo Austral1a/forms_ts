@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c08be4bf-e568-4d8e-b884-38979dcb4557" name="Default Changelist" comment="">
+    <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/EmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/EmployeeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Employees.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Employees.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/hooks/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/hooks/useGetEmployees.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/Employees/intrefaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Employees/intrefaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/rootReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/rootReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/rootSaga.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/rootSaga.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/patterns.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/patterns.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/url.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/url.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +28,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1kWSSTAEkJCJNZlB9PBZC4YcqNS" />
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="ProjectId" id="1kbFmyjQkkps2F7lwAz5Wfyqbrd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -22,33 +42,47 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/node_modules/@types/react/index.d.ts" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Interfaces/Login" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="ts.external.directory.path" value="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Interfaces\Login" />
+      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Interfaces\Employees" />
+      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Components\Table" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c08be4bf-e568-4d8e-b884-38979dcb4557" name="Default Changelist" comment="" />
-      <created>1605814854018</created>
+      <changelist id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="" />
+      <created>1605961546616</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1605814854018</updated>
-      <workItem from="1605814855331" duration="3392000" />
-      <workItem from="1605856948755" duration="5625000" />
+      <updated>1605961546616</updated>
+      <workItem from="1605961547955" duration="170000" />
+      <workItem from="1605962589412" duration="4465000" />
+      <workItem from="1605967071769" duration="189000" />
+      <workItem from="1605967346693" duration="20614000" />
+      <workItem from="1606035137799" duration="31386000" />
     </task>
     <servers />
   </component>
@@ -66,5 +100,27 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1001" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606133037071">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1001" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606133037071" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1606120285769">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606120285769" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1606127343741">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606127343741" />
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1606120319795">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606120319795" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

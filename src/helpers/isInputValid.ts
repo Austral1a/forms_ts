@@ -1,3 +1,1 @@
-export const isInputValid = (validator: RegExp, text: string): boolean => {
-    return validator.test(text)
-}
+export const isInputValid = (pattern: RegExp, text: string) => pattern.test(text);

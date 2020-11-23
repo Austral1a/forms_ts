@@ -1,12 +1,13 @@
-import React, {FC, FormEventHandler, FocusEventHandler} from 'react';
+import React, {FC, FormEventHandler, FocusEventHandler, ReactNode} from 'react';
 import classNames from 'classnames'
 import './Input.scss';
 
 interface Props {
     type: string;
+    name: string;
     placeholder?: string;
     disabled?: boolean;
-    errorMessage?: string;
+    errorMessage?: ReactNode;
     value?: string;
     hasError?: boolean;
     icon?: string;
@@ -18,6 +19,7 @@ interface Props {
 }
 
 export const Input: FC<Props> = ({
+    name,
     type,
     placeholder,
     errorMessage,
@@ -37,6 +39,7 @@ export const Input: FC<Props> = ({
         <div className={customClassesContainer}>
             {icon && <span className='input-container__icon'><img src={icon}/></span>}
             <input
+                name={name}
                 type={type}
                 placeholder={placeholder}
                 className={customClassesInput}
