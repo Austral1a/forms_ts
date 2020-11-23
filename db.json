@@ -14,65 +14,13 @@
     }
   ],
   "employees": [
-    {
-      "firstName": "Dan",
-      "lastName": "K",
-      "email": "es@d.com",
-      "position": "Developer",
-      "id": 1
-    },
+
     {
       "firstName": "Kyle",
       "lastName": "Butler",
       "email": "ed@d.com",
       "position": "Developer",
       "id": 2
-    },
-    {
-      "firstName": "Dexter",
-      "lastName": "Morgan",
-      "email": "ex@d.com",
-      "position": "Developer",
-      "id": 3
-    },
-    {
-      "firstName": "Kyle1",
-      "lastName": "Butler2",
-      "email": "sed@d.com",
-      "position": "Developer",
-      "id": 4
-    },
-    {
-      "firstName": "Kyle2221",
-      "lastName": "Butler2",
-      "email": "sessd@d.com",
-      "position": "Developer",
-      "id": 5
-    },
-    {
-      "firstName": "Kyle22s21",
-      "lastName": "Butler2",
-      "email": "sesszd@d.com",
-      "position": "Dev",
-      "id": 6
-    },
-    {
-      "position": "dev",
-      "id": 7
-    },
-    {
-      "firstName": "asdasd",
-      "lastName": "asdasd",
-      "email": "asd@d.cm",
-      "position": "Developer",
-      "id": 8
-    },
-    {
-      "firstName": "Danas",
-      "lastName": "koras",
-      "email": "dan@d.ac",
-      "position": "Developer",
-      "id": 9
     }
   ]
 }
