@@ -1,7 +1,12 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC, ReactElement, ReactNode } from "react";
 import { Button } from "../../Components/Button";
+import { EditEmployeeModal } from "./modal/EditEmployeeModal";
 
-export const ActionsBlock: FC<{}> = (): ReactElement => {
+interface Props {
+  id: number;
+}
+
+export const ActionsBlock: FC<Props> = ({ id }): ReactElement => {
   return (
     <>
       <div className="employees__actions-block">
@@ -12,7 +17,7 @@ export const ActionsBlock: FC<{}> = (): ReactElement => {
           onClick={() => "show delete confirmation"}
         />
       </div>
-      {/*EDIT EMPLOYEE MODAL*/}
+      <EditEmployeeModal id={id} isOpen={} setIsOpen={} />
       {/*DELETE EMPLOYEE CONFIRM*/}
     </>
   );

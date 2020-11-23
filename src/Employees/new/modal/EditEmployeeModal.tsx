@@ -7,18 +7,24 @@ import { useDispatch } from "react-redux";
 
 interface Props {
   id: number;
-  employee: GetEmployee;
+  // employee: GetEmployee;
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
 }
-
-export const EditEmployeeModal: FC<Props> = ({ id, employee }) => {
+export const EditEmployeeModal: FC<Props> = ({
+  id,
+  // employee,
+  isOpen,
+  setIsOpen,
+}) => {
   const dispatch = useDispatch();
   // get certain employee by id
   const employeeData: Employee = useEditEmployeeManagement(id);
   const data = {
     ...employeeData,
     btnText: "Edit",
-    handleClose: () => {},
-    dispatchAction: () => dispatch(editEmployeeAction(employee)),
+    handleClose: () => setIsOpen(false),
+    dispatchAction: () => dispatch(editEmployeeAction(props.values)),
   };
-  return <EmployeeModal data={data} />;
+  return isOpen ? <EmployeeModal data={data} /> : null;
 };

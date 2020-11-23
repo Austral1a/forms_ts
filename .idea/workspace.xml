@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/EmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/EmployeeModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/Employees.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Employees.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/hooks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/hooks/useCreateEmployee.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/hooks/useCreateEmployee.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/hooks/useGetEmployee.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/hooks/useEditEmployee.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/new/ActionsBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/new/ActionsBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/new/modal/EditEmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/new/modal/EditEmployeeModal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
