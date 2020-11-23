@@ -10,7 +10,10 @@ import { getEmployeesAction } from "../Store/Employees";
 import { Card, Button, Modal } from "../Components";
 import "./Employees.scss";
 import { EmployeeModal } from "./EmployeeModal";
-import { createEmployeeAction } from "../Store/Employees";
+import { getEmployeeAction, editEmployeeAction } from "../Store/Employees";
+import { useCreateEmployee, useGetEmployees, useGetEmployee } from "./hooks";
+
+import { delEmployee } from "../API";
 
 interface Employee {
   firstName: string;
@@ -27,25 +30,17 @@ interface GetEmployeePayload {
 
 export const Employees: FC = (): ReactElement => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModalToolbarOpen, setIsModalToolbarOpen] = useState(false);
+
   const dispatch = useDispatch();
-  const dispatchGetEmployeesAction = useCallback(
-    () => dispatch(getEmployeesAction()),
+
+  const dispatchGetEmployeeAction = useCallback(
+    (id: number) => dispatch(getEmployeeAction(id)),
     [dispatch]
   );
 
-  const dispatchCreateEmployeeAction = useCallback(
-    (values, position) =>
-      dispatch(
-        createEmployeeAction(
-          values.firstName,
-          values.lastName,
-          values.email,
-          position
-        )
-      ),
-    [dispatch]
-  );
+  const createEmployee = useCreateEmployee();
+  const getEmployees = useGetEmployees();
+  const getEmployee = useGetEmployee();
 
   const employees = useSelector(
     (state: { getEmployeesReducer: GetEmployeePayload }) =>
@@ -53,9 +48,10 @@ export const Employees: FC = (): ReactElement => {
   );
 
   useEffect(() => {
-    dispatchGetEmployeesAction();
-  }, [dispatchGetEmployeesAction, employees]);
+    getEmployees();
+  }, [getEmployees, employees]);
 
+  const [modalData, setModalData] = useState({});
   return (
     <Card>
       <div className="card-header">
@@ -68,14 +64,19 @@ export const Employees: FC = (): ReactElement => {
           className="card-header_create-employee"
           type="button"
           text="create"
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => {
+            setModalData({
+              firstName: "",
+              lastName: "",
+              email: "",
+              position: "",
+              modalType: "Create",
+              handleClose: () => setIsModalOpen(false),
+              dispatchAction: createEmployee,
+            });
+            setIsModalOpen(true);
+          }}
         />
-        {isModalOpen && (
-          <EmployeeModal
-            dispatchAction={dispatchCreateEmployeeAction}
-            handleClose={() => setIsModalOpen(false)}
-          />
-        )}
       </div>
       <div className="card-body">
         {employees.map((employee) => {
@@ -87,20 +88,50 @@ export const Employees: FC = (): ReactElement => {
               <h4>{employee.position}</h4>
               <div className="card-body__toolbar">
                 <Button
-                  onClick={() => setIsModalToolbarOpen(true)}
+                  onClick={() => {
+                    setModalData({
+                      firstName: employee.firstName,
+                      lastName: employee.lastName,
+                      email: employee.email,
+                      position: employee.position,
+                      modalType: "Edit",
+                      preload: getEmployees,
+                      handleClose: () => setIsModalOpen(false),
+                      dispatchAction: (values: any) => {
+                        getEmployee(
+                          values.firstName,
+                          values.lastName,
+                          values.email,
+                          values.position,
+                          employee.id
+                        );
+                        setIsModalOpen(false);
+                      },
+                    });
+                    setIsModalOpen(true);
+                  }}
                   type="button"
                   text="Edit"
                 />
                 <Button
-                  onClick={() => setIsModalToolbarOpen(true)}
-                  type="button"
+                  onClick={() => {
+                    delEmployee(employee.id);
+                  }}
                   text="Delete"
+                  type="button"
                 />
               </div>
             </div>
           );
         })}
       </div>
+      {isModalOpen && (
+        <EmployeeModal
+          dispatchAction={dispatchGetEmployeeAction}
+          // @ts-ignore
+          data={modalData}
+        />
+      )}
     </Card>
   );
 };

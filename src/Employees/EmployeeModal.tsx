@@ -1,46 +1,53 @@
-import React, { FC, useCallback } from "react";
+import React, { FC, useCallback, useEffect } from "react";
 import { Button, Input, Modal, Form } from "../Components";
 import { email, person } from "../assets";
 import { TextField } from "./TextField";
-import { Formik, FormikProps } from "formik";
+import { Field, Formik, FormikProps } from "formik";
 import { useValidations } from "./hooks";
 
-interface Values {
+interface FormikData {
   firstName: string;
   lastName: string;
   email: string;
   position: string;
 }
 
-interface Props {
-  data?: Values;
-  dispatchAction: (values: object, position: string) => void;
+interface Data extends FormikData {
+  modalType: string;
+  preload?: () => void;
   handleClose: () => void;
+  dispatchAction: (values: any) => void;
 }
 
-export const EmployeeModal: FC<Props> = ({
-  handleClose,
-  data,
-  dispatchAction,
-}) => {
+interface Props {
+  data: Data;
+}
+
+export const EmployeeModal: FC<Props> = ({ data }) => {
+  useEffect(() => {
+    if (data.preload) {
+      data.preload();
+    }
+  }, [data]);
+
   return (
     <Formik
       initialValues={{
-        firstName: data?.firstName ? data.firstName : "",
-        lastName: data?.lastName ? data.lastName : "",
-        email: data?.email ? data.email : "",
-        position: data?.position ? data.position : "",
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        position: data.position,
       }}
       validate={useValidations}
       onSubmit={() => console.log("")}
     >
-      {(props: FormikProps<Values>) => (
+      {(props: FormikProps<FormikData>) => (
         <Form className="modal-container__modal form ">
           <Button
             text="close"
             type="button"
             className="modal-container_close"
-            onClick={handleClose}
+            onClick={data.handleClose}
           />
           <TextField
             icon={person}
@@ -60,14 +67,20 @@ export const EmployeeModal: FC<Props> = ({
             placeholder="Email"
             type="text"
           />
-          <select name="position">
-            <option value="dev">dev</option>
-            <option value="qa">qa</option>
-          </select>
+          <Field as="select" name="position">
+            <option value="qa">QA</option>
+            <option value="dev">Developer</option>
+            <option value="manager">Manager</option>
+          </Field>
           <Button
-            text="Create"
-            onClick={() => dispatchAction(props.values, "Developer")}
+            text={data.modalType}
+            onClick={() => data.dispatchAction(props.values)}
             type="button"
+            disabled={
+              !!props.errors.firstName ||
+              !!props.errors.lastName ||
+              !!props.errors.email
+            }
           />
         </Form>
       )}

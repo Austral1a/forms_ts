@@ -14,9 +14,19 @@ export interface GetEmployeesPayload {
   errorMessage: string;
 }
 
+export interface GetEmployeePayload {
+  employee: GetEmployee;
+  errorMessage: string;
+}
+
 export interface GetEmployeesAction {
   type: string;
   payload: GetEmployeesPayload;
+}
+
+export interface GetEmployeeAction {
+  type: string;
+  payload: GetEmployeePayload
 }
 
 //////////////////////////////////////////////////
