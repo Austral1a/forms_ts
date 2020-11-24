@@ -1,2 +1,2 @@
-export * from "./EmployeesList";
+export * from "./Components";
 export * from "./EmployeeToolbar";

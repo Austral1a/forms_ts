@@ -1,0 +1,32 @@
+@import '../../../styles/variables';
+
+.input-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 50px;
+  position: relative;
+
+  .input-container__input {
+    padding: 3px 0 3px 25px;
+    border-radius: 4px;
+  }
+
+  .input-container__error {
+    color: $text-error;
+  }
+
+  .input-container__input_error {
+    border-bottom: 2px solid $input-error;
+  }
+
+  .input-container__icon {
+    img {
+      width: 20px;
+      height: 20px;
+      opacity: 0.8;
+    }
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+}

@@ -1,5 +1,6 @@
 .employees-container {
   display: grid;
+  height: 85vh;
   max-width: 1440px;
   width: 90vw;
   grid-template-columns: 1fr;
@@ -7,29 +8,37 @@
   justify-content: center;
   justify-items: center;
   align-content: center;
-  &_create-employee {
+  &__toolbar {
     align-self: center;
     justify-self: end;
   }
-}
 
-.employees-header {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  border-bottom: 1px solid black;
-}
+  &__body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto-fill, 40px);
+    grid-gap: 10px;
+    align-items: center;
+    justify-items: center;
+    background-color: #8899ac;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-y: auto;
+    &-header {
+      // TODO: EXTRACT INTO MIXIN
+      display: contents;
+      font-size: 1.2rem;
+      border-bottom: 1px solid black;
+    }
 
-.employees-body {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(auto-fill, 50px);
-  grid-gap: 10px;
-  align-items: center;
-  justify-items: center;
-  &__employee {
-    border: 1px solid black;
-    display: contents;
+    &-employee {
+      // TODO: EXTRACT INTO MIXIN
+      display: contents;
+      border: 1px solid black;
+    }
   }
+
 }
 
 .modal-container__modal {
