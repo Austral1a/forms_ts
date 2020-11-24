@@ -26,7 +26,8 @@ export interface GetEmployeesAction {
 
 export interface GetEmployeeAction {
   type: string;
-  payload: GetEmployeePayload
+  payload: GetEmployeePayload;
+  error: string;
 }
 
 //////////////////////////////////////////////////

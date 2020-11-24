@@ -1,7 +1,9 @@
-import { call, put } from "redux-saga/effects";
+import { call, put, fork } from "redux-saga/effects";
 import {
   CREATE_EMPLOYEE_FAIL,
   CREATE_EMPLOYEE_SUCCESS,
+  DELETE_EMPLOYEE_FAIL,
+  DELETE_EMPLOYEE_SUCCESS,
   EDIT_EMPLOYEE_FAIL,
   EDIT_EMPLOYEE_SUCCESS,
   GET_EMPLOYEE_FAIL,
@@ -14,6 +16,7 @@ import {
   getEmployees as get,
   getEmployee as getOne,
   editEmployee as edit,
+  delEmployee as del,
 } from "../../API";
 
 import {
@@ -54,33 +57,29 @@ export function* getEmployees() {
       payload: { employees } as GetEmployeesPayload,
     } as GetEmployeesAction);
   } catch (e) {
-    console.log(e);
     yield put({
       type: GET_EMPLOYEES_FAIL,
-      payload: {
-        errorMessage: e.message,
-      },
+      error: e.message,
     });
   }
 }
+/*
 
 export function* getEmployee(action: { payload: { id: number } }) {
   try {
     const employee: Employee = yield call(getOne, action.payload.id);
     yield put({
       type: GET_EMPLOYEE_SUCCESS,
-      payload: { employee, errorMessage: "" } as GetEmployeePayload,
+      payload: { employee } as GetEmployeePayload,
     } as GetEmployeeAction);
   } catch (e) {
     yield put({
       type: GET_EMPLOYEE_FAIL,
-      payload: {
-        employee: {},
-        errorMessage: e.message,
-      } as GetEmployeePayload,
+      error: e.message,
     } as GetEmployeeAction);
   }
 }
+*/
 
 export function* editEmployee(action: {
   payload: {
@@ -103,6 +102,21 @@ export function* editEmployee(action: {
     yield put({
       type: EDIT_EMPLOYEE_FAIL,
       errorMessage: e.message,
+    });
+  }
+}
+
+export function* deleteEmployee(action: { id: number }) {
+  try {
+    const { id } = action;
+    yield call(del, id);
+    yield put({
+      type: DELETE_EMPLOYEE_SUCCESS,
+    });
+  } catch (e) {
+    yield put({
+      type: DELETE_EMPLOYEE_FAIL,
+      error: e.message,
     });
   }
 }

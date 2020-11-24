@@ -1,21 +1,19 @@
-import React, { FC, ReactElement, ReactNode, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Employee, GetEmployee } from "../../Interfaces/Employees";
-import { ActionsBlock } from "./ActionsBlock";
+import { ActionsBlock } from "./index";
 import { getEmployeesAction } from "../../Store/Employees";
-import { useSelector } from "react-redux";
-
-interface Props {
-  employees: GetEmployee[];
-}
+import { useDispatch, useSelector } from "react-redux";
 
 export const EmployeesList = () => {
-  useEffect(() => {
-    getEmployeesAction();
-  }, []);
+  const dispatch = useDispatch();
 
   const employees: GetEmployee[] = useSelector(
     (state: any) => state.getEmployeesReducer.employees
   );
+
+  useEffect(() => {
+    dispatch(getEmployeesAction());
+  }, [dispatch]);
   return (
     <div className="card-body">
       {employees.map((employee) => (
@@ -24,8 +22,7 @@ export const EmployeesList = () => {
           <h4>{employee.lastName}</h4>
           <h4>{employee.email}</h4>
           <h4>{employee.position}</h4>
-          <ActionsBlock id={employee.id} />
-          {/*TODO: RENDER ACTIONS BLOCK*/}
+          <ActionsBlock employeeData={employee} />
         </div>
       ))}
     </div>

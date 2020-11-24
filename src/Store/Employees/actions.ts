@@ -22,6 +22,10 @@ export const EDIT_EMPLOYEE = "EDIT_EMPLOYEE";
 export const EDIT_EMPLOYEE_SUCCESS = "EDIT_EMPLOYEE_SUCCESS";
 export const EDIT_EMPLOYEE_FAIL = "EDIT_EMPLOYEE_FAIL";
 
+export const DELETE_EMPLOYEE = "DELETE_EMPLOYEE";
+export const DELETE_EMPLOYEE_SUCCESS = "DELETE_EMPLOYEE_SUCCESS";
+export const DELETE_EMPLOYEE_FAIL = "DELETE_EMPLOYEE_FAIL";
+
 export const createEmployeeAction = (
   firstName: string,
   lastName: string,
@@ -42,13 +46,7 @@ export const createEmployeeAction = (
 
 export const getEmployeesAction = () => ({
   type: GET_EMPLOYEES,
-});
-
-export const getEmployeeAction = (id: number) => ({
-  type: GET_EMPLOYEE,
-  payload: {
-    id,
-  },
+  payload: { employees: [] },
 });
 
 export const editEmployeeAction = (editedEmployee: GetEmployee) => {
@@ -57,3 +55,15 @@ export const editEmployeeAction = (editedEmployee: GetEmployee) => {
     payload: editedEmployee,
   };
 };
+
+interface DeleteEmployeeAction {
+  type: string;
+  id: number;
+  error: string;
+}
+
+export const deleteEmployeeAction = (id: number): DeleteEmployeeAction => ({
+  type: DELETE_EMPLOYEE,
+  id,
+  error: "",
+});

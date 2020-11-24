@@ -1,0 +1,16 @@
+.modal-container__delete-confirmation {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 15px;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  .modal-container__delete-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+  }
+}
