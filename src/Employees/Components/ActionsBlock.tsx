@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useState } from "react";
+import React, { FC, ReactElement } from "react";
 import { Button } from "../../Components";
 import { EditEmployeeModal, DeleteEmployeeModal } from "./index";
 import { GetEmployee } from "../../Interfaces/Employees";

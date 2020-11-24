@@ -1,10 +1,10 @@
-import React, { FC, useCallback, useEffect } from "react";
-import { Button, Input, Modal, Form } from "../../Components";
-import { email as emailSvg, person } from "../../assets";
-import { TextField } from "../TextField";
+import React, { FC } from "react";
+import { Button, Modal, Form } from "../../../Components";
+import { email as emailSvg, person } from "../../../assets";
+import { TextField } from "../../TextField";
 import { Field, Formik, FormikProps } from "formik";
-import { useValidations } from "../hooks";
-import { Employee } from "../../Interfaces/Employees";
+import { useValidations } from "../../hooks";
+import { Employee } from "../../../Interfaces/Employees";
 
 export interface FormikData {
   firstName: string;
@@ -16,7 +16,7 @@ export interface FormikData {
 export interface Data extends FormikData {
   btnText: string;
   handleClose: () => void;
-  dispatchAction: (values: any) => void;
+  dispatchAction: (props: FormikProps<FormikData>) => void;
 }
 
 interface Props {

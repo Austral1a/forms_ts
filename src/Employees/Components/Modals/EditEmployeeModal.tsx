@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, MouseEventHandler } from "react";
 import { EmployeeModal } from "./EmployeeModal";
-import { GetEmployee } from "../../Interfaces/Employees";
-import { useEditEmployeeManagement } from "./hooks";
+import { GetEmployee } from "../../../Interfaces/Employees";
+import { useEditEmployeeManagement } from "../hooks";
 
 interface Props {
   isOpen: boolean;
@@ -15,5 +15,5 @@ export const EditEmployeeModal: FC<Props> = ({
 }) => {
   const data = useEditEmployeeManagement({ employeeData, handleClose });
 
-  return <>{isOpen ? <EmployeeModal data={data} /> : null}</>;
+  return <>{isOpen && <EmployeeModal data={data} />}</>;
 };

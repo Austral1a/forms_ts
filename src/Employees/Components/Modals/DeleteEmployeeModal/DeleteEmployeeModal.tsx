@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { Modal, Button } from "../../../Components";
-import { useDeleteEmployeeManagement } from "../hooks";
+import { Modal, Button } from "../../../../Components";
+import { useDeleteEmployeeManagement } from "../../hooks";
 import "./DeleteEmployeeModal.scss";
 
 interface Props {

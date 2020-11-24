@@ -1,4 +1,4 @@
-import { call, put, fork } from "redux-saga/effects";
+import { call, put } from "redux-saga/effects";
 import {
   CREATE_EMPLOYEE_FAIL,
   CREATE_EMPLOYEE_SUCCESS,
@@ -6,25 +6,19 @@ import {
   DELETE_EMPLOYEE_SUCCESS,
   EDIT_EMPLOYEE_FAIL,
   EDIT_EMPLOYEE_SUCCESS,
-  GET_EMPLOYEE_FAIL,
-  GET_EMPLOYEE_SUCCESS,
   GET_EMPLOYEES_FAIL,
   GET_EMPLOYEES_SUCCESS,
 } from "./actions";
 import {
   createEmployee as create,
   getEmployees as get,
-  getEmployee as getOne,
   editEmployee as edit,
   delEmployee as del,
 } from "../../API";
 
 import {
   GetEmployee,
-  Employee,
   CreateEmployeeAction,
-  GetEmployeePayload,
-  GetEmployeeAction,
   GetEmployeesAction,
   GetEmployeesPayload,
 } from "../../Interfaces/Employees";

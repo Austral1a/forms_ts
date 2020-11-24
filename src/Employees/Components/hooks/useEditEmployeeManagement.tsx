@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { MouseEventHandler, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { editEmployeeAction } from "../../../Store/Employees";
 import { Employee, GetEmployee } from "../../../Interfaces/Employees";

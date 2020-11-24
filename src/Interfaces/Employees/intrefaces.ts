@@ -33,10 +33,10 @@ export interface GetEmployeeAction {
 //////////////////////////////////////////////////
 export interface CreateEmployeePayload {
   employee: Employee;
-  errorMessage: string;
 }
 
 export interface CreateEmployeeAction {
   type: string;
   payload: CreateEmployeePayload;
+  error: string;
 }
