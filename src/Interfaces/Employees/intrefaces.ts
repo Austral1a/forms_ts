@@ -26,16 +26,17 @@ export interface GetEmployeesAction {
 
 export interface GetEmployeeAction {
   type: string;
-  payload: GetEmployeePayload
+  payload: GetEmployeePayload;
+  error: string;
 }
 
 //////////////////////////////////////////////////
 export interface CreateEmployeePayload {
   employee: Employee;
-  errorMessage: string;
 }
 
 export interface CreateEmployeeAction {
   type: string;
   payload: CreateEmployeePayload;
+  error: string;
 }

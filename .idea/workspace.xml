@@ -4,21 +4,29 @@
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/getEmployee.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/API/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/EmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/EmployeeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Button/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Card/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Card/Card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Toolbar/Toolbar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/ActionsBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/ActionsBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/DeleteEmployeeModal/DeleteEmployeeModal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/Modals/DeleteEmployeeModal/DeleteEmployeeModal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/DeleteEmployeeModal/DeleteEmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/Modals/DeleteEmployeeModal/DeleteEmployeeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/DeleteEmployeeModal/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/Modals/DeleteEmployeeModal/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EditEmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/Modals/EditEmployeeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/Modals/EmployeeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/hooks/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/hooks/useEditEmployeeManagement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/hooks/useEditEmployeeManagement.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Employees.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Employees.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Employees/Employees.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Employees.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/hooks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/hooks/useGetEmployees.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interfaces/Employees/intrefaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Employees/intrefaces.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Store/Employees/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/actions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Store/Employees/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Store/rootReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/rootReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/rootSaga.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/rootSaga.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/patterns.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/patterns.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/url.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/url.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +64,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -66,8 +74,11 @@
       <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Interfaces\Employees" />
-      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Components\Table" />
+      <recent name="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\src\Employees\Components\Modals" />
+      <recent name="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\src\Employees\Components\DeleteEmployeeModal" />
+      <recent name="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\src\Employees\Components" />
+      <recent name="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\src\Employees" />
+      <recent name="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\src\Employees\new" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -83,6 +94,7 @@
       <workItem from="1605967071769" duration="189000" />
       <workItem from="1605967346693" duration="20614000" />
       <workItem from="1606035137799" duration="31386000" />
+      <workItem from="1606202791644" duration="26833000" />
     </task>
     <servers />
   </component>
@@ -102,22 +114,22 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1001" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606133037071">
+    <state x="975" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606229220916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1001" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606133037071" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1606120285769">
+    <state x="975" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606229220916" />
+    <state x="908" y="168" key="SettingsEditor" timestamp="1606214238944">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606120285769" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1606127343741">
+    <state x="908" y="168" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606214238944" />
+    <state x="659" y="209" width="1095" height="581" key="find.popup" timestamp="1606230788547">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606127343741" />
-    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1606120319795">
+    <state x="659" y="209" width="1095" height="581" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606230788547" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606219518792">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606120319795" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606219518792" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -5,8 +5,10 @@ import { rootSaga } from "./rootSaga";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const sagaMiddleware = createSagaMiddleware();
+
 export const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
+
 sagaMiddleware.run(rootSaga);

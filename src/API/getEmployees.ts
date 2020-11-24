@@ -8,9 +8,8 @@ interface EmployeeResponse {
   id: number;
 }
 
-export const getEmployees = (): Promise<EmployeeResponse[]> => {
+export async function getEmployees() {
   const resource: string = `${home}/employees`;
-  return fetch(resource)
-    .then((res) => res.json())
-    .then((employees: EmployeeResponse[]) => employees);
-};
+  const response = await fetch(resource);
+  return await response.json();
+}
