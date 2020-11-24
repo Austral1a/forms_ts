@@ -1,19 +1,9 @@
-import React, { useEffect } from "react";
-import { Employee, GetEmployee } from "../../Interfaces/Employees";
+import React from "react";
 import { ActionsBlock } from "./index";
-import { getEmployeesAction } from "../../Store/Employees";
-import { useDispatch, useSelector } from "react-redux";
+import { useEmployeesManagement } from "./hooks";
 
 export const EmployeesList = () => {
-  const dispatch = useDispatch();
-
-  const employees: GetEmployee[] = useSelector(
-    (state: any) => state.getEmployeesReducer.employees
-  );
-
-  useEffect(() => {
-    dispatch(getEmployeesAction());
-  }, [dispatch]);
+  const employees = useEmployeesManagement();
   return (
     <div className="card-body">
       {employees.map((employee) => (
