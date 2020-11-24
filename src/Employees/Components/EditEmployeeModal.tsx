@@ -1,8 +1,7 @@
 import React, { FC } from "react";
-import { useDispatch } from "react-redux";
 import { EmployeeModal } from "./EmployeeModal";
-import { editEmployeeAction } from "../../Store/Employees";
 import { GetEmployee } from "../../Interfaces/Employees";
+import { useEditEmployeeManagement } from "./hooks";
 
 interface Props {
   isOpen: boolean;
@@ -14,14 +13,7 @@ export const EditEmployeeModal: FC<Props> = ({
   isOpen,
   handleClose,
 }) => {
-  const dispatch = useDispatch();
-  const { id } = employeeData;
-  const data = {
-    ...employeeData,
-    btnText: "Edit",
-    handleClose,
-    dispatchAction: (props: any) =>
-      dispatch(editEmployeeAction({ ...props.values, id })),
-  };
+  const data = useEditEmployeeManagement({ employeeData, handleClose });
+
   return <>{isOpen ? <EmployeeModal data={data} /> : null}</>;
 };
