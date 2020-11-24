@@ -42,9 +42,14 @@ export const EmployeeModal: FC<Props> = ({ data }) => {
           errors: { firstName, lastName, email },
         } = props;
         const isBtnDisabled = !!firstName || !!lastName || !!email;
+        const isFormValid = !isBtnDisabled;
         return (
           <Modal>
-            <Form className="modal-container__modal form ">
+            <Form
+              onSubmit={() => ""}
+              isValid={isFormValid}
+              className="modal-container__modal form "
+            >
               <Button
                 text="close"
                 type="button"
