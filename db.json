@@ -15,15 +15,8 @@
   ],
   "employees": [
     {
-      "id": 1,
-      "firstName": "johns",
-      "lastName": "doe",
-      "email": "john@d.com",
-      "position": "dev"
-    },
-    {
       "id": 2,
-      "firstName": "johnsazsz",
+      "firstName": "johnsazszw",
       "lastName": "NeScala",
       "email": "johne@d.co",
       "position": "qa"
@@ -51,7 +44,7 @@
     },
     {
       "firstName": "aa",
-      "lastName": "aa",
+      "lastName": "aas",
       "email": "dadsasdasd@d.c",
       "position": "manager",
       "id": 8
@@ -69,13 +62,6 @@
       "email": "dakpoids@d.c",
       "position": "manager",
       "id": 10
-    },
-    {
-      "firstName": "s",
-      "lastName": "s",
-      "email": "sssss@s.c",
-      "position": "manager",
-      "id": 11
     }
   ]
 }
