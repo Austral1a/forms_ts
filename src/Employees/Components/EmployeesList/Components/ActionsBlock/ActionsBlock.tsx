@@ -14,15 +14,12 @@ export const ActionsBlock: FC<Props> = ({ employeeData }): ReactElement => {
   const manager = useActionsBlockManagement();
 
   const {
-    edit: { isEditModalOpen, handleEditModalClose, handleEditModalOpen },
-  } = manager;
-
-  const {
-    delete: {
-      isDeleteModalOpen,
-      handleDeleteModalClose,
-      handleDeleteModalOpen,
-    },
+    isEditModalOpen,
+    handleEditModalClose,
+    handleEditModalOpen,
+    isDeleteModalOpen,
+    handleDeleteModalClose,
+    handleDeleteModalOpen,
   } = manager;
 
   const {
