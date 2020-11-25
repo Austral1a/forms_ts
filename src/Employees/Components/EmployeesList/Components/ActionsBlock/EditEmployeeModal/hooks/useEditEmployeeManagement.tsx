@@ -3,12 +3,12 @@ import { useDispatch } from "react-redux";
 import { editEmployeeAction } from "../../../../../../../Store/Employees";
 import {
   Employee,
-  GetEmployee,
-} from "../../../../../../../Interfaces/Employees";
+  EmployeeWithId,
+} from "../../../../../../../Store/Employees/interfaces";
 import { FormikProps } from "formik";
 
 interface Props {
-  employeeData: GetEmployee;
+  employeeData: EmployeeWithId;
   handleClose: () => void;
 }
 

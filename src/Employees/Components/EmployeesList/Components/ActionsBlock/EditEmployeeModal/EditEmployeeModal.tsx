@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 import { EmployeeModal } from "../../../../../../Components";
-import { GetEmployee } from "../../../../../../Interfaces/Employees";
+import { EmployeeWithId } from "../../../../../../Store/Employees/interfaces";
 import { useEditEmployeeManagement } from "./hooks";
 
 interface Props {
   isOpen: boolean;
   handleClose: () => void;
-  employeeData: GetEmployee;
+  employeeData: EmployeeWithId;
 }
 export const EditEmployeeModal: FC<Props> = ({
   employeeData,
