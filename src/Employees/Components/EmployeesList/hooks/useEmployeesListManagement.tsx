@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { GetEmployee } from "../../../../Interfaces/Employees";
+import { EmployeeWithId } from "../../../../Store/Employees/interfaces";
 import { createSelector } from "reselect";
 import { getEmployeesAction } from "../../../../Store/Employees";
 import { useEffect } from "react";
@@ -16,6 +16,6 @@ export const useEmployeesManagement = () => {
   useEffect(() => {
     dispatch(getEmployeesAction());
   }, [dispatch]);
-  const employees: GetEmployee[] = useSelector(selectEmployees);
+  const employees: EmployeeWithId[] = useSelector(selectEmployees);
   return employees;
 };
