@@ -3,7 +3,7 @@ import { Button, Modal, Form, TextField } from "../../index";
 import { email as emailSvg, person } from "../../../assets";
 import { Field, Formik, FormikProps } from "formik";
 import { useValidations } from "./hooks";
-import { Employee } from "../../../Interfaces/Employees";
+import { Employee } from "../../../Store/Employees/interfaces";
 
 export interface FormikData {
   firstName: string;
