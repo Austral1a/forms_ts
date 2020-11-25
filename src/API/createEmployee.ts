@@ -1,22 +1,20 @@
 import { home } from "../url";
+import { Employee } from "../Store/Employees/interfaces";
 
-export const createEmployee = (
-  firstName: string,
-  lastName: string,
-  email: string,
-  position: string
-): void => {
+export const createEmployee = async (
+  employee: Employee
+): Promise<void | Error> => {
   const url = `${home}/employees`;
-  fetch(url, {
+  const response = await fetch(url, {
     method: "POST",
     body: JSON.stringify({
-      firstName,
-      lastName,
-      email,
-      position,
+      ...employee,
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
+  if (!response.ok) {
+    throw new Error("Couldn't create employee");
+  }
 };

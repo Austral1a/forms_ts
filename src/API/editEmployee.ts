@@ -1,14 +1,14 @@
 import { home } from "../url";
 
-export const editEmployee = (
+export const editEmployee = async (
   id: number,
   firstName: string,
   lastName: string,
   email: string,
   position: string
-): void => {
+): Promise<void | Error> => {
   const resource: string = `${home}/employees/${id}`;
-  fetch(resource, {
+  const fetchInit = {
     method: "PATCH",
     body: JSON.stringify({
       firstName,
@@ -19,5 +19,9 @@ export const editEmployee = (
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
-  });
+  };
+  const response = await fetch(resource, fetchInit);
+  if (!response.ok) {
+    throw new Error("Couldn't update employee");
+  }
 };

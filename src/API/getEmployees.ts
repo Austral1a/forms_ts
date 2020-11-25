@@ -8,8 +8,12 @@ interface EmployeeResponse {
   id: number;
 }
 
-export async function getEmployees() {
+export async function getEmployees(): Promise<EmployeeResponse | Error> {
   const resource: string = `${home}/employees`;
   const response = await fetch(resource);
-  return await response.json();
+  if (response.ok) {
+    return await response.json();
+  } else {
+    throw new Error("Couldn't fetch employees, please try to reload page");
+  }
 }

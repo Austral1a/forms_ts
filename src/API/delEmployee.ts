@@ -1,8 +1,11 @@
 import { home } from "../url";
 
-export const delEmployee = (id: number): void => {
+export const delEmployee = async (id: number): Promise<void | Error> => {
   const resource = `${home}/employees/${id}`;
-  fetch(resource, {
+  const response = await fetch(resource, {
     method: "DELETE",
   });
+  if (!response.ok) {
+    throw new Error("Couldn't delete employee");
+  }
 };
