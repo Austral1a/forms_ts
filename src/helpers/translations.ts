@@ -31,6 +31,8 @@ export const translations: ObjectDictionary = {
     qa: "QA",
     dev: "Developer",
     manager: "Manager",
+    inputTypeText: "text",
+    inputTypePassword: "password",
   },
   modal: {
     deleteConfirm: "Are you sure you want to delete that employee?",

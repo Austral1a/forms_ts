@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login/hooks/usePasswordIconManagement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/hooks/usePasswordIconManagement.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers/translations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/translations.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

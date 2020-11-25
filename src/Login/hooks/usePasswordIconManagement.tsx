@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { pswd_visibility_off, pswd_visibility_on } from "../../assets";
+import { translations } from "../../helpers";
 
 interface Result {
   setPswdIcon: string;
@@ -11,9 +12,12 @@ interface Result {
 export const usePasswordIconManagement = (): Result => {
   const [isPswdMouseDown, setIsPsdwMouseDown] = useState(false);
 
+  const {
+    field: { inputTypeText, inputTypePassword },
+  } = translations;
   return {
     setPswdIcon: isPswdMouseDown ? pswd_visibility_on : pswd_visibility_off,
-    pswdInputType: isPswdMouseDown ? "text" : "password",
+    pswdInputType: isPswdMouseDown ? inputTypeText : inputTypePassword,
     handlePswdIconMouseDown: useCallback(() => setIsPsdwMouseDown(true), [
       setIsPsdwMouseDown,
     ]),
