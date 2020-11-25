@@ -16,21 +16,18 @@ import {
   delEmployee as del,
 } from "../../API";
 
-import { CreateEmployeeAction } from "../../Interfaces/Employees";
 import {
-  DeleteEmployeePayload,
+  CreateEmployeeRequest,
   DeleteEmployeeRequest,
   EmployeeWithId,
 } from "./interfaces";
 
-export function* createEmployee(action: CreateEmployeeAction) {
+export function* createEmployee(action: CreateEmployeeRequest) {
   try {
     const {
-      payload: {
-        employee: { firstName, lastName, email, position },
-      },
+      payload: { employee },
     } = action;
-    yield call(create, firstName, lastName, email, position);
+    yield call(create, employee);
     yield put(createEmployeeSuccess());
   } catch (e) {
     yield put(createEmployeeFail(e));
