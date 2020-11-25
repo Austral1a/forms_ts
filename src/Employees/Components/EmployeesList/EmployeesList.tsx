@@ -1,17 +1,27 @@
 import React from "react";
 import { ActionsBlock } from "./Components";
 import { useEmployeesManagement } from "./hooks";
+import { translations } from "../../../helpers";
 
 export const EmployeesList = () => {
   const employees = useEmployeesManagement();
+  const {
+    field: {
+      lastNameHolder,
+      firstNameHolder,
+      emailHolder,
+      positionsHolder,
+      actionsHolder,
+    },
+  } = translations;
   return (
     <div className="employees-container__body">
       <div className="employees-container__body-header">
-        <h4>First Name</h4>
-        <h4>Last Name</h4>
-        <h4>Email</h4>
-        <h4>Position</h4>
-        <h4>Actions</h4>
+        <h4>{firstNameHolder}</h4>
+        <h4>{lastNameHolder}</h4>
+        <h4>{emailHolder}</h4>
+        <h4>{positionsHolder}</h4>
+        <h4>{actionsHolder}</h4>
       </div>
       {employees.map((employee) => (
         <div key={employee.id} className="employees-container__body-employee">

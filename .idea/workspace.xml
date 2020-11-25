@@ -3,17 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/delEmployee.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/delEmployee.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/common/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/Button/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeeToolbar/EmployeeToolbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeeToolbar/EmployeeToolbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/ActionsBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/ActionsBlock.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/DeleteEmployeeModal/DeleteEmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/DeleteEmployeeModal/DeleteEmployeeModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/DeleteEmployeeModal/hooks/useDeleteEmployeeManagement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/DeleteEmployeeModal/hooks/useDeleteEmployeeManagement.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Employees/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/rootSaga.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/rootSaga.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/EmployeesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/EmployeesList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

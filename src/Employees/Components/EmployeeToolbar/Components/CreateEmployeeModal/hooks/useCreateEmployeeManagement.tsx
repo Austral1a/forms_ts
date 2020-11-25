@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { useCallback } from "react";
 import { createEmployeeAction } from "../../../../../../Store/Employees";
 import { Employee } from "../../../../../../Store/Employees/interfaces";
+import { translations } from "../../../../../../helpers";
 
 interface Props {
   handleClose: () => void;
@@ -19,12 +20,15 @@ export const useCreateEmployeeManagement = ({ handleClose }: Props) => {
     [dispatch]
   );
 
+  const {
+    button: { createText },
+  } = translations;
   return {
     firstName: "",
     lastName: "",
     email: "",
     position: "",
-    btnText: "Create",
+    btnText: createText,
     handleClose,
     dispatchAction,
   };

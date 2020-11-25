@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Modal, Button } from "../../../../../../Components";
 import { useDeleteEmployeeManagement } from "./hooks";
+import { translations } from "../../../../../../helpers";
 import "./DeleteEmployeeModal.scss";
 
 interface Props {
@@ -15,16 +16,24 @@ export const DeleteEmployeeModal: FC<Props> = ({
   employeeId,
 }) => {
   const dispatchAction = useDeleteEmployeeManagement(employeeId);
+  const {
+    button: { deleteText, closeText },
+    modal: { deleteConfirm },
+  } = translations;
   return (
     <>
       {isOpen && (
         <Modal>
           <div className="modal-container__modal">
             <div className="modal-container__delete-confirmation">
-              <h3>Are you sure you wanna delete that user?</h3>
+              <h3>{deleteConfirm}</h3>
               <div className="modal-container__delete-options">
-                <Button text="Delete" onClick={dispatchAction} type="button" />
-                <Button text="Close" onClick={handleClose} type="button" />
+                <Button
+                  text={deleteText}
+                  onClick={dispatchAction}
+                  type="button"
+                />
+                <Button text={closeText} onClick={handleClose} type="button" />
               </div>
             </div>
           </div>

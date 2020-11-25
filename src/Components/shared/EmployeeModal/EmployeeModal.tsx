@@ -4,6 +4,7 @@ import { email as emailSvg, person } from "../../../assets";
 import { Field, Formik, FormikProps } from "formik";
 import { useValidations } from "./hooks";
 import { Employee } from "../../../Store/Employees/interfaces";
+import { translations } from "../../../helpers";
 
 export interface FormikData {
   firstName: string;
@@ -30,6 +31,19 @@ export const EmployeeModal: FC<Props> = ({ data }) => {
     position: data.position,
   };
 
+  const {
+    button: { closeText, textType },
+    field: {
+      emailHolder,
+      emailVal,
+      firstNameHolder,
+      firstNameVal,
+      lastNameHolder,
+      lastNameVal,
+      positionVal,
+    },
+  } = translations;
+
   return (
     <Formik
       initialValues={employee}
@@ -50,30 +64,30 @@ export const EmployeeModal: FC<Props> = ({ data }) => {
               className="modal-container__modal form "
             >
               <Button
-                text="close"
+                text={closeText}
                 type="button"
                 className="modal-container_close"
                 onClick={data.handleClose}
               />
               <TextField
                 icon={person}
-                name="firstName"
-                placeholder="First Name"
-                type="text"
+                name={firstNameVal}
+                placeholder={firstNameHolder}
+                type={textType}
               />
               <TextField
                 icon={person}
-                name="lastName"
-                placeholder="Last Name"
-                type="text"
+                name={lastNameVal}
+                placeholder={lastNameHolder}
+                type={textType}
               />
               <TextField
                 icon={emailSvg}
-                name="email"
-                placeholder="Email"
-                type="text"
+                name={emailVal}
+                placeholder={emailHolder}
+                type={textType}
               />
-              <Field as="select" name="position">
+              <Field as="select" name={positionVal}>
                 <option value="qa">QA</option>
                 <option value="dev">Developer</option>
                 <option value="manager">Manager</option>

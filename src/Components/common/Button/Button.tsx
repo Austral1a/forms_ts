@@ -2,10 +2,10 @@ import React, { FC, MouseEventHandler } from "react";
 import classNames from "classnames/dedupe";
 import "./Button.scss";
 
-type Button = "button" | "submit" | "reset";
+type ButtonType = "button" | "submit" | "reset";
 
 interface Props {
-  type: Button;
+  type: ButtonType;
   text: string;
   disabled?: boolean;
   className?: string;
