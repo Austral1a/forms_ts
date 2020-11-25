@@ -2,7 +2,6 @@ import React, { FC, ReactElement, ReactNode, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./Modal.scss";
 
-const appRoot = document.querySelector("#root") as HTMLDivElement;
 const modalRoot = document.querySelector("#modal-root") as HTMLDivElement;
 
 interface Props {
