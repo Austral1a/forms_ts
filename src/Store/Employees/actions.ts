@@ -1,14 +1,5 @@
 import {
-  GetEmployee,
-  GetEmployeesPayload,
-  GetEmployeesAction,
-  CreateEmployeeAction,
-  Employee,
-} from "../../Interfaces/Employees";
-import { Employees } from "../../Employees";
-import {
   CreateEmployeeFail,
-  CreateEmployeeRequest,
   CreateEmployeeSuccess,
   DeleteEmployeeFail,
   DeleteEmployeeRequest,
@@ -16,6 +7,7 @@ import {
   EditEmployeeFail,
   EditEmployeeRequest,
   EditEmployeeSuccess,
+  Employee,
   EmployeeWithId,
   GetEmployeeRequest,
   GetEmployeesFail,
@@ -26,17 +18,17 @@ export const CREATE_EMPLOYEE: string = "CREATE_EMPLOYEE";
 export const CREATE_EMPLOYEE_SUCCESS: string = "CREATE_EMPLOYEE_SUCCESS";
 export const CREATE_EMPLOYEE_FAIL: string = "CREATE_EMPLOYEE_FAIL";
 
-export const GET_EMPLOYEES = "GET_EMPLOYEES";
-export const GET_EMPLOYEES_SUCCESS = "GET_EMPLOYEES_SUCCESS";
-export const GET_EMPLOYEES_FAIL = "GET_EMPLOYEES_FAIL";
+export const GET_EMPLOYEES: string = "GET_EMPLOYEES";
+export const GET_EMPLOYEES_SUCCESS: string = "GET_EMPLOYEES_SUCCESS";
+export const GET_EMPLOYEES_FAIL: string = "GET_EMPLOYEES_FAIL";
 
-export const EDIT_EMPLOYEE = "EDIT_EMPLOYEE";
-export const EDIT_EMPLOYEE_SUCCESS = "EDIT_EMPLOYEE_SUCCESS";
-export const EDIT_EMPLOYEE_FAIL = "EDIT_EMPLOYEE_FAIL";
+export const EDIT_EMPLOYEE: string = "EDIT_EMPLOYEE";
+export const EDIT_EMPLOYEE_SUCCESS: string = "EDIT_EMPLOYEE_SUCCESS";
+export const EDIT_EMPLOYEE_FAIL: string = "EDIT_EMPLOYEE_FAIL";
 
-export const DELETE_EMPLOYEE = "DELETE_EMPLOYEE";
-export const DELETE_EMPLOYEE_SUCCESS = "DELETE_EMPLOYEE_SUCCESS";
-export const DELETE_EMPLOYEE_FAIL = "DELETE_EMPLOYEE_FAIL";
+export const DELETE_EMPLOYEE: string = "DELETE_EMPLOYEE";
+export const DELETE_EMPLOYEE_SUCCESS: string = "DELETE_EMPLOYEE_SUCCESS";
+export const DELETE_EMPLOYEE_FAIL: string = "DELETE_EMPLOYEE_FAIL";
 
 ///////CREATE EMPLOYEE///////////////////////////////////
 export const createEmployeeAction = (employee: Employee) => ({
