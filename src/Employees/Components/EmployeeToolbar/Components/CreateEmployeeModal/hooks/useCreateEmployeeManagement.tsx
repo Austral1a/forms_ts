@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useCallback } from "react";
 import { createEmployeeAction } from "../../../../../../Store/Employees";
-import { Employee } from "../../../../../../Interfaces/Employees";
+import { Employee } from "../../../../../../Store/Employees/interfaces";
 
 interface Props {
   handleClose: () => void;
