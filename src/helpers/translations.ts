@@ -26,6 +26,8 @@ export const translations: ObjectDictionary = {
     emailHolder: "Email",
     positionsHolder: "Position",
     actionsHolder: "Actions",
+    psdwVal: "password",
+    pswdHolder: "Password",
     qa: "QA",
     dev: "Developer",
     manager: "Manager",

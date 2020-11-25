@@ -9,6 +9,7 @@ import { TextField } from "./index";
 import { usePasswordIconManagement } from "./hooks";
 import { useDispatch } from "react-redux";
 import { loginAction } from "../Store/Login";
+import { translations } from "../helpers";
 
 interface Values {
   email: string;
@@ -29,6 +30,11 @@ export const Login: FC = () => {
     [dispatch]
   );
 
+  const {
+    field: { emailVal, emailHolder, pswdHolder, psdwVal },
+    button: { textType },
+  } = translations;
+
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
@@ -38,15 +44,15 @@ export const Login: FC = () => {
       {(props: FormikProps<Values>) => (
         <Form className="form form-login login">
           <TextField
-            name="email"
-            type="text"
-            placeholder="Email"
+            name={emailVal}
+            type={textType}
+            placeholder={emailHolder}
             icon={email}
           />
           <TextField
-            name="password"
+            name={psdwVal}
             type={pswdInputType}
-            placeholder="Password"
+            placeholder={pswdHolder}
             icon={setPswdIcon}
             handleIconMouseDown={handlePswdIconMouseDown}
             handleIconMouseUp={handlePswdIconMouseUp}
