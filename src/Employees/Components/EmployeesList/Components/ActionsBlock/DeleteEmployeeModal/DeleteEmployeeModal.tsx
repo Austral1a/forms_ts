@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback } from "react";
 import { Modal, Button } from "../../../../../../Components";
 import { useDeleteEmployeeManagement } from "./hooks";
 import { translations } from "../../../../../../helpers";
@@ -20,6 +20,10 @@ export const DeleteEmployeeModal: FC<Props> = ({
     button: { deleteText, closeText },
     modal: { deleteConfirm },
   } = translations;
+  const handleSubmit = useCallback(() => {
+    dispatchAction();
+    handleClose();
+  }, [handleClose, dispatchAction]);
   return (
     <>
       {isOpen && (
@@ -30,7 +34,7 @@ export const DeleteEmployeeModal: FC<Props> = ({
               <div className="modal-container__delete-options">
                 <Button
                   text={deleteText}
-                  onClick={dispatchAction}
+                  onClick={handleSubmit}
                   type="button"
                 />
                 <Button text={closeText} onClick={handleClose} type="button" />

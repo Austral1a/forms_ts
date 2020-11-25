@@ -12,7 +12,7 @@ export const translations: ObjectDictionary = {
     submitType: "submit",
     buttonType: "button",
     textType: "text",
-    editText: "Text",
+    editText: "Edit",
     deleteText: "Delete",
     createText: "Create",
   },

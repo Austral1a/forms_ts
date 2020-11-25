@@ -15,20 +15,6 @@
   ],
   "employees": [
     {
-      "id": 2,
-      "firstName": "johnsazszw",
-      "lastName": "NeScala",
-      "email": "johne@d.co",
-      "position": "qa"
-    },
-    {
-      "firstName": "aa",
-      "lastName": "aa",
-      "email": "dads@d.c",
-      "position": "manager",
-      "id": 5
-    },
-    {
       "firstName": "aaa",
       "lastName": "aaa",
       "email": "daas@d.c",

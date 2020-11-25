@@ -1,9 +1,10 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, ReactElement, useEffect } from "react";
 import { useSelector } from "react-redux";
 import "./ErrorHandler.scss";
+import { selectError } from "../Store/Errors";
 
-export const ErrorHandler: FC = () => {
-  const error = useSelector((state: any) => state.errorReducer.errorMessage);
+export const ErrorHandler: FC = (): ReactElement => {
+  const error = useSelector(selectError);
   useEffect(() => {}, [error]);
-  return <div className="error">{error}</div>;
+  return <>{error && <div className="error">{error}</div>}</>;
 };

@@ -13,6 +13,20 @@ import {
   GET_EMPLOYEES_FAIL,
   GET_EMPLOYEES_SUCCESS,
 } from "./actions";
+import { ErrorsWatcherState } from "../Errors";
+import { LoginState } from "../Login";
+
+export interface State {
+  getEmployeesReducer: EmployeesState;
+  loginReducer: LoginState;
+  errorReducer: ErrorsWatcherState;
+}
+
+export interface EmployeesState {
+  employees: EmployeeWithId[];
+  name: string;
+  message: string;
+}
 
 export interface Employee {
   firstName: string;
