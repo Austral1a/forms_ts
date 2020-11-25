@@ -1,19 +1,20 @@
 import { GET_EMPLOYEES_FAIL, GET_EMPLOYEES_SUCCESS } from "./actions";
+import { Employee, GetEmployeesFail, GetEmployeesSuccess } from "./interfaces";
 
-import {
-  GetEmployeesAction,
-  GetEmployeesPayload,
-} from "../../Interfaces/Employees";
+interface GetEmployeeState {
+  employees: Employee[];
+  name: string;
+  message: string;
+}
+type GetEmployeesAction = GetEmployeesSuccess & GetEmployeesFail;
 
-const initState = {
+const initState: GetEmployeeState = {
   employees: [],
-  errorMessage: "",
+  name: "",
+  message: "",
 };
 
-export const reducer = (
-  state = initState,
-  action: GetEmployeesAction
-): GetEmployeesPayload => {
+export const reducer = (state = initState, action: GetEmployeesAction) => {
   switch (action.type) {
     case GET_EMPLOYEES_SUCCESS:
       const {
@@ -25,11 +26,12 @@ export const reducer = (
       };
     case GET_EMPLOYEES_FAIL:
       const {
-        payload: { errorMessage },
+        payload: { name, message },
       } = action;
       return {
         ...state,
-        errorMessage,
+        name,
+        message,
       };
     default:
       return state;
