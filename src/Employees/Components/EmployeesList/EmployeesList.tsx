@@ -15,8 +15,8 @@ export const EmployeesList: FC = (): ReactElement => {
     },
   } = translations;
   return (
-    <div className="employees-container__body">
-      <div className="employees-container__body-header">
+    <div className="employees-list">
+      <div className="employees-list__header">
         <h4>{firstNameText}</h4>
         <h4>{lastNameText}</h4>
         <h4>{emailText}</h4>
@@ -24,7 +24,7 @@ export const EmployeesList: FC = (): ReactElement => {
         <h4>{actionsText}</h4>
       </div>
       {employeesList.map((employee) => (
-        <div key={employee.id} className="employees-container__body-employee">
+        <div key={employee.id} className="employees-list__item">
           <h4>{employee.firstName}</h4>
           <h4>{employee.lastName}</h4>
           <h4>{employee.email}</h4>

@@ -1,5 +1,5 @@
 import React, { FC, useCallback } from "react";
-import { Button, Form } from "../../index";
+import { Button, EmployeeFormFields, Form, InputField } from "../../index";
 import { Field, Formik, FormikProps } from "formik";
 import { Employee } from "../../../Store/Employees/interfaces";
 import { translations } from "../../../helpers";
@@ -11,47 +11,42 @@ import {
 } from "../../index";
 import "./EmployeeModal.scss";
 
+import {useModalFields} from './hooks/useModalFields'
+
 interface EmployeeModalProps {
-  employeeFieldsValues?: Employee;
+  fieldsValues?: EmployeeModalFields;
   btnText: string;
   handleClose: () => void;
-  dispatchAction: (props: FormikProps<Employee>) => void;
+  onSubmit: (props: FormikProps<EmployeeModalFields>) => void;
+}
+
+export interface EmployeeModalFields {
+  firstName: string;
+  lastName: string;
+  email: string;
+  position: string;
 }
 
 export const EmployeeModal: FC<EmployeeModalProps> = ({
-  employeeFieldsValues,
+  fieldsValues,
   btnText,
   handleClose,
-  dispatchAction,
+  onSubmit,
 }) => {
-  const employee: Employee = {
-    firstName: employeeFieldsValues?.firstName
-      ? employeeFieldsValues?.firstName
-      : "",
-    lastName: employeeFieldsValues?.lastName
-      ? employeeFieldsValues?.lastName
-      : "",
-    email: employeeFieldsValues?.email ? employeeFieldsValues?.email : "",
-    position: employeeFieldsValues?.position
-      ? employeeFieldsValues.position
-      : "",
+  const initialValues: EmployeeModalFields = {
+    firstName: fieldsValues?.firstName || "",
+    lastName: fieldsValues?.lastName || "",
+    email: fieldsValues?.email || "",
+    position: fieldsValues?.position || "",
   };
 
-  const {
-    button: { closeText },
-    field: { positionText },
-  } = translations;
+  const {firstNameField} = useModalFields();
 
-  const onSubmit = useCallback(
-    (props: FormikProps<Employee>) => {
-      dispatchAction(props);
-    },
-    [dispatchAction]
-  );
+  const { button: { closeText } } = translations;
 
   return (
-    <Formik initialValues={employee} onSubmit={handleClose}>
-      {(props: FormikProps<Employee>) => {
+    <Formik initialValues={initialValues} onSubmit={handleClose}>
+      {(props: FormikProps<EmployeeModalFields>) => {
         return (
           <div className="employee-modal-container">
             <Form
@@ -66,14 +61,22 @@ export const EmployeeModal: FC<EmployeeModalProps> = ({
                 className="modal-container_close"
                 onClick={handleClose}
               />
-              <FirstNameField />
+              <InputField
+      placeholder={firstNameText}
+      icon={personSvg}
+      name={EmployeeFormFields.FIRST_NAME}
+      value={firstNameField.value}
+      touched={firstNameField.touched}
+      error={firstNameField.error}
+      handleBlur={firstNameField.onBlur}
+      handleChange={firstNameField.onChange}
+    />
               <LastNameField />
               <EmailField />
               <PositionsField />
               <Button
                 text={btnText}
                 // TODO: remove onClick
-                onClick={() => onSubmit(props)}
                 type="submit"
                 disabled={false}
               />

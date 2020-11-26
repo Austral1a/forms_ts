@@ -1,29 +1,30 @@
 import React, { FC } from "react";
-import { EmployeeModal } from "../../../../../../Components";
+import { EmployeeModal, EmployeeModalFields } from "@Components";
 import { EmployeeResponse } from "../../../../../../Store/Employees/interfaces";
 import { useEditEmployeeManager } from "./hooks";
 
 interface EditEmployeeModalProps {
   isOpen: boolean;
   handleClose: () => void;
-  employeeValues: EmployeeResponse;
+  employeeFieldsValues: EmployeeModalFields;
 }
 export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
-  employeeValues,
+  employeeFieldsValues,
   isOpen,
   handleClose,
 }) => {
+  const { employeeId } = employeeFieldsValues;
+
   const {
-    employeeFieldsValues,
-    btnText,
+    submitButtonText,
     editEmployee,
-  } = useEditEmployeeManager({ employeeValues });
+  } = useEditEmployeeManager({ employeeId });
 
   return (
     <>
       {isOpen && (
         <EmployeeModal
-          btnText={btnText}
+          submitButtonText={submitButtonText}
           dispatchAction={editEmployee}
           handleClose={handleClose}
           employeeFieldsValues={employeeFieldsValues}

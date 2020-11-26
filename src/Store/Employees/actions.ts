@@ -1,3 +1,4 @@
+import { FSAAuto, ErrorFSAAuto } from "flux-standard-action";
 import {
   CreateEmployeeFail,
   CreateEmployeeSuccess,
@@ -30,6 +31,19 @@ export enum EmployeeActionTypes {
 }
 
 ///////CREATE EMPLOYEE///////////////////////////////////
+export type CreateEmployeeRequest = FSAAuto<
+  typeof EmployeeActionTypes.CREATE_EMPLOYEE,
+  CreateEmployeePayload
+>;
+
+export type CreateEmployeeSuccess = FSAAuto<
+  typeof EmployeeActionTypes.CREATE_EMPLOYEE_SUCCESS
+>;
+export type CreateEmployeeFail = ErrorFSAAuto<
+  typeof EmployeeActionTypes.CREATE_EMPLOYEE_FAIL,
+  Error
+>;
+
 export const createEmployeeAction = (employee: Employee) => ({
   type: EmployeeActionTypes.CREATE_EMPLOYEE,
   payload: {

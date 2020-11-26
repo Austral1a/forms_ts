@@ -16,33 +16,20 @@ export interface EmployeesState {
 }
 
 export interface Employee {
+  id: number;
   firstName: string;
   lastName: string;
   email: string;
   position: string;
 }
 
-export interface EmployeeResponse extends Employee {
-  id: number;
-}
 
 /////CREATE EMPLOYEE///////////
 interface CreateEmployeePayload {
   employee: Employee;
 }
 
-export type CreateEmployeeRequest = FSAAuto<
-  typeof EmployeeActionTypes.CREATE_EMPLOYEE,
-  CreateEmployeePayload
->;
 
-export type CreateEmployeeSuccess = FSAAuto<
-  typeof EmployeeActionTypes.CREATE_EMPLOYEE_SUCCESS
->;
-export type CreateEmployeeFail = ErrorFSAAuto<
-  typeof EmployeeActionTypes.CREATE_EMPLOYEE_FAIL,
-  Error
->;
 /////////////////////////////
 
 //////GET EMPLOYEES//////////////
@@ -65,7 +52,7 @@ export type GetEmployeesFail = ErrorFSAAuto<
 ///EDIT EMPLOYEE///////
 export type EditEmployeeRequest = FSAAuto<
   typeof EmployeeActionTypes.EDIT_EMPLOYEE,
-  EmployeeResponse
+  Employee
 >;
 export type EditEmployeeSuccess = FSAAuto<
   typeof EmployeeActionTypes.EDIT_EMPLOYEE_SUCCESS
