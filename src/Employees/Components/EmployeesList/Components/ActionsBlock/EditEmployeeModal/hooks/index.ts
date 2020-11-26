@@ -1,1 +1,1 @@
-export * from "./useEditEmployeeManagement";
+export * from "./useEditEmployeeManager";

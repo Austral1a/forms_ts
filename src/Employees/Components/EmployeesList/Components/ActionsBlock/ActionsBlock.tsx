@@ -1,26 +1,26 @@
 import React, { FC, ReactElement } from "react";
 import { Button } from "../../../../../Components";
 import { EditEmployeeModal, DeleteEmployeeModal } from "../index";
-import { useActionsBlockManagement } from "./hooks";
+import { useActionsBlockManager } from "./hooks";
 import { EmployeeResponse } from "../../../../../Store/Employees/interfaces";
 import { translations } from "../../../../../helpers";
 import "./ActionsBlock.scss";
 
-interface Props {
+interface ActionsBlockProps {
   employeeData: EmployeeResponse;
 }
 
-export const ActionsBlock: FC<Props> = ({ employeeData }): ReactElement => {
-  const manager = useActionsBlockManagement();
-
+export const ActionsBlock: FC<ActionsBlockProps> = ({
+  employeeData,
+}): ReactElement => {
   const {
     isEditModalOpen,
-    handleEditModalClose,
-    handleEditModalOpen,
+    onEditModalClose,
+    onEditModalOpen,
     isDeleteModalOpen,
-    handleDeleteModalClose,
-    handleDeleteModalOpen,
-  } = manager;
+    onDeleteModalClose,
+    onDeleteModalOpen,
+  } = useActionsBlockManager();
 
   const {
     button: { editText, deleteText },
@@ -28,22 +28,18 @@ export const ActionsBlock: FC<Props> = ({ employeeData }): ReactElement => {
   return (
     <>
       <div className="employees-container__body-actions-block">
-        <Button text={editText} type={"button"} onClick={handleEditModalOpen} />
-        <Button
-          text={deleteText}
-          type={"button"}
-          onClick={handleDeleteModalOpen}
-        />
+        <Button text={editText} type={"button"} onClick={onEditModalOpen} />
+        <Button text={deleteText} type={"button"} onClick={onDeleteModalOpen} />
       </div>
       <EditEmployeeModal
         employeeData={employeeData}
         isOpen={isEditModalOpen}
-        handleClose={handleEditModalClose}
+        handleClose={onEditModalClose}
       />
       <DeleteEmployeeModal
         employeeId={employeeData.id}
         isOpen={isDeleteModalOpen}
-        handleClose={handleDeleteModalClose}
+        handleClose={onDeleteModalClose}
       />
     </>
   );

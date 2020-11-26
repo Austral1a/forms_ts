@@ -1,19 +1,19 @@
 import React, { FC } from "react";
 import { EmployeeModal } from "../../../../../../Components";
 import { EmployeeResponse } from "../../../../../../Store/Employees/interfaces";
-import { useEditEmployeeManagement } from "./hooks";
+import { useEditEmployeeManager } from "./hooks";
 
-interface Props {
+interface EditEmployeeModalProps {
   isOpen: boolean;
   handleClose: () => void;
   employeeData: EmployeeResponse;
 }
-export const EditEmployeeModal: FC<Props> = ({
+export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
   employeeData,
   isOpen,
   handleClose,
 }) => {
-  const data = useEditEmployeeManagement({ employeeData, handleClose });
+  const data = useEditEmployeeManager({ employeeData, handleClose });
 
   return <>{isOpen && <EmployeeModal data={data} />}</>;
 };

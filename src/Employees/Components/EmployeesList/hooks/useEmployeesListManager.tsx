@@ -4,11 +4,15 @@ import { getEmployeesAction } from "../../../../Store/Employees";
 import { selectEmployees } from "../../../../Store/Employees";
 import { useEffect } from "react";
 
-export const useEmployeesManagement = () => {
+interface EmployeeManagerResult {
+  employeesList: EmployeeResponse[];
+}
+
+export const useEmployeesManager = (): EmployeeManagerResult => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getEmployeesAction());
   }, [dispatch]);
-  const employees: EmployeeResponse[] = useSelector(selectEmployees);
-  return employees;
+  const employeesList: EmployeeResponse[] = useSelector(selectEmployees);
+  return { employeesList };
 };

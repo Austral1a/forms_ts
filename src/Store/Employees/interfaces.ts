@@ -1,18 +1,5 @@
-import { ErrorFSA, ErrorFSAAuto, FSA, FSAAuto } from "flux-standard-action";
-import {
-  CREATE_EMPLOYEE,
-  CREATE_EMPLOYEE_FAIL,
-  CREATE_EMPLOYEE_SUCCESS,
-  DELETE_EMPLOYEE,
-  DELETE_EMPLOYEE_FAIL,
-  DELETE_EMPLOYEE_SUCCESS,
-  EDIT_EMPLOYEE,
-  EDIT_EMPLOYEE_FAIL,
-  EDIT_EMPLOYEE_SUCCESS,
-  GET_EMPLOYEES,
-  GET_EMPLOYEES_FAIL,
-  GET_EMPLOYEES_SUCCESS,
-} from "./actions";
+import { ErrorFSAAuto, FSAAuto } from "flux-standard-action";
+import { EmployeeActionTypes } from "./actions";
 import { ErrorsWatcherState } from "../Errors";
 import { LoginState } from "../Login";
 
@@ -45,13 +32,15 @@ interface CreateEmployeePayload {
 }
 
 export type CreateEmployeeRequest = FSAAuto<
-  typeof CREATE_EMPLOYEE,
+  typeof EmployeeActionTypes.CREATE_EMPLOYEE,
   CreateEmployeePayload
 >;
 
-export type CreateEmployeeSuccess = FSAAuto<typeof CREATE_EMPLOYEE_SUCCESS>;
+export type CreateEmployeeSuccess = FSAAuto<
+  typeof EmployeeActionTypes.CREATE_EMPLOYEE_SUCCESS
+>;
 export type CreateEmployeeFail = ErrorFSAAuto<
-  typeof CREATE_EMPLOYEE_FAIL,
+  typeof EmployeeActionTypes.CREATE_EMPLOYEE_FAIL,
   Error
 >;
 /////////////////////////////
@@ -60,21 +49,31 @@ export type CreateEmployeeFail = ErrorFSAAuto<
 interface GetEmployeesPayload {
   employees: Employee[];
 }
-export type GetEmployeeRequest = FSAAuto<typeof GET_EMPLOYEES>;
+export type GetEmployeeRequest = FSAAuto<
+  typeof EmployeeActionTypes.GET_EMPLOYEES
+>;
 export type GetEmployeesSuccess = FSAAuto<
-  typeof GET_EMPLOYEES_SUCCESS,
+  typeof EmployeeActionTypes.GET_EMPLOYEES_SUCCESS,
   GetEmployeesPayload
 >;
-export type GetEmployeesFail = ErrorFSAAuto<typeof GET_EMPLOYEES_FAIL, Error>;
+export type GetEmployeesFail = ErrorFSAAuto<
+  typeof EmployeeActionTypes.GET_EMPLOYEES_FAIL,
+  Error
+>;
 /////////////////////////////
 
 ///EDIT EMPLOYEE///////
 export type EditEmployeeRequest = FSAAuto<
-  typeof EDIT_EMPLOYEE,
+  typeof EmployeeActionTypes.EDIT_EMPLOYEE,
   EmployeeResponse
 >;
-export type EditEmployeeSuccess = FSAAuto<typeof EDIT_EMPLOYEE_SUCCESS>;
-export type EditEmployeeFail = ErrorFSAAuto<typeof EDIT_EMPLOYEE_FAIL, Error>;
+export type EditEmployeeSuccess = FSAAuto<
+  typeof EmployeeActionTypes.EDIT_EMPLOYEE_SUCCESS
+>;
+export type EditEmployeeFail = ErrorFSAAuto<
+  typeof EmployeeActionTypes.EDIT_EMPLOYEE_FAIL,
+  Error
+>;
 ////////////////////////
 
 ////DELETE EMPLOYEE/////
@@ -83,12 +82,14 @@ export interface DeleteEmployeePayload {
 }
 
 export type DeleteEmployeeRequest = FSAAuto<
-  typeof DELETE_EMPLOYEE,
+  typeof EmployeeActionTypes.DELETE_EMPLOYEE,
   DeleteEmployeePayload
 >;
-export type DeleteEmployeeSuccess = FSAAuto<typeof DELETE_EMPLOYEE_SUCCESS>;
+export type DeleteEmployeeSuccess = FSAAuto<
+  typeof EmployeeActionTypes.DELETE_EMPLOYEE_SUCCESS
+>;
 export type DeleteEmployeeFail = ErrorFSAAuto<
-  typeof DELETE_EMPLOYEE_FAIL,
+  typeof EmployeeActionTypes.DELETE_EMPLOYEE_FAIL,
   Error
 >;
 ////////////////////////

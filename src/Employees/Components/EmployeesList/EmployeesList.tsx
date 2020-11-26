@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FC, ReactElement } from "react";
 import { ActionsBlock } from "./Components";
-import { useEmployeesManagement } from "./hooks";
+import { useEmployeesManager } from "./hooks";
 import { translations } from "../../../helpers";
 
-export const EmployeesList = () => {
-  const employees = useEmployeesManagement();
+export const EmployeesList: FC = (): ReactElement => {
+  const { employeesList } = useEmployeesManager();
   const {
     field: {
       lastNameHolder,
@@ -23,7 +23,7 @@ export const EmployeesList = () => {
         <h4>{positionsHolder}</h4>
         <h4>{actionsHolder}</h4>
       </div>
-      {employees.map((employee) => (
+      {employeesList.map((employee) => (
         <div key={employee.id} className="employees-container__body-employee">
           <h4>{employee.firstName}</h4>
           <h4>{employee.lastName}</h4>

@@ -1,1 +1,1 @@
-export * from "./useDeleteEmployeeManagement";
+export * from "./useDeleteEmployeeManager";

@@ -12,7 +12,7 @@ interface Props {
   handleClose: () => void;
 }
 
-export const useEditEmployeeManagement = ({
+export const useEditEmployeeManager = ({
   employeeData,
   handleClose,
 }: Props) => {

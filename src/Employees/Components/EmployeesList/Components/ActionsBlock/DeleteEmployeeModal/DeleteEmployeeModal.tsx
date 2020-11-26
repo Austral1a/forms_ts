@@ -1,29 +1,29 @@
 import React, { FC, useCallback } from "react";
 import { Modal, Button } from "../../../../../../Components";
-import { useDeleteEmployeeManagement } from "./hooks";
+import { useDeleteEmployeeManager } from "./hooks";
 import { translations } from "../../../../../../helpers";
 import "./DeleteEmployeeModal.scss";
 
-interface Props {
+interface DeleteEmployeeProps {
   isOpen: boolean;
   handleClose: () => void;
   employeeId: number;
 }
 
-export const DeleteEmployeeModal: FC<Props> = ({
+export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
   isOpen,
   handleClose,
   employeeId,
 }) => {
-  const dispatchAction = useDeleteEmployeeManagement(employeeId);
+  const { deleteEmployee } = useDeleteEmployeeManager(employeeId);
   const {
     button: { deleteText, closeText },
     modal: { deleteConfirm },
   } = translations;
   const handleSubmit = useCallback(() => {
-    dispatchAction();
+    deleteEmployee();
     handleClose();
-  }, [handleClose, dispatchAction]);
+  }, [handleClose, deleteEmployee]);
   return (
     <>
       {isOpen && (

@@ -1,1 +1,1 @@
-export * from "./useActionsBlockManagement";
+export * from "./useActionsBlockManager";

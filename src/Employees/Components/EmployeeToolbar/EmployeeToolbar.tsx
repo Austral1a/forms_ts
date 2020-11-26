@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import { Button } from "../../../Components";
 import { CreateEmployeeModal } from "./Components";
 import { useCreateEmployeeBlockManagement } from "./Components";
 import { translations } from "../../../helpers";
 
-export const EmployeeToolbar: FC = () => {
+export const EmployeeToolbar: FC = (): ReactElement => {
   const manager = useCreateEmployeeBlockManagement();
 
   const {

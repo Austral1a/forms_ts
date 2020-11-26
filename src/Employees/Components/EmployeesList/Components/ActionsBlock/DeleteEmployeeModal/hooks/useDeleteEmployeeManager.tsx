@@ -2,9 +2,16 @@ import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { deleteEmployeeAction } from "../../../../../../../Store/Employees";
 
-export const useDeleteEmployeeManagement = (id: number) => {
+interface DeleteEmployeeManagerResult {
+  deleteEmployee: () => void;
+}
+
+export const useDeleteEmployeeManager = (
+  id: number
+): DeleteEmployeeManagerResult => {
   const dispatch = useDispatch();
-  return useCallback(() => {
+  const deleteEmployee = useCallback(() => {
     dispatch(deleteEmployeeAction(id));
   }, [dispatch, id]);
+  return { deleteEmployee };
 };
