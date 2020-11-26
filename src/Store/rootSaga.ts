@@ -1,21 +1,21 @@
 import { LOGIN, login } from "./Login";
 import {
-  EmployeeActions,
-  getEmployees,
-  createEmployee,
-  deleteEmployee,
-  editEmployee,
+  EmployeeActionTypes,
+  getEmployeesSaga,
+  createEmployeeSaga,
+  deleteEmployeeSaga,
+  editEmployeeSaga,
 } from "./Employees";
 import { watchErrors } from "./Errors";
-import { takeEvery, all } from "redux-saga/effects";
+import { takeEvery, all, takeLatest } from "redux-saga/effects";
 
 export function* rootSaga() {
   yield all([
     yield takeEvery(LOGIN, login),
-    yield takeEvery(EmployeeActions.GET_EMPLOYEES, getEmployees),
-    yield takeEvery(EmployeeActions.CREATE_EMPLOYEE, createEmployee),
-    yield takeEvery(EmployeeActions.DELETE_EMPLOYEE, deleteEmployee),
-    yield takeEvery(EmployeeActions.EDIT_EMPLOYEE, editEmployee),
+    yield takeLatest(EmployeeActionTypes.GET_EMPLOYEES, getEmployeesSaga),
+    yield takeLatest(EmployeeActionTypes.CREATE_EMPLOYEE, createEmployeeSaga),
+    yield takeLatest(EmployeeActionTypes.DELETE_EMPLOYEE, deleteEmployeeSaga),
+    yield takeLatest(EmployeeActionTypes.EDIT_EMPLOYEE, editEmployeeSaga),
     watchErrors(),
   ]);
 }

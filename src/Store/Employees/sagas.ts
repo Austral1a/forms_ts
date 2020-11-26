@@ -13,7 +13,7 @@ import {
   createEmployee,
   getEmployees,
   editEmployee,
-  delEmployee,
+  deleteEmployee,
 } from "../../API";
 
 import {
@@ -59,7 +59,7 @@ export function* deleteEmployeeSaga(action: DeleteEmployeeRequest) {
     const {
       payload: { id },
     } = action;
-    yield call(delEmployee, id);
+    yield call(deleteEmployee, id);
     yield put(deleteEmployeeSuccess());
   } catch (e) {
     yield put(deleteEmployeeFail(e));
