@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import { FormikHandlers } from "formik";
 
-interface FirstNameFieldProps {
+interface InputFieldProps {
   icon: string;
   name: string;
   placeholder: string;
@@ -12,7 +12,7 @@ interface FirstNameFieldProps {
   handleChange: FormikHandlers["handleChange"];
 }
 
-export const InputField: FC<FirstNameFieldProps> = ({
+export const InputField: FC<InputFieldProps> = ({
   icon,
   name,
   placeholder,
