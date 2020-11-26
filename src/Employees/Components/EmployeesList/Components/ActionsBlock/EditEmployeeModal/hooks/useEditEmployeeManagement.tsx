@@ -3,12 +3,12 @@ import { useDispatch } from "react-redux";
 import { editEmployeeAction } from "../../../../../../../Store/Employees";
 import {
   Employee,
-  EmployeeWithId,
+  EmployeeResponse,
 } from "../../../../../../../Store/Employees/interfaces";
 import { FormikProps } from "formik";
 
 interface Props {
-  employeeData: EmployeeWithId;
+  employeeData: EmployeeResponse;
   handleClose: () => void;
 }
 
@@ -20,8 +20,10 @@ export const useEditEmployeeManagement = ({
   const { id } = employeeData;
 
   const dispatchAction = useCallback(
-    (props: FormikProps<Employee>) =>
-      dispatch(editEmployeeAction({ ...props.values, id })),
+    (props: FormikProps<Employee>) => {
+      // TODO: ADD editEmployee action certain type
+      dispatch(editEmployeeAction({ ...props.values, id }));
+    },
     [dispatch, id]
   );
 

@@ -19,7 +19,7 @@ import {
 import {
   CreateEmployeeRequest,
   DeleteEmployeeRequest,
-  EmployeeWithId,
+  EmployeeResponse,
 } from "./interfaces";
 
 export function* createEmployee(action: CreateEmployeeRequest) {
@@ -36,7 +36,7 @@ export function* createEmployee(action: CreateEmployeeRequest) {
 
 export function* getEmployees() {
   try {
-    const employees: EmployeeWithId[] = yield call(get);
+    const employees: EmployeeResponse[] = yield call(get);
     yield put(getEmployeeSuccess(employees));
   } catch (e) {
     yield put(getEmployeeFail(e));

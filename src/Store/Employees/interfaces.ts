@@ -23,7 +23,7 @@ export interface State {
 }
 
 export interface EmployeesState {
-  employees: EmployeeWithId[];
+  employees: EmployeeResponse[];
   name: string;
   message: string;
 }
@@ -35,7 +35,7 @@ export interface Employee {
   position: string;
 }
 
-export interface EmployeeWithId extends Employee {
+export interface EmployeeResponse extends Employee {
   id: number;
 }
 
@@ -69,7 +69,10 @@ export type GetEmployeesFail = ErrorFSAAuto<typeof GET_EMPLOYEES_FAIL, Error>;
 /////////////////////////////
 
 ///EDIT EMPLOYEE///////
-export type EditEmployeeRequest = FSAAuto<typeof EDIT_EMPLOYEE, EmployeeWithId>;
+export type EditEmployeeRequest = FSAAuto<
+  typeof EDIT_EMPLOYEE,
+  EmployeeResponse
+>;
 export type EditEmployeeSuccess = FSAAuto<typeof EDIT_EMPLOYEE_SUCCESS>;
 export type EditEmployeeFail = ErrorFSAAuto<typeof EDIT_EMPLOYEE_FAIL, Error>;
 ////////////////////////

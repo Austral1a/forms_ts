@@ -8,7 +8,7 @@ import {
   EditEmployeeRequest,
   EditEmployeeSuccess,
   Employee,
-  EmployeeWithId,
+  EmployeeResponse,
   GetEmployeeRequest,
   GetEmployeesFail,
   GetEmployeesSuccess,
@@ -56,7 +56,7 @@ export const getEmployeesAction = (): GetEmployeeRequest => ({
 });
 
 export const getEmployeeSuccess = (
-  employees: EmployeeWithId[]
+  employees: EmployeeResponse[]
 ): GetEmployeesSuccess => ({
   type: GET_EMPLOYEES_SUCCESS,
   payload: { employees },
@@ -74,7 +74,7 @@ export const getEmployeeFail = (error: Error): GetEmployeesFail => ({
 
 ////////////EDIT EMPLOYEE////////////////////
 export const editEmployeeAction = (
-  editedEmployee: EmployeeWithId
+  editedEmployee: EmployeeResponse
 ): EditEmployeeRequest => {
   return {
     type: EDIT_EMPLOYEE,

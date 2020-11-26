@@ -2,12 +2,12 @@ import React, { FC, ReactElement } from "react";
 import { Button } from "../../../../../Components";
 import { EditEmployeeModal, DeleteEmployeeModal } from "../index";
 import { useActionsBlockManagement } from "./hooks";
-import { EmployeeWithId } from "../../../../../Store/Employees/interfaces";
+import { EmployeeResponse } from "../../../../../Store/Employees/interfaces";
 import { translations } from "../../../../../helpers";
 import "./ActionsBlock.scss";
 
 interface Props {
-  employeeData: EmployeeWithId;
+  employeeData: EmployeeResponse;
 }
 
 export const ActionsBlock: FC<Props> = ({ employeeData }): ReactElement => {
