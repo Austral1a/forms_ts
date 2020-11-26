@@ -23,7 +23,7 @@ export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
     <>
       {isOpen && (
         <EmployeeModal
-          btnText={btnText}
+          submitBtnText={btnText}
           dispatchAction={editEmployee}
           handleClose={handleClose}
           employeeFieldsValues={employeeFieldsValues}

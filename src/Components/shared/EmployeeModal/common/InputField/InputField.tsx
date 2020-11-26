@@ -26,7 +26,7 @@ export const InputField: FC<InputFieldProps> = ({
     <div className="input-container">
       {icon && (
         <span className="input-container__icon">
-          <img src={icon} />
+          <img alt={name} src={icon} />
         </span>
       )}
       <input
@@ -37,7 +37,7 @@ export const InputField: FC<InputFieldProps> = ({
         onBlur={handleBlur}
         onChange={handleChange}
       />
-      {touched && error && <p className="input-container__error">{error}</p>}
+      {touched && !!error && <p className="input-container__error">{error}</p>}
     </div>
   );
 };

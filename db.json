@@ -36,10 +36,10 @@
       "id": 10
     },
     {
-      "firstName": "asd",
+      "firstName": "asdsss",
       "lastName": "asd",
       "email": "asd@asd.com",
-      "position": "",
+      "position": "Developer",
       "id": 11
     },
     {
@@ -50,11 +50,18 @@
       "id": 12
     },
     {
-      "firstName": "dasdqweqwe",
+      "firstName": "dasdqweqwesss",
       "lastName": "qweqweqw",
       "email": "qwewe@sadasd.com",
-      "position": "QA",
+      "position": "Developer",
       "id": 13
+    },
+    {
+      "firstName": "first",
+      "lastName": "last",
+      "email": "las@d.c",
+      "position": "Manager",
+      "id": 14
     }
   ]
 }

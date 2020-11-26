@@ -26,18 +26,23 @@ export const SelectField: FC<SelectFieldProps> = ({
   return (
     <div className="select-container">
       <select
-        defaultValue={defaultValue}
         className="select-container__select"
         name={name}
         onBlur={handleBlur}
         onChange={handleChange}
         value={value}
       >
-        {selectOptions.map((optionText) => {
-          return <Option value={optionText} optionText={optionText} />;
+        {selectOptions.map((optionText, id) => {
+          return (
+            <Option
+              key={optionText + id}
+              value={optionText}
+              optionText={optionText}
+            />
+          );
         })}
       </select>
-      {touched && error && <p className="select-container__error">{error}</p>}
+      {touched && !!error && <p className="select-container__error">{error}</p>}
     </div>
   );
 };

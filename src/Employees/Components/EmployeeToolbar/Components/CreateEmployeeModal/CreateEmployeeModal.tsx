@@ -16,7 +16,7 @@ export const CreateEmployeeModal: FC<CreateEmployeeModalProps> = ({
     <>
       {isOpen && (
         <EmployeeModal
-          btnText={btnText}
+          submitBtnText={btnText}
           dispatchAction={createEmployee}
           handleClose={handleClose}
         />

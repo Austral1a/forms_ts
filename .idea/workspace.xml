@@ -4,10 +4,23 @@
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/PositionsField/PositionsField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/PositionsField/PositionsField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/EmailField/EmailField.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/EmailField/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/FirstNameField/FirstNameField.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/FirstNameField/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/LastNameField/LastNameField.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/LastNameField/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/PositionsField/PositionsField.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/PositionsField/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/InputField/InputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/InputField/InputField.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/SelectField/SelectField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/SelectField/SelectField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeeToolbar/Components/CreateEmployeeModal/CreateEmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeeToolbar/Components/CreateEmployeeModal/CreateEmployeeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/EditEmployeeModal/EditEmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/EditEmployeeModal/EditEmployeeModal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +60,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\node_modules\prettier" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Dexter\AppData\Roaming\npm\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="C:\Users\Dexter\Desktop\react\forms_ts\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -81,6 +94,7 @@
       <workItem from="1606202791644" duration="27372000" />
       <workItem from="1606244169832" duration="33000" />
       <workItem from="1606244211425" duration="5158000" />
+      <workItem from="1606417641821" duration="6327000" />
     </task>
     <servers />
   </component>
@@ -98,32 +112,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606394441231">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606394441231" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1606290949529">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606290949529" />
-    <state x="1126" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606391593281">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1126" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606391593281" />
-    <state x="790" y="226" width="745" height="534" key="find.popup" timestamp="1606400673827">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="790" y="226" width="745" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606400673827" />
-    <state x="974" y="244" key="run.anything.popup" timestamp="1606396363415">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="974" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606396363415" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606389284333">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606389284333" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
