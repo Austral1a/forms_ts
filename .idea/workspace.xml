@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/EditEmployeeModal/hooks/useEditEmployeeManagement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/EditEmployeeModal/hooks/useEditEmployeeManagement.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/editEmployee.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/editEmployee.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

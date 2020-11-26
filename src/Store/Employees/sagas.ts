@@ -10,10 +10,10 @@ import {
   getEmployeeSuccess,
 } from "./actions";
 import {
-  createEmployee as create,
-  getEmployees as get,
-  editEmployee as edit,
-  delEmployee as del,
+  createEmployee,
+  getEmployees,
+  editEmployee,
+  delEmployee,
 } from "../../API";
 
 import {
@@ -23,45 +23,43 @@ import {
   EmployeeResponse,
 } from "./interfaces";
 
-export function* createEmployee(action: CreateEmployeeRequest) {
+export function* createEmployeeSaga(action: CreateEmployeeRequest) {
   try {
     const {
       payload: { employee },
     } = action;
-    yield call(create, employee);
+    yield call(createEmployee, employee);
     yield put(createEmployeeSuccess());
   } catch (e) {
     yield put(createEmployeeFail(e));
   }
 }
 
-export function* getEmployees() {
+export function* getEmployeesSaga() {
   try {
-    const employees: EmployeeResponse[] = yield call(get);
+    const employees: EmployeeResponse[] = yield call(getEmployees);
     yield put(getEmployeeSuccess(employees));
   } catch (e) {
     yield put(getEmployeeFail(e));
   }
 }
 
-export function* editEmployee(action: EditEmployeeRequest) {
+export function* editEmployeeSaga(action: EditEmployeeRequest) {
   try {
-    const {
-      payload: { id, firstName, lastName, email, position },
-    } = action;
-    yield call(edit, id, firstName, lastName, email, position);
+    const { payload } = action;
+    yield call(editEmployee, payload);
     yield put(editEmployeeSuccess());
   } catch (e) {
     yield put(editEmployeeFail(e));
   }
 }
 
-export function* deleteEmployee(action: DeleteEmployeeRequest) {
+export function* deleteEmployeeSaga(action: DeleteEmployeeRequest) {
   try {
     const {
       payload: { id },
     } = action;
-    yield call(del, id);
+    yield call(delEmployee, id);
     yield put(deleteEmployeeSuccess());
   } catch (e) {
     yield put(deleteEmployeeFail(e));

@@ -14,7 +14,7 @@ import {
   GetEmployeesSuccess,
 } from "./interfaces";
 
-export enum EmployeeActions {
+export enum EmployeeActionTypes {
   CREATE_EMPLOYEE = "CREATE_EMPLOYEE",
   CREATE_EMPLOYEE_SUCCESS = "CREATE_EMPLOYEE_SUCCESS",
   CREATE_EMPLOYEE_FAIL = "CREATE_EMPLOYEE_FAIL",
@@ -31,16 +31,16 @@ export enum EmployeeActions {
 
 ///////CREATE EMPLOYEE///////////////////////////////////
 export const createEmployeeAction = (employee: Employee) => ({
-  type: EmployeeActions.CREATE_EMPLOYEE,
+  type: EmployeeActionTypes.CREATE_EMPLOYEE,
   payload: {
     employee,
   },
 });
 export const createEmployeeSuccess = (): CreateEmployeeSuccess => ({
-  type: EmployeeActions.CREATE_EMPLOYEE_SUCCESS,
+  type: EmployeeActionTypes.CREATE_EMPLOYEE_SUCCESS,
 });
 export const createEmployeeFail = (error: Error): CreateEmployeeFail => ({
-  type: EmployeeActions.CREATE_EMPLOYEE_FAIL,
+  type: EmployeeActionTypes.CREATE_EMPLOYEE_FAIL,
   payload: {
     name: error.name,
     message: error.message,
@@ -51,18 +51,18 @@ export const createEmployeeFail = (error: Error): CreateEmployeeFail => ({
 
 //////////GET EMPLOYEES//////////////////////////////////
 export const getEmployeesAction = (): GetEmployeeRequest => ({
-  type: EmployeeActions.GET_EMPLOYEES,
+  type: EmployeeActionTypes.GET_EMPLOYEES,
 });
 
 export const getEmployeeSuccess = (
   employees: EmployeeResponse[]
 ): GetEmployeesSuccess => ({
-  type: EmployeeActions.GET_EMPLOYEES_SUCCESS,
+  type: EmployeeActionTypes.GET_EMPLOYEES_SUCCESS,
   payload: { employees },
 });
 
 export const getEmployeeFail = (error: Error): GetEmployeesFail => ({
-  type: EmployeeActions.GET_EMPLOYEES_FAIL,
+  type: EmployeeActionTypes.GET_EMPLOYEES_FAIL,
   payload: {
     name: error.name,
     message: error.message,
@@ -76,15 +76,15 @@ export const editEmployeeAction = (
   editedEmployee: EmployeeResponse
 ): EditEmployeeRequest => {
   return {
-    type: EmployeeActions.EDIT_EMPLOYEE,
+    type: EmployeeActionTypes.EDIT_EMPLOYEE,
     payload: editedEmployee,
   };
 };
 export const editEmployeeSuccess = (): EditEmployeeSuccess => ({
-  type: EmployeeActions.EDIT_EMPLOYEE_SUCCESS,
+  type: EmployeeActionTypes.EDIT_EMPLOYEE_SUCCESS,
 });
 export const editEmployeeFail = (error: Error): EditEmployeeFail => ({
-  type: EmployeeActions.EDIT_EMPLOYEE_FAIL,
+  type: EmployeeActionTypes.EDIT_EMPLOYEE_FAIL,
   payload: {
     name: error.name,
     message: error.message,
@@ -95,14 +95,14 @@ export const editEmployeeFail = (error: Error): EditEmployeeFail => ({
 
 /////DELETE EMPLOYEE///////////////////////
 export const deleteEmployeeAction = (id: number): DeleteEmployeeRequest => ({
-  type: EmployeeActions.DELETE_EMPLOYEE,
+  type: EmployeeActionTypes.DELETE_EMPLOYEE,
   payload: { id },
 });
 export const deleteEmployeeSuccess = (): DeleteEmployeeSuccess => ({
-  type: EmployeeActions.DELETE_EMPLOYEE_SUCCESS,
+  type: EmployeeActionTypes.DELETE_EMPLOYEE_SUCCESS,
 });
 export const deleteEmployeeFail = (error: Error): DeleteEmployeeFail => ({
-  type: EmployeeActions.DELETE_EMPLOYEE_FAIL,
+  type: EmployeeActionTypes.DELETE_EMPLOYEE_FAIL,
   payload: {
     name: error.name,
     message: error.message,

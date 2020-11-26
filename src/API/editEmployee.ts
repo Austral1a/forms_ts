@@ -1,13 +1,14 @@
 import { home } from "../url";
+import { EmployeeResponse } from "../Store/Employees/interfaces";
 
-export const editEmployee = async (
-  id: number,
-  firstName: string,
-  lastName: string,
-  email: string,
-  position: string
-): Promise<void | Error> => {
-  const resource: string = `${home}/employees/${id}`;
+export const editEmployee = async ({
+  id,
+  firstName,
+  lastName,
+  email,
+  position,
+}: EmployeeResponse): Promise<void | Error> => {
+  const resource = `${home}/employees/${id}`;
   const fetchInit = {
     method: "PATCH",
     body: JSON.stringify({
