@@ -19,6 +19,7 @@ import {
 import {
   CreateEmployeeRequest,
   DeleteEmployeeRequest,
+  EditEmployeeRequest,
   EmployeeResponse,
 } from "./interfaces";
 
@@ -43,15 +44,7 @@ export function* getEmployees() {
   }
 }
 
-export function* editEmployee(action: {
-  payload: {
-    id: number;
-    firstName: string;
-    lastName: string;
-    email: string;
-    position: string;
-  };
-}) {
+export function* editEmployee(action: EditEmployeeRequest) {
   try {
     const {
       payload: { id, firstName, lastName, email, position },
