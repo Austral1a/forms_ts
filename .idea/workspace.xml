@@ -4,10 +4,8 @@
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/PositionsField/PositionsField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/PositionsField/PositionsField.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/InputField/InputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/InputField/InputField.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,14 +110,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1126" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606391593281" />
-    <state x="790" y="226" width="745" height="534" key="find.popup" timestamp="1606400673827">
+    <state x="790" y="226" width="745" height="534" key="find.popup" timestamp="1606403276623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="790" y="226" width="745" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606400673827" />
-    <state x="974" y="244" key="run.anything.popup" timestamp="1606396363415">
+    <state x="790" y="226" width="745" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606403276623" />
+    <state x="974" y="244" key="run.anything.popup" timestamp="1606406367178">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="974" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606396363415" />
+    <state x="974" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606406367178" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606389284333">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

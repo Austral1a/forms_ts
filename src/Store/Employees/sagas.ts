@@ -47,6 +47,7 @@ export function* getEmployeesSaga() {
 export function* editEmployeeSaga(action: EditEmployeeRequest) {
   try {
     const { payload } = action;
+    debugger;
     yield call(editEmployee, payload);
     yield put(editEmployeeSuccess());
   } catch (e) {

@@ -1,5 +1,5 @@
 import React, { FC, useCallback } from "react";
-import { Button, Form } from "../../index";
+import { Button, EmployeeFormFields, Form, InputField } from "../../index";
 import { Field, Formik, FormikProps } from "formik";
 import { Employee } from "../../../Store/Employees/interfaces";
 import { translations } from "../../../helpers";
@@ -10,6 +10,10 @@ import {
   PositionsField,
 } from "../../index";
 import "./EmployeeModal.scss";
+import { person as personSvg } from "../../../assets";
+
+import { useFirstNameField } from "./hooks/useFirstNameField";
+import { EmployeeModalData } from "../../EmployeeModalData";
 
 interface EmployeeModalProps {
   employeeFieldsValues?: Employee;
@@ -51,36 +55,7 @@ export const EmployeeModal: FC<EmployeeModalProps> = ({
 
   return (
     <Formik initialValues={employee} onSubmit={handleClose}>
-      {(props: FormikProps<Employee>) => {
-        return (
-          <div className="employee-modal-container">
-            <Form
-              // TODO: remove onSubmit
-              onSubmit={() => ""}
-              isValid={props.isValid}
-              className="modal-container__modal form"
-            >
-              <Button
-                text={closeText}
-                type="button"
-                className="modal-container_close"
-                onClick={handleClose}
-              />
-              <FirstNameField />
-              <LastNameField />
-              <EmailField />
-              <PositionsField />
-              <Button
-                text={btnText}
-                // TODO: remove onClick
-                onClick={() => onSubmit(props)}
-                type="submit"
-                disabled={false}
-              />
-            </Form>
-          </div>
-        );
-      }}
+      <EmployeeModalData onSubmit={onSubmit} />
     </Formik>
   );
 };
