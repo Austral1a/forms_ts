@@ -4,13 +4,14 @@ import { createEmployeeAction } from "../../../../../../Store/Employees";
 import { Employee } from "../../../../../../Store/Employees/interfaces";
 import { translations } from "../../../../../../helpers";
 
-interface Props {
-  handleClose: () => void;
+interface CreateEmployeeManagerResult {
+  createEmployee: (props: { values: Employee }) => void;
+  btnText: string;
 }
 
-export const useCreateEmployeeManagement = ({ handleClose }: Props) => {
+export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
   const dispatch = useDispatch();
-  const dispatchAction = useCallback(
+  const createEmployee = useCallback(
     (props: { values: Employee }) => {
       const {
         values: { firstName, lastName, email, position },
@@ -19,17 +20,11 @@ export const useCreateEmployeeManagement = ({ handleClose }: Props) => {
     },
     [dispatch]
   );
-
   const {
     button: { createText },
   } = translations;
   return {
-    firstName: "",
-    lastName: "",
-    email: "",
-    position: "",
+    createEmployee,
     btnText: createText,
-    handleClose,
-    dispatchAction,
   };
 };

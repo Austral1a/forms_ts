@@ -1,13 +1,26 @@
 import React, { FC } from "react";
 import { EmployeeModal } from "../../../../../Components";
-import { useCreateEmployeeManagement } from "./hooks";
+import { useCreateEmployeeManager } from "./hooks";
 
-interface Props {
+interface CreateEmployeeModalProps {
   isOpen: boolean;
   handleClose: () => void;
 }
 
-export const CreateEmployeeModal: FC<Props> = ({ isOpen, handleClose }) => {
-  const data = useCreateEmployeeManagement({ handleClose });
-  return <>{isOpen && <EmployeeModal data={data} />}</>;
+export const CreateEmployeeModal: FC<CreateEmployeeModalProps> = ({
+  isOpen,
+  handleClose,
+}) => {
+  const { createEmployee, btnText } = useCreateEmployeeManager();
+  return (
+    <>
+      {isOpen && (
+        <EmployeeModal
+          btnText={btnText}
+          dispatchAction={createEmployee}
+          handleClose={handleClose}
+        />
+      )}
+    </>
+  );
 };

@@ -1,13 +1,10 @@
 import { home } from "../url";
 import { EmployeeResponse } from "../Store/Employees/interfaces";
 
-export const editEmployee = async ({
-  id,
-  firstName,
-  lastName,
-  email,
-  position,
-}: EmployeeResponse): Promise<void | Error> => {
+export const editEmployee = async (
+  employeeValues: EmployeeResponse
+): Promise<void | Error> => {
+  const { id, firstName, lastName, email, position } = employeeValues;
   const resource = `${home}/employees/${id}`;
   const fetchInit = {
     method: "PATCH",

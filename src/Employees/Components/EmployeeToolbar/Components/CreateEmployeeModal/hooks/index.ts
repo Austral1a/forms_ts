@@ -1,2 +1,2 @@
-export * from "./useCreateEmployeeBlockManagement";
-export * from "./useCreateEmployeeManagement";
+export * from "./useCreateEmployeeBlockManager";
+export * from "./useCreateEmployeeManager";

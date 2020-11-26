@@ -7,11 +7,11 @@ import { translations } from "../../../../../helpers";
 import "./ActionsBlock.scss";
 
 interface ActionsBlockProps {
-  employeeData: EmployeeResponse;
+  employeeValues: EmployeeResponse;
 }
 
 export const ActionsBlock: FC<ActionsBlockProps> = ({
-  employeeData,
+  employeeValues,
 }): ReactElement => {
   const {
     isEditModalOpen,
@@ -21,7 +21,7 @@ export const ActionsBlock: FC<ActionsBlockProps> = ({
     onDeleteModalClose,
     onDeleteModalOpen,
   } = useActionsBlockManager();
-
+  const { id } = employeeValues;
   const {
     button: { editText, deleteText },
   } = translations;
@@ -32,12 +32,12 @@ export const ActionsBlock: FC<ActionsBlockProps> = ({
         <Button text={deleteText} type={"button"} onClick={onDeleteModalOpen} />
       </div>
       <EditEmployeeModal
-        employeeData={employeeData}
+        employeeValues={employeeValues}
         isOpen={isEditModalOpen}
         handleClose={onEditModalClose}
       />
       <DeleteEmployeeModal
-        employeeId={employeeData.id}
+        employeeId={id}
         isOpen={isDeleteModalOpen}
         handleClose={onDeleteModalClose}
       />

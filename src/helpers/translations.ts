@@ -2,36 +2,27 @@ interface StringDictionary {
   readonly [key: string]: string;
 }
 
-interface ObjectDictionary {
+interface TranslationsDictionary {
   readonly [key: string]: StringDictionary;
 }
 
-export const translations: ObjectDictionary = {
+export const translations: TranslationsDictionary = {
   button: {
     closeText: "Close",
-    submitType: "submit",
-    buttonType: "button",
-    textType: "text",
     editText: "Edit",
     deleteText: "Delete",
     createText: "Create",
   },
   field: {
-    firstNameVal: "firstName",
-    lastNameVal: "lastName",
-    emailVal: "email",
-    positionVal: "position",
-    firstNameHolder: "First Name",
-    lastNameHolder: "Last Name",
-    emailHolder: "Email",
-    positionsHolder: "Position",
-    actionsHolder: "Actions",
-    psdwVal: "password",
-    pswdHolder: "Password",
+    firstNameText: "First Name",
+    lastNameText: "Last Name",
+    emailText: "Email",
+    positionText: "Position",
+    actionsText: "Actions",
+    passwordText: "Password",
     qa: "QA",
     dev: "Developer",
     manager: "Manager",
-    inputTypeText: "text",
     inputTypePassword: "password",
   },
   modal: {

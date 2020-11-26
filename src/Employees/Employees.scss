@@ -1,3 +1,5 @@
+@import '../styles/variables';
+
 .employees-container {
   display: grid;
   height: 85vh;
@@ -15,27 +17,37 @@
 
   &__body {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(auto-fill, 40px);
-    grid-gap: 10px;
-    align-items: center;
-    justify-items: center;
-    background-color: #8899ac;
+    display: flex;
+    flex-direction: column;
+    background-color: $secondary-bg-color;
     border-radius: 4px;
     padding: 10px;
     overflow-y: auto;
+    & > * {
+      margin-bottom: 25px;
+    }
     &-header {
       // TODO: EXTRACT INTO MIXIN
-      display: contents;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: 40px;
       font-size: 1.2rem;
-      border-bottom: 1px solid black;
     }
 
     &-employee {
       // TODO: EXTRACT INTO MIXIN
-      display: contents;
-      border: 1px solid black;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: 40px;
+      border-radius: 4px;
+      opacity: 0.8;
+      -webkit-box-shadow: 0 12px 8px -4px rgba(0,0,0,0.43);
+      box-shadow: 0 12px 8px -4px rgba(0,0,0,0.43);
+      background-color: $employee-block-bg-color;
     }
   }
 

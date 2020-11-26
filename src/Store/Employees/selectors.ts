@@ -2,6 +2,6 @@ import { createSelector } from "reselect";
 import { State } from "./interfaces";
 
 export const selectEmployees = createSelector(
-  (state: State) => state.getEmployeesReducer.employees,
+  (state: State) => state.employeesReducer.employees,
   (employees) => employees
 );

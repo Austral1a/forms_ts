@@ -5,24 +5,24 @@ import {
 } from "../../../../helpers";
 
 interface Values {
-  firstName: string;
-  lastName: string;
-  email: string;
-  position: string;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  position?: string;
 }
 
 export const useValidations = (values: Values): Values => {
-  const errors: Values = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    position: "",
-  };
-  if (!isInputValid(patterns.name, values.firstName))
-    errors.firstName = ValidationMessages.firstName;
-  if (!isInputValid(patterns.name, values.lastName))
-    errors.lastName = ValidationMessages.lastName;
-  if (!isInputValid(patterns.email, values.email))
-    errors.email = ValidationMessages.email;
+  const errors: Values = {};
+  if (!isInputValid(patterns.name, typeof values.firstName)) {
+    errors.firstName = ValidationMessages.invalidName;
+  } else {
+    delete errors.firstName;
+  }
+  if (!isInputValid(patterns.name, typeof values.lastName))
+    errors.lastName = ValidationMessages.invalidName;
+  else delete errors.lastName;
+  if (!isInputValid(patterns.email, typeof values.email))
+    errors.email = ValidationMessages.invalidEmail;
+  else delete errors.email;
   return errors;
 };

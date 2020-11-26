@@ -9,7 +9,7 @@ interface Props {
   text: string;
   disabled?: boolean;
   className?: string;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick: () => void;
 }
 
 export const Button: FC<Props> = ({

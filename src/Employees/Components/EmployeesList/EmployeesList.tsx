@@ -7,21 +7,21 @@ export const EmployeesList: FC = (): ReactElement => {
   const { employeesList } = useEmployeesManager();
   const {
     field: {
-      lastNameHolder,
-      firstNameHolder,
-      emailHolder,
-      positionsHolder,
-      actionsHolder,
+      lastNameText,
+      firstNameText,
+      emailText,
+      positionText,
+      actionsText,
     },
   } = translations;
   return (
     <div className="employees-container__body">
       <div className="employees-container__body-header">
-        <h4>{firstNameHolder}</h4>
-        <h4>{lastNameHolder}</h4>
-        <h4>{emailHolder}</h4>
-        <h4>{positionsHolder}</h4>
-        <h4>{actionsHolder}</h4>
+        <h4>{firstNameText}</h4>
+        <h4>{lastNameText}</h4>
+        <h4>{emailText}</h4>
+        <h4>{positionText}</h4>
+        <h4>{actionsText}</h4>
       </div>
       {employeesList.map((employee) => (
         <div key={employee.id} className="employees-container__body-employee">
@@ -29,7 +29,7 @@ export const EmployeesList: FC = (): ReactElement => {
           <h4>{employee.lastName}</h4>
           <h4>{employee.email}</h4>
           <h4>{employee.position}</h4>
-          <ActionsBlock employeeData={employee} />
+          <ActionsBlock employeeValues={employee} />
         </div>
       ))}
     </div>

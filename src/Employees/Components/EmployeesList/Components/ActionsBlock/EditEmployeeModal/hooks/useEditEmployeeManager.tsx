@@ -5,32 +5,38 @@ import {
   Employee,
   EmployeeResponse,
 } from "../../../../../../../Store/Employees/interfaces";
+import { translations } from "../../../../../../../helpers";
 import { FormikProps } from "formik";
 
-interface Props {
-  employeeData: EmployeeResponse;
-  handleClose: () => void;
+interface EditEmployeeManagerProps {
+  employeeValues: EmployeeResponse;
+}
+
+interface EditEmployeeManagerResult {
+  btnText: string;
+  employeeFieldsValues: Employee;
+  editEmployee: (props: FormikProps<Employee>) => void;
 }
 
 export const useEditEmployeeManager = ({
-  employeeData,
-  handleClose,
-}: Props) => {
+  employeeValues,
+}: EditEmployeeManagerProps): EditEmployeeManagerResult => {
   const dispatch = useDispatch();
-  const { id } = employeeData;
-
-  const dispatchAction = useCallback(
+  const { id } = employeeValues;
+  const { firstName, lastName, email, position } = employeeValues;
+  const employeeFieldsValues = { firstName, lastName, email, position };
+  const {
+    button: { editText },
+  } = translations;
+  const editEmployee = useCallback(
     (props: FormikProps<Employee>) => {
-      // TODO: ADD editEmployee action certain type
       dispatch(editEmployeeAction({ ...props.values, id }));
     },
     [dispatch, id]
   );
-
   return {
-    ...employeeData,
-    btnText: "Edit",
-    handleClose,
-    dispatchAction,
+    btnText: editText,
+    employeeFieldsValues,
+    editEmployee,
   };
 };

@@ -4,7 +4,7 @@ import { ErrorsWatcherState } from "../Errors";
 import { LoginState } from "../Login";
 
 export interface State {
-  getEmployeesReducer: EmployeesState;
+  employeesReducer: EmployeesState;
   loginReducer: LoginState;
   errorReducer: ErrorsWatcherState;
 }

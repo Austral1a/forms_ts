@@ -8,8 +8,8 @@ interface Values {
 export const useValidations = (values: Values): Values => {
   const errors: Values = { email: "", password: "" };
   if (!isInputValid(patterns.email, values.email))
-    errors.email = ValidationMessages.email;
+    errors.email = ValidationMessages.invalidEmail;
   if (!isInputValid(patterns.password, values.password))
-    errors.password = ValidationMessages.password;
+    errors.password = ValidationMessages.invalidPassword;
   return errors;
 };

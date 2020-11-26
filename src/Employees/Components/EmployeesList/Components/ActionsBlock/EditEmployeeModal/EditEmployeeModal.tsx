@@ -6,14 +6,29 @@ import { useEditEmployeeManager } from "./hooks";
 interface EditEmployeeModalProps {
   isOpen: boolean;
   handleClose: () => void;
-  employeeData: EmployeeResponse;
+  employeeValues: EmployeeResponse;
 }
 export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
-  employeeData,
+  employeeValues,
   isOpen,
   handleClose,
 }) => {
-  const data = useEditEmployeeManager({ employeeData, handleClose });
+  const {
+    employeeFieldsValues,
+    btnText,
+    editEmployee,
+  } = useEditEmployeeManager({ employeeValues });
 
-  return <>{isOpen && <EmployeeModal data={data} />}</>;
+  return (
+    <>
+      {isOpen && (
+        <EmployeeModal
+          btnText={btnText}
+          dispatchAction={editEmployee}
+          handleClose={handleClose}
+          employeeFieldsValues={employeeFieldsValues}
+        />
+      )}
+    </>
+  );
 };

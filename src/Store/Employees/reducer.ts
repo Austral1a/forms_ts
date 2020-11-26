@@ -2,6 +2,7 @@ import { EmployeeActionTypes } from "./actions";
 import {
   Employee,
   EmployeesState,
+  GetEmployeeRequest,
   GetEmployeesFail,
   GetEmployeesSuccess,
 } from "./interfaces";
@@ -19,10 +20,8 @@ const initState: GetEmployeeState = {
   message: "",
 };
 
-export const employeesReducer = (
-  state = initState,
-  action: GetEmployeesAction
-) => {
+export const employeesReducer = (state = initState, action: any) => {
+  // TODO: Add action type
   switch (action.type) {
     case EmployeeActionTypes.GET_EMPLOYEES_SUCCESS:
       const {

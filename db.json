@@ -15,21 +15,7 @@
   ],
   "employees": [
     {
-      "firstName": "aaa",
-      "lastName": "aaa",
-      "email": "daas@d.c",
-      "position": "manager",
-      "id": 6
-    },
-    {
-      "firstName": "aaaa",
-      "lastName": "aaaa",
-      "email": "dxxads@d.c",
-      "position": "manager",
-      "id": 7
-    },
-    {
-      "firstName": "aa",
+      "firstName": "aaaaa",
       "lastName": "aas",
       "email": "dadsasdasd@d.c",
       "position": "manager",
@@ -45,7 +31,7 @@
     {
       "firstName": "aa",
       "lastName": "aa",
-      "email": "dakpoids@d.c",
+      "email": "m@d.c",
       "position": "manager",
       "id": 10
     }
