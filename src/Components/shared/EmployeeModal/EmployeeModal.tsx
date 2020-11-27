@@ -4,6 +4,13 @@ import { EmployeeModalForm } from "@Components";
 import "./EmployeeModal.scss";
 import { EmployeeModalFormFields } from "@Employees";
 
+export enum EmployeeFormFields {
+  FIRST_NAME = "firstName",
+  LAST_NAME = "lastName",
+  EMAIL = "email",
+  POSITION = "position",
+}
+
 interface EmployeeModalProps {
   employeeFieldsValues?: EmployeeModalFormFields;
   submitBtnText: string;

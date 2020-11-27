@@ -96,7 +96,6 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
           />
           <Button
             text={submitBtnText}
-            onClick={() => ""}
             type="submit"
             disabled={!formikContext.isValid}
           />

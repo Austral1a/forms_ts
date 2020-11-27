@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useCreateEmployeeBlockManager = () => {
+export const useEmployeeToolbarManager = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   return {
     isCreateModalOpen,

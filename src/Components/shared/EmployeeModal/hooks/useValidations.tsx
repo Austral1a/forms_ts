@@ -5,7 +5,7 @@ interface Values {
   lastName?: string;
   email?: string;
   position?: string;
-}
+}// TODO: remove
 
 export const useValidations = (values: Values): Values => {
   const errors: Values = {};

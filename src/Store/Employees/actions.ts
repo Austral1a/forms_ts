@@ -35,22 +35,16 @@ export type CreateEmployeeFail = ErrorFSAAuto<
   typeof EmployeeActionTypes.CREATE_EMPLOYEE_FAIL,
   Error
 >;
-export const createEmployeeAction = (employee: EmployeeModalFormFields) => ({
+export const createEmployeeAction = (payload: CreateEmployeePayload) => ({
   type: EmployeeActionTypes.CREATE_EMPLOYEE,
-  payload: {
-    employee,
-  },
+  payload,
 });
 export const createEmployeeSuccess = (): CreateEmployeeSuccess => ({
   type: EmployeeActionTypes.CREATE_EMPLOYEE_SUCCESS,
 });
 export const createEmployeeFail = (error: Error): CreateEmployeeFail => ({
   type: EmployeeActionTypes.CREATE_EMPLOYEE_FAIL,
-  payload: {
-    name: error.name,
-    message: error.message,
-  },
-  error: true,
+  error,
 });
 //////////////////////////////////////////////////////////
 
@@ -72,10 +66,10 @@ export const getEmployeesAction = (): GetEmployeeRequest => ({
 });
 
 export const getEmployeeSuccess = (
-  employees: EmployeeResponse[]
+  payload: GetEmployeesResponse
 ): GetEmployeesSuccess => ({
   type: EmployeeActionTypes.GET_EMPLOYEES_SUCCESS,
-  payload: { employees },
+  payload,
 });
 
 export const getEmployeeFail = (error: Error): GetEmployeesFail => ({
@@ -149,3 +143,6 @@ export const deleteEmployeeFail = (error: Error): DeleteEmployeeFail => ({
   error: true,
 });
 ///////////////////////////////////////////
+
+
+export type GetEmployeesAction = GetEmployeesSuccess | GetEmployeesFail;

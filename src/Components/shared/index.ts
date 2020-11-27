@@ -1,2 +1,2 @@
 export * from "./EmployeeModal";
-export * from "./Validations";
+export * from "../../helpers/Validations";

@@ -26,5 +26,13 @@ export const usePositionModalField = (): PositionFieldResult => {
       onBlur: fieldPosition.onBlur,
       onChange: fieldPosition.onChange,
     },
+    positionField: {
+      value: fieldPosition.value,
+      setValue: helpersPosition.setValue,
+      touched: metaPosition.touched,
+      error: metaPosition.error,
+      onBlur: fieldPosition.onBlur,
+      onChange: fieldPosition.onChange,
+    },
   };
 };

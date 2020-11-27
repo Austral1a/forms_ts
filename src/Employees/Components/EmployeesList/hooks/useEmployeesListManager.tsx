@@ -13,6 +13,8 @@ export const useEmployeesManager = (): EmployeeManagerResult => {
   useEffect(() => {
     dispatch(getEmployeesAction());
   }, [dispatch]);
+
   const employeesList: EmployeeResponse[] = useSelector(selectEmployees);
+  
   return { employeesList };
 };

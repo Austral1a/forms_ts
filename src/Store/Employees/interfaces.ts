@@ -1,16 +1,13 @@
 import { ErrorsWatcherState } from "@StoreErrors";
 import { LoginState } from "@StoreLogin";
 
-export interface State {
+export interface EmployeesAwareState {
   employeesReducer: EmployeesState;
-  loginReducer: LoginState;
-  errorReducer: ErrorsWatcherState;
 }
 
 export interface EmployeesState {
   employees: EmployeeResponse[];
-  name: string;
-  message: string;
+  errorMessage: Error;
 }
 
 export interface EmployeeResponse {
@@ -28,7 +25,7 @@ export interface CreateEmployeePayload {
 /////////////////////////////
 
 //////GET EMPLOYEES//////////////
-export interface GetEmployeesPayload {
+export interface GetEmployeesResponse {
   employees: EmployeeResponse[];
 }
 /////////////////////////////
