@@ -11,12 +11,12 @@ export const CreateEmployeeModal: FC<CreateEmployeeModalProps> = ({
   isOpen,
   handleClose,
 }) => {
-  const { createEmployee, btnText } = useCreateEmployeeManager();
+  const { createEmployee, submitBtnText } = useCreateEmployeeManager();
   return (
     <>
       {isOpen && (
         <EmployeeModal
-          submitBtnText={btnText}
+          submitBtnText={submitBtnText}
           dispatchAction={createEmployee}
           handleClose={handleClose}
         />

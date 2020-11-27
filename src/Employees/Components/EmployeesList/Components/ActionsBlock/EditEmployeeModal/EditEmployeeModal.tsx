@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { EmployeeModal } from "../../../../../../Components";
-import { EmployeeResponse } from "../../../../../../Store/Employees/interfaces";
+import { EmployeeModal } from "@Components";
+import { EmployeeResponse } from "@StoreEmployees";
 import { useEditEmployeeManager } from "./hooks";
 
 interface EditEmployeeModalProps {
@@ -15,7 +15,7 @@ export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
 }) => {
   const {
     employeeFieldsValues,
-    btnText,
+    submitBtnText,
     editEmployee,
   } = useEditEmployeeManager({ employeeValues });
 
@@ -23,7 +23,7 @@ export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
     <>
       {isOpen && (
         <EmployeeModal
-          submitBtnText={btnText}
+          submitBtnText={submitBtnText}
           dispatchAction={editEmployee}
           handleClose={handleClose}
           employeeFieldsValues={employeeFieldsValues}

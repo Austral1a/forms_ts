@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import { ActionsBlock } from "./Components";
 import { useEmployeesManager } from "./hooks";
-import { translations } from "../../../helpers";
+import { translations } from "@helpers";
 
 export const EmployeesList: FC = (): ReactElement => {
   const { employeesList } = useEmployeesManager();

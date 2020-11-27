@@ -1,6 +1,6 @@
-import { reducer as loginReducer } from "./Login";
-import { employeesReducer } from "./Employees";
-import { reducer as errorReducer } from "./Errors";
+import { reducer as loginReducer } from "@StoreLogin";
+import { employeesReducer } from "@StoreEmployees";
+import { reducer as errorReducer } from "@StoreErrors";
 import { combineReducers } from "redux";
 
 export const rootReducer = combineReducers({

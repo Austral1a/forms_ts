@@ -1,18 +1,16 @@
-import { EmployeeActionTypes } from "./actions";
 import {
-  Employee,
-  EmployeesState,
-  GetEmployeeRequest,
+  EmployeeActionTypes,
   GetEmployeesFail,
   GetEmployeesSuccess,
-} from "./interfaces";
+} from "./actions";
+import { EmployeeModalFormFields } from "@Employees";
 
 interface GetEmployeeState {
-  employees: Employee[];
+  employees: EmployeeModalFormFields[];
   name: string;
   message: string;
 }
-type GetEmployeesAction = GetEmployeesSuccess & GetEmployeesFail;
+type GetEmployeesAction = GetEmployeesSuccess | GetEmployeesFail;
 
 const initState: GetEmployeeState = {
   employees: [],
@@ -20,7 +18,10 @@ const initState: GetEmployeeState = {
   message: "",
 };
 
-export const employeesReducer = (state = initState, action: any) => {
+export const employeesReducer = (
+  state = initState,
+  action: GetEmployeesAction
+) => {
   // TODO: Add action type
   switch (action.type) {
     case EmployeeActionTypes.GET_EMPLOYEES_SUCCESS:

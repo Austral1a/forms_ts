@@ -1,14 +1,14 @@
 import React, { FC } from "react";
 import { Formik, FormikProps } from "formik";
-import { Employee } from "../../../Store/Employees/interfaces";
-import { EmployeeModalForm } from "../../index";
+import { EmployeeModalForm } from "@Components";
+import { EmployeeModalFormFields } from "@Employees";
 import "./EmployeeModal.scss";
 
 interface EmployeeModalProps {
-  employeeFieldsValues?: Employee;
+  employeeFieldsValues?: EmployeeModalFormFields;
   submitBtnText: string;
   handleClose: () => void;
-  dispatchAction: (props: FormikProps<Employee>) => void;
+  dispatchAction: (props: FormikProps<EmployeeModalFormFields>) => void;
 }
 
 export const EmployeeModal: FC<EmployeeModalProps> = ({
@@ -17,7 +17,7 @@ export const EmployeeModal: FC<EmployeeModalProps> = ({
   handleClose,
   dispatchAction,
 }) => {
-  const employee: Employee = {
+  const employee: EmployeeModalFormFields = {
     firstName: employeeFieldsValues?.firstName || "",
     lastName: employeeFieldsValues?.lastName || "",
     email: employeeFieldsValues?.email || "",

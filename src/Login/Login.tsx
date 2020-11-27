@@ -1,15 +1,13 @@
 import React, { FC, useCallback } from "react";
-import { Formik, Form, FormikProps } from "formik";
-import { Button } from "../Components";
+import { Formik } from "formik";
 import { useValidations } from "./hooks";
 import "./Login.scss";
-import "../Components/Form/Form.scss";
-import { email } from "../assets";
-import { TextField } from "./index";
+import "../Components/common/Form/Form.scss";
 import { usePasswordIconManagement } from "./hooks";
 import { useDispatch } from "react-redux";
-import { loginAction } from "../Store/Login";
-import { translations } from "../helpers";
+import { loginAction } from "@StoreLogin";
+import { translations } from "@helpers";
+import { LoginForm } from "./Components";
 
 interface Values {
   email: string;
@@ -25,46 +23,25 @@ export const Login: FC = () => {
   } = usePasswordIconManagement();
 
   const dispatch = useDispatch();
-  const dispatchLoginAction = useCallback(
-    (values) => dispatch(loginAction(values.email, values.password)),
+  const login = useCallback(
+    (values: Values) => {
+      const { email, password } = values;
+      dispatch(loginAction(email, password));
+    },
     [dispatch]
   );
 
   const {
-    field: { emailVal, emailHolder, pswdHolder, psdwVal },
-    button: { textType },
+    button: { createText },
   } = translations;
 
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
-      onSubmit={() => console.log("submitted")}
+      onSubmit={login}
       validate={useValidations}
     >
-      {(props: FormikProps<Values>) => (
-        <Form className="form form-login login">
-          <TextField
-            name={emailVal}
-            type={textType}
-            placeholder={emailHolder}
-            icon={email}
-          />
-          <TextField
-            name={psdwVal}
-            type={pswdInputType}
-            placeholder={pswdHolder}
-            icon={setPswdIcon}
-            handleIconMouseDown={handlePswdIconMouseDown}
-            handleIconMouseUp={handlePswdIconMouseUp}
-          />
-          <Button
-            type="submit"
-            text="Login"
-            onClick={() => dispatchLoginAction(props.values)}
-            disabled={!!props.errors.email || !!props.errors.password}
-          />
-        </Form>
-      )}
+      <LoginForm submitBtnText={createText} />
     </Formik>
   );
 };

@@ -1,3 +1,3 @@
 export * from "./Login";
-export * from "./TextField";
 export * from "./hooks";
+export * from "./Components";

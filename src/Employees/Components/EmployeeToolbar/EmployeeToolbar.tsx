@@ -1,18 +1,15 @@
 import React, { FC, ReactElement } from "react";
-import { Button } from "../../../Components";
+import { Button } from "@Components";
 import { CreateEmployeeModal } from "./Components";
 import { useCreateEmployeeBlockManager } from "./Components";
-import { translations } from "../../../helpers";
+import { translations } from "@helpers";
 
 export const EmployeeToolbar: FC = (): ReactElement => {
-  const manager = useCreateEmployeeBlockManager();
-
   const {
     isCreateModalOpen,
     handleCreateModalClose,
     handleCreateModalOpen,
-  } = manager;
-
+  } = useCreateEmployeeBlockManager();
   const {
     button: { createText },
   } = translations;

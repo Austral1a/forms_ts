@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/src/Login/Components/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/Components/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/rootSaga.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/rootSaga.ts" afterDir="false" />
+>>>>>>> 0d193cdedacd6944882f7ed7ebf5cbebcd910df8
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +22,12 @@
     <node-interpreter value="project" />
     <bower-package value="" />
     <bower.json value="" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -42,22 +54,22 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Dexter\AppData\Roaming\npm\node_modules\prettier" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
-    <property name="ts.external.directory.path" value="C:\Users\Dexter\Desktop\react\forms_ts\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Interfaces\Login" />
+      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\src\Components\shared" />
       <recent name="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\src\Components\shared\Validations\FirstNameValidations" />
       <recent name="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\src\Components\shared\EmployeeModal\common\enums" />
       <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Components\shared\EmployeeModal" />
       <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Components\shared\EmployeeModal\Components" />
-      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Employees" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Interfaces\Login" />
-      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\assets" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -76,7 +88,12 @@
       <workItem from="1606202791644" duration="27372000" />
       <workItem from="1606244169832" duration="33000" />
       <workItem from="1606244211425" duration="5158000" />
+<<<<<<< HEAD
       <workItem from="1606417641821" duration="6989000" />
+=======
+      <workItem from="1606417641821" duration="6327000" />
+      <workItem from="1606492266851" duration="266000" />
+>>>>>>> 0d193cdedacd6944882f7ed7ebf5cbebcd910df8
     </task>
     <servers />
   </component>
@@ -94,6 +111,28 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606491506624">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606491506624" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1606467897383">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606467897383" />
+    <state x="595" y="100" width="1232" height="847" key="dock-window-1" timestamp="1606478724333">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="595" y="100" width="1232" height="847" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1606478724333" />
+    <state x="693" y="326" width="721" height="534" key="find.popup" timestamp="1606488681603">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="693" y="326" width="721" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606488681603" />
+    <state x="998" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1606473855621">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="998" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606473855621" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

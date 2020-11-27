@@ -1,8 +1,4 @@
-import {
-  isInputValid,
-  patterns,
-  ValidationMessages,
-} from "../../../../helpers";
+import { isInputValid, patterns, ValidationMessages } from "@helpers";
 
 interface Values {
   firstName?: string;

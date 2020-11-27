@@ -1,5 +1,5 @@
 import { home } from "../url";
-import { EmployeeResponse } from "../Store/Employees/interfaces";
+import { EmployeeResponse } from "@StoreEmployees";
 
 export const editEmployee = async (
   employeeValues: EmployeeResponse
