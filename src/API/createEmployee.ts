@@ -1,5 +1,5 @@
 import { home } from "../url";
-import { EmployeeModalFormFields } from "../Employees";
+import { EmployeeModalFormFields } from "@Employees";
 
 export const createEmployee = async (
   employee: EmployeeModalFormFields

@@ -10,7 +10,7 @@ interface GetEmployeeState {
   name: string;
   message: string;
 }
-type GetEmployeesAction = GetEmployeesSuccess & GetEmployeesFail;
+type GetEmployeesAction = GetEmployeesSuccess | GetEmployeesFail;
 
 const initState: GetEmployeeState = {
   employees: [],
@@ -18,7 +18,10 @@ const initState: GetEmployeeState = {
   message: "",
 };
 
-export const employeesReducer = (state = initState, action: any) => {
+export const employeesReducer = (
+  state = initState,
+  action: GetEmployeesAction
+) => {
   // TODO: Add action type
   switch (action.type) {
     case EmployeeActionTypes.GET_EMPLOYEES_SUCCESS:

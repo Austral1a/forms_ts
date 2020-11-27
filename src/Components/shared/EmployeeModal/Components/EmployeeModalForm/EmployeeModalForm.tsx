@@ -1,17 +1,18 @@
 import React, { FC, ReactElement, useCallback } from "react";
-import { Button, Form } from "@Components";
-import { SelectField } from "@Components";
+import { Button, Form, SelectField, InputField, useFields } from "@Components";
 import { FormikProps, useFormikContext } from "formik";
-import {
-  useEmailModalField,
-  useFirstNameModalField,
-  useLastNameModalField,
-  usePositionModalField,
-} from "../../hooks";
-import { person as personSvg, email as emailSvg } from "../../../../../assets";
-import { EmployeeFormFields, InputField } from "../../common";
+
+import { person as personSvg, email as emailSvg } from "@Assets";
 import { translations } from "@helpers";
 import { EmployeeModalFormFields } from "@Employees";
+
+export enum EmployeeFormFields {
+  FIRST_NAME = "firstName",
+  LAST_NAME = "lastName",
+  EMAIL = "email",
+  POSITION = "position",
+  PASSWORD = "password",
+}
 
 interface EmployeeModalFormProps {
   handleClose: () => void;
@@ -26,10 +27,12 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
 }): ReactElement => {
   const formikContext = useFormikContext<EmployeeModalFormFields>();
 
-  const { firstNameField } = useFirstNameModalField();
-  const { lastNameField } = useLastNameModalField();
-  const { emailField } = useEmailModalField();
-  const { positionField } = usePositionModalField();
+  const {
+    emailField,
+    firstNameField,
+    lastNameField,
+    positionField,
+  } = useFields();
 
   const {
     field: { firstNameText, lastNameText, emailText, qa, dev, manager },
@@ -96,7 +99,6 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
           />
           <Button
             text={submitBtnText}
-            onClick={() => ""}
             type="submit"
             disabled={!formikContext.isValid}
           />

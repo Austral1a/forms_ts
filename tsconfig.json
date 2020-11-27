@@ -11,9 +11,10 @@
       "@helpers": ["src/helpers/"],
       "@Components": ["src/Components/"],
       "@StoreEmployees": ["src/Store/Employees/"],
-      "@StoreErrors": ["src/Store/Errors"],
-      "@StoreLogin": ["src/Store/Login"],
-      "@Employees": ["src/Employees"]
+      "@StoreErrors": ["src/Store/Errors/"],
+      "@StoreLogin": ["src/Store/Login/"],
+      "@Employees": ["src/Employees/"],
+      "@Assets": ["src/assets/"]
     },
     "allowJs": true,
     "skipLibCheck": true,

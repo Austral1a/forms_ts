@@ -1,7 +1,7 @@
 import { createSelector } from "reselect";
-import { State } from "./interfaces";
+import { State, EmployeeAwareState } from "./interfaces";
 
 export const selectEmployees = createSelector(
-  (state: State) => state.employeesReducer.employees,
+  (state: EmployeeAwareState) => state.employeesReducer.employees,
   (employees) => employees
 );

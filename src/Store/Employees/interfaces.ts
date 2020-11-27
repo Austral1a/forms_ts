@@ -7,6 +7,10 @@ export interface State {
   errorReducer: ErrorsWatcherState;
 }
 
+export interface EmployeeAwareState {
+  employeesReducer: EmployeesState;
+}
+
 export interface EmployeesState {
   employees: EmployeeResponse[];
   name: string;
