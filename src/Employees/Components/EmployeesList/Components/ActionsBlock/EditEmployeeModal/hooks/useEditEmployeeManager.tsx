@@ -1,21 +1,19 @@
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { editEmployeeAction } from "../../../../../../../Store/Employees";
-import {
-  Employee,
-  EmployeeResponse,
-} from "../../../../../../../Store/Employees/interfaces";
+import { EmployeeResponse } from "../../../../../../../Store/Employees/interfaces";
 import { translations } from "../../../../../../../helpers";
 import { FormikProps } from "formik";
+import { EmployeeModalFormFields } from "../../../../../../Employees";
 
 interface EditEmployeeManagerProps {
   employeeValues: EmployeeResponse;
 }
 
 interface EditEmployeeManagerResult {
-  btnText: string;
-  employeeFieldsValues: Employee;
-  editEmployee: (props: FormikProps<Employee>) => void;
+  submitBtnText: string;
+  employeeFieldsValues: EmployeeModalFormFields;
+  editEmployee: (props: FormikProps<EmployeeModalFormFields>) => void;
 }
 
 export const useEditEmployeeManager = ({
@@ -29,13 +27,21 @@ export const useEditEmployeeManager = ({
     button: { editText },
   } = translations;
   const editEmployee = useCallback(
-    (props: FormikProps<Employee>) => {
-      dispatch(editEmployeeAction({ ...props.values, id }));
+    (props: FormikProps<EmployeeModalFormFields>) => {
+      const { firstName, lastName, email, position } = props.values;
+      const editActionPayload = {
+        firstName,
+        lastName,
+        email,
+        position,
+        id,
+      };
+      dispatch(editEmployeeAction(editActionPayload));
     },
     [dispatch, id]
   );
   return {
-    btnText: editText,
+    submitBtnText: editText,
     employeeFieldsValues,
     editEmployee,
   };

@@ -1,8 +1,8 @@
 import { home } from "../url";
-import { Employee } from "../Store/Employees/interfaces";
+import { EmployeeModalFormFields } from "../Employees";
 
 export const createEmployee = async (
-  employee: Employee
+  employee: EmployeeModalFormFields
 ): Promise<void | Error> => {
   const url = `${home}/employees`;
   const response = await fetch(url, {

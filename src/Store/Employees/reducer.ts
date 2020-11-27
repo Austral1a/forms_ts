@@ -1,14 +1,12 @@
-import { EmployeeActionTypes } from "./actions";
 import {
-  Employee,
-  EmployeesState,
-  GetEmployeeRequest,
+  EmployeeActionTypes,
   GetEmployeesFail,
   GetEmployeesSuccess,
-} from "./interfaces";
+} from "./actions";
+import { EmployeeModalFormFields } from "../../Employees";
 
 interface GetEmployeeState {
-  employees: Employee[];
+  employees: EmployeeModalFormFields[];
   name: string;
   message: string;
 }

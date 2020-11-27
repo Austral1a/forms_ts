@@ -15,7 +15,7 @@ export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
 }) => {
   const {
     employeeFieldsValues,
-    btnText,
+    submitBtnText,
     editEmployee,
   } = useEditEmployeeManager({ employeeValues });
 
@@ -23,7 +23,7 @@ export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
     <>
       {isOpen && (
         <EmployeeModal
-          submitBtnText={btnText}
+          submitBtnText={submitBtnText}
           dispatchAction={editEmployee}
           handleClose={handleClose}
           employeeFieldsValues={employeeFieldsValues}

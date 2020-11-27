@@ -4,23 +4,19 @@
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/EmailField/EmailField.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/EmailField/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/FirstNameField/FirstNameField.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/FirstNameField/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/LastNameField/LastNameField.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/LastNameField/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/PositionsField/PositionsField.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/PositionsField/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/createEmployee.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/createEmployee.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/EmployeeModalForm/EmployeeModalForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/EmployeeModalForm/EmployeeModalForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/InputField/InputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/InputField/InputField.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/SelectField/SelectField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/SelectField/SelectField.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeeToolbar/Components/CreateEmployeeModal/CreateEmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeeToolbar/Components/CreateEmployeeModal/CreateEmployeeModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/EditEmployeeModal/EditEmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/EditEmployeeModal/EditEmployeeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/usePositionModalField.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/usePositionModalField.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeeToolbar/Components/CreateEmployeeModal/hooks/useCreateEmployeeManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeeToolbar/Components/CreateEmployeeModal/hooks/useCreateEmployeeManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/EditEmployeeModal/hooks/useEditEmployeeManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/EditEmployeeModal/hooks/useEditEmployeeManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Employees.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Employees.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/interfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/sagas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/general.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/general.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,22 +56,22 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Dexter\AppData\Roaming\npm\node_modules\prettier" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="C:\Users\Dexter\Desktop\react\forms_ts\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Interfaces\Login" />
+      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\src\Components\shared\Validations\FirstNameValidations" />
       <recent name="C:\Users\daniil.korzh\WebstormProjects\react\forms_ts\src\Components\shared\EmployeeModal\common\enums" />
       <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Components\shared\EmployeeModal" />
       <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Components\shared\EmployeeModal\Components" />
       <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Employees" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\Interfaces\Login" />
-      <recent name="C:\Users\Dexter\Desktop\react\forms_ts\src\assets" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -112,6 +108,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1606467897383">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606467897383" />
+    <state x="667" y="253" width="721" height="534" key="find.popup" timestamp="1606470595670">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="253" width="721" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606470595670" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

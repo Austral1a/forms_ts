@@ -5,14 +5,11 @@ import { useCreateEmployeeBlockManager } from "./Components";
 import { translations } from "../../../helpers";
 
 export const EmployeeToolbar: FC = (): ReactElement => {
-  const manager = useCreateEmployeeBlockManager();
-
   const {
     isCreateModalOpen,
     handleCreateModalClose,
     handleCreateModalOpen,
-  } = manager;
-
+  } = useCreateEmployeeBlockManager();
   const {
     button: { createText },
   } = translations;

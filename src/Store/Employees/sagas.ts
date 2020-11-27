@@ -1,10 +1,13 @@
 import { call, put } from "redux-saga/effects";
 import {
   createEmployeeFail,
+  CreateEmployeeRequest,
   createEmployeeSuccess,
   deleteEmployeeFail,
+  DeleteEmployeeRequest,
   deleteEmployeeSuccess,
   editEmployeeFail,
+  EditEmployeeRequest,
   editEmployeeSuccess,
   getEmployeeFail,
   getEmployeeSuccess,
@@ -16,12 +19,7 @@ import {
   deleteEmployee,
 } from "../../API";
 
-import {
-  CreateEmployeeRequest,
-  DeleteEmployeeRequest,
-  EditEmployeeRequest,
-  EmployeeResponse,
-} from "./interfaces";
+import { EmployeeResponse } from "./interfaces";
 
 export function* createEmployeeSaga(action: CreateEmployeeRequest) {
   try {

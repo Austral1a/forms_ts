@@ -1,9 +1,11 @@
 import { FormikHandlers, useField } from "formik";
 import { EmployeeFormFields } from "../common";
+import { EmployeeModalFormFields } from "../../../../Employees";
 
 interface PositionFieldResult {
   positionField: {
     value: string;
+    setValue: (value: string, shouldValidate?: boolean) => void;
     touched: boolean;
     error: string | undefined;
     onBlur: FormikHandlers["handleBlur"];
@@ -12,14 +14,14 @@ interface PositionFieldResult {
 }
 
 export const usePositionModalField = (): PositionFieldResult => {
-  const [fieldPosition, metaPosition] = useField<string>({
-    id: EmployeeFormFields.EMAIL,
-    name: EmployeeFormFields.EMAIL,
-    // TODO: Add validator
+  const [fieldPosition, metaPosition, helpersPosition] = useField<string>({
+    id: EmployeeFormFields.POSITION,
+    name: EmployeeFormFields.POSITION,
   });
   return {
     positionField: {
       value: fieldPosition.value,
+      setValue: helpersPosition.setValue,
       touched: metaPosition.touched,
       error: metaPosition.error,
       onBlur: fieldPosition.onBlur,
