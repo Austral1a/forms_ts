@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { deleteEmployeeAction } from "../../../../../../../Store/Employees";
+import { deleteEmployeeAction } from "@StoreEmployees";
 
 interface DeleteEmployeeManagerResult {
   deleteEmployee: () => void;

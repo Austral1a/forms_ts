@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { Formik, FormikProps } from "formik";
-import { EmployeeModalForm } from "../../index";
+import { EmployeeModalForm } from "@Components";
 import "./EmployeeModal.scss";
-import { EmployeeModalFormFields } from "../../../Employees";
+import { EmployeeModalFormFields } from "@Employees";
 
 interface EmployeeModalProps {
   employeeFieldsValues?: EmployeeModalFormFields;

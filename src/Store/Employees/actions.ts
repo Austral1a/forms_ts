@@ -5,7 +5,7 @@ import {
   EmployeeResponse,
 } from "./interfaces";
 import { ErrorFSAAuto, FSAAuto } from "flux-standard-action";
-import { EmployeeModalFormFields } from "../../Employees";
+import { EmployeeModalFormFields } from "@Employees";
 
 export enum EmployeeActionTypes {
   CREATE_EMPLOYEE = "CREATE_EMPLOYEE",

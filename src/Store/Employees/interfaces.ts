@@ -1,5 +1,5 @@
-import { ErrorsWatcherState } from "../Errors";
-import { LoginState } from "../Login";
+import { ErrorsWatcherState } from "@StoreErrors";
+import { LoginState } from "@StoreLogin";
 
 export interface State {
   employeesReducer: EmployeesState;

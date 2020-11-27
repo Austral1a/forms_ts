@@ -1,6 +1,5 @@
 import { FormikHandlers, useField } from "formik";
-import { EmployeeFormFields } from "../common";
-import { EmployeeModalFormFields } from "../../../../Employees";
+import { EmployeeFormFields } from "@Components";
 
 interface PositionFieldResult {
   positionField: {

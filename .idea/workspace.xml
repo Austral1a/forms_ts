@@ -2,22 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/getHttpsConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/jest/cssTransform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/jest/fileTransform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/modules.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/paths.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/pnpTs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/webpackDevServer.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/build.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/start.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/EmployeeModalForm/EmployeeModalForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/EmployeeModalForm/EmployeeModalForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/SelectField/SelectField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/SelectField/SelectField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/useEmailModalField.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/useEmailModalField.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/useFirstNameModalField.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/useFirstNameModalField.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/useLastNameModalField.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/useLastNameModalField.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/usePositionModalField.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/usePositionModalField.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/useValidations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/useValidations.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/Validations/EmailValidation/EmailValidation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/Validations/EmailValidation/EmailValidation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/Validations/NameValidation/NameValidation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/Validations/NameValidation/NameValidation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/ActionsBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/ActionsBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/DeleteEmployeeModal/DeleteEmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/DeleteEmployeeModal/DeleteEmployeeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/DeleteEmployeeModal/hooks/useDeleteEmployeeManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/DeleteEmployeeModal/hooks/useDeleteEmployeeManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/EditEmployeeModal/EditEmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/EditEmployeeModal/EditEmployeeModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/EditEmployeeModal/hooks/useEditEmployeeManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/Components/ActionsBlock/EditEmployeeModal/hooks/useEditEmployeeManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/EmployeesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Employees/Components/EmployeesList/EmployeesList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ErrorHandler/ErrorHandler.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ErrorHandler/ErrorHandler.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/interfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Employees/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/Errors/selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Errors/selectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/rootReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/rootReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/rootSaga.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/rootSaga.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,10 +131,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="253" width="721" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606470595670" />
-    <state x="998" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1606472985770">
+    <state x="998" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1606473855621">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="998" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606472985770" />
+    <state x="998" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606473855621" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

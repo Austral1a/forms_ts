@@ -1,10 +1,10 @@
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
-import { editEmployeeAction } from "../../../../../../../Store/Employees";
-import { EmployeeResponse } from "../../../../../../../Store/Employees/interfaces";
-import { translations } from "../../../../../../../helpers";
+import { editEmployeeAction } from "@StoreEmployees";
+import { EmployeeResponse } from "@StoreEmployees";
+import { translations } from "@helpers";
 import { FormikProps } from "formik";
-import { EmployeeModalFormFields } from "../../../../../../Employees";
+import { EmployeeModalFormFields } from "@Employees";
 
 interface EditEmployeeManagerProps {
   employeeValues: EmployeeResponse;

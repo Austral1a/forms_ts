@@ -334,7 +334,10 @@ module.exports = function (webpackEnv) {
         ...(modules.webpackAliases || {}),
         "@helpers": path.resolve(__dirname, "../src/helpers/"),
         "@Components": path.resolve(__dirname, "../src/Components/"),
-        "@Store": path.resolve(__dirname, "../src/Store/"),
+        "@StoreEmployees": path.resolve(__dirname, "../src/Store/Employees/"),
+        "@StoreErrors": path.resolve(__dirname, "../src/Store/Errors"),
+        "@StoreLogin": path.resolve(__dirname, "../src/Store/Login"),
+        "@Employees": path.resolve(__dirname, "../src/Employees/"),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

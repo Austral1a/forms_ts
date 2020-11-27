@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from "react";
 import { FormikHandlers } from "formik";
-import { Option } from "./Components";
+import { Option } from "@Components";
 
 interface SelectFieldProps {
   selectOptions: string[];

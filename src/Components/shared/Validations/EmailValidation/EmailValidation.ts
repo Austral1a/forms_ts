@@ -3,7 +3,7 @@ import {
   patterns,
   patternNames,
   ValidationMessages,
-} from "../../../../helpers";
+} from "@helpers";
 
 export const emailValidationRule = () => {
   const { email } = patternNames;

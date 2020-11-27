@@ -1,7 +1,6 @@
 import { FormikHandlers, useField } from "formik";
 import { useMemo } from "react";
-import { emailValidationRule } from "../../Validations";
-import { EmployeeFormFields } from "../common";
+import { emailValidationRule, EmployeeFormFields } from "@Components";
 
 interface EmailFieldResult {
   emailField: {

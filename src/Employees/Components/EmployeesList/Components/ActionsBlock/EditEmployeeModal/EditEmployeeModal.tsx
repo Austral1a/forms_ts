@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { EmployeeModal } from "../../../../../../Components";
-import { EmployeeResponse } from "../../../../../../Store/Employees/interfaces";
+import { EmployeeModal } from "@Components";
+import { EmployeeResponse } from "@StoreEmployees";
 import { useEditEmployeeManager } from "./hooks";
 
 interface EditEmployeeModalProps {

@@ -1,4 +1,4 @@
-import { LOGIN, login } from "./Login";
+import { LOGIN, login } from "@StoreLogin";
 import {
   EmployeeActionTypes,
   getEmployeesSaga,

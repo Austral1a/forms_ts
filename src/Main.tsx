@@ -1,7 +1,7 @@
 import React, { FC, useContext } from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Login } from "./Login";
-import { Employees } from "./Employees";
+import { Employees } from "@Employees";
 import { useSelector } from "react-redux";
 import { ErrorHandler } from "./ErrorHandler";
 

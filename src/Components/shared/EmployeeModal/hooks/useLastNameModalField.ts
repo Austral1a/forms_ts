@@ -1,7 +1,6 @@
 import { FormikHandlers, useField } from "formik";
 import { useMemo } from "react";
-import { nameValidationRule } from "../../Validations";
-import { EmployeeFormFields } from "../common";
+import { nameValidationRule, EmployeeFormFields } from "@Components";
 
 interface LastNameFieldResult {
   lastNameField: {

@@ -10,7 +10,10 @@
     "paths": {
       "@helpers": ["src/helpers/"],
       "@Components": ["src/Components/"],
-      "@Store": ["src/Store"/]
+      "@StoreEmployees": ["src/Store/Employees/"],
+      "@StoreErrors": ["src/Store/Errors"],
+      "@StoreLogin": ["src/Store/Login"],
+      "@Employees": ["src/Employees"]
     },
     "allowJs": true,
     "skipLibCheck": true,

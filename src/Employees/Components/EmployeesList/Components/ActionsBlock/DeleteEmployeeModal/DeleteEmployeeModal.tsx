@@ -1,7 +1,7 @@
 import React, { FC, useCallback } from "react";
-import { Button } from "../../../../../../Components";
+import { Button } from "@Components";
 import { useDeleteEmployeeManager } from "./hooks";
-import { translations } from "../../../../../../helpers";
+import { translations } from "@helpers";
 import "./DeleteEmployeeModal.scss";
 
 interface DeleteEmployeeProps {

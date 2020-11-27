@@ -1,6 +1,6 @@
 import React, { FC, ReactElement, useCallback } from "react";
-import { Button, Form } from "../../../../common";
-import { SelectField } from "../../common";
+import { Button, Form } from "@Components";
+import { SelectField } from "@Components";
 import { FormikProps, useFormikContext } from "formik";
 import {
   useEmailModalField,
@@ -10,8 +10,8 @@ import {
 } from "../../hooks";
 import { person as personSvg, email as emailSvg } from "../../../../../assets";
 import { EmployeeFormFields, InputField } from "../../common";
-import { translations } from "../../../../../helpers";
-import { EmployeeModalFormFields } from "../../../../../Employees";
+import { translations } from "@helpers";
+import { EmployeeModalFormFields } from "@Employees";
 
 interface EmployeeModalFormProps {
   handleClose: () => void;

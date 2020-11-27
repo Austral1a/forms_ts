@@ -3,7 +3,7 @@ import {
   GetEmployeesFail,
   GetEmployeesSuccess,
 } from "./actions";
-import { EmployeeModalFormFields } from "../../Employees";
+import { EmployeeModalFormFields } from "@Employees";
 
 interface GetEmployeeState {
   employees: EmployeeModalFormFields[];

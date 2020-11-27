@@ -1,9 +1,9 @@
 import React, { FC, ReactElement } from "react";
-import { Button } from "../../../../../Components";
+import { Button } from "@Components";
 import { EditEmployeeModal, DeleteEmployeeModal } from "../index";
 import { useActionsBlockManager } from "./hooks";
-import { EmployeeResponse } from "../../../../../Store/Employees/interfaces";
-import { translations } from "../../../../../helpers";
+import { EmployeeResponse } from "@StoreEmployees";
+import { translations } from "@helpers";
 import "./ActionsBlock.scss";
 
 interface ActionsBlockProps {
