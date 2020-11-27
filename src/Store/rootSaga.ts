@@ -11,7 +11,7 @@ import { takeEvery, all, takeLatest } from "redux-saga/effects";
 
 export function* rootSaga() {
   yield all([
-    yield takeEvery(LOGIN, login),
+    yield takeLatest(LOGIN, login),
     yield takeLatest(EmployeeActionTypes.GET_EMPLOYEES, getEmployeesSaga),
     yield takeLatest(EmployeeActionTypes.CREATE_EMPLOYEE, createEmployeeSaga),
     yield takeLatest(EmployeeActionTypes.DELETE_EMPLOYEE, deleteEmployeeSaga),

@@ -24,10 +24,8 @@ export const Login: FC = () => {
 
   const dispatch = useDispatch();
   const login = useCallback(
-    (formikContext) => {
-      const {
-        values: { email, password },
-      } = formikContext;
+    (values: Values) => {
+      const { email, password } = values;
       dispatch(loginAction(email, password));
     },
     [dispatch]

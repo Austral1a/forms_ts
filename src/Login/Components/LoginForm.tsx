@@ -53,11 +53,7 @@ export const LoginForm: FC<LoginFormProps> = ({
         handleChange={passwordField.onChange}
         handleBlur={passwordField.onBlur}
       />
-      <Button
-        text={submitBtnText}
-        type="submit"
-        disabled={!formikContext.isValid}
-      />
+      <Button text={submitBtnText} type="submit" disabled={false} />
     </Form>
   );
 };
