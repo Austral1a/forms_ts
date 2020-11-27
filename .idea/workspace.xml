@@ -3,52 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eb0ad934-4c63-4892-b6e1-b12299da2925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/createEmployee.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/createEmployee.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/editEmployee.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/editEmployee.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/getEmployees.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/getEmployees.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/Button/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/Form/Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/Form/Form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/EmployeeModalForm/EmployeeModalForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/Components/EmployeeModalForm/EmployeeModalForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/EmployeeModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/InputField/InputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/InputField/InputField.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/InputField/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/InputField/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/SelectField/Components/Option/Option.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/SelectField/Components/Option/Option.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/SelectField/Components/Option/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/SelectField/Components/Option/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/SelectField/Components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/SelectField/Components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/SelectField/SelectField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/SelectField/SelectField.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/SelectField/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/SelectField/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/enums/EmployeeFormFields.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/enums/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/common/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/hooks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/useEmailModalField.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/useFirstNameModalField.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/useLastNameModalField.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/usePositionModalField.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/hooks/useValidations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/hooks/useValidations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/EmployeeModal/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/Validations/EmailValidation/EmailValidation.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/Validations/EmailValidation/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/Validations/NameValidation/NameValidation.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/Validations/NameValidation/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/Validations/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login/TextField.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login/hooks/usePasswordIconManagement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/hooks/usePasswordIconManagement.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Employees/interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/interfaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Employees/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Employees/selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Employees/selectors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Errors/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Errors/sagas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Login/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Login/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/InputField/InputField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/InputField/InputField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login/Components/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/Components/LoginForm.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -2,6 +2,7 @@ import React, { FC, ReactElement } from "react";
 import { FormikHandlers } from "formik";
 
 interface InputFieldProps {
+  type?: "text" | "password";
   icon: string;
   name: string;
   placeholder: string;
@@ -14,6 +15,7 @@ interface InputFieldProps {
 
 export const InputField: FC<InputFieldProps> = ({
   icon,
+  type = "text",
   name,
   placeholder,
   error,
@@ -30,6 +32,7 @@ export const InputField: FC<InputFieldProps> = ({
         </span>
       )}
       <input
+        type={type}
         placeholder={placeholder}
         name={name}
         className="input-container__input"

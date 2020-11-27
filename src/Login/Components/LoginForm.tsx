@@ -42,6 +42,7 @@ export const LoginForm: FC<LoginFormProps> = ({
         handleBlur={emailField.onBlur}
       />
       <InputField
+        type={"password"}
         name={LoginFormFields.PASSWORD}
         touched={passwordField.touched}
         error={passwordField.error}
