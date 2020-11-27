@@ -2,7 +2,7 @@ import React, { FC, ReactElement } from "react";
 import { Button } from "../../../Components";
 import { CreateEmployeeModal } from "./Components";
 import { useCreateEmployeeBlockManager } from "./Components";
-import { translations } from "../../../helpers";
+import { translations } from "@helpers";
 
 export const EmployeeToolbar: FC = (): ReactElement => {
   const {

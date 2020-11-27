@@ -2,6 +2,11 @@
   "name": "forms_ts",
   "version": "0.1.0",
   "private": true,
+  "_moduleAliases": {
+    "@helpers": "src/helpers/",
+    "@Store": "src/Store/",
+    "@Components": "src/Components/"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.1",
@@ -19,6 +24,7 @@
     "flux-standard-action": "^2.1.1",
     "formik": "^2.2.5",
     "json-server": "^0.16.2",
+    "module-alias": "^2.2.2",
     "prettier": "^2.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
