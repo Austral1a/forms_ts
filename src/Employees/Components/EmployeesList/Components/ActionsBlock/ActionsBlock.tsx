@@ -17,11 +17,8 @@ export const ActionsBlock: FC<ActionsBlockProps> = ({
     isEditModalOpen,
     onEditModalClose,
     onEditModalOpen,
-    isDeleteModalOpen,
-    onDeleteModalClose,
     onDeleteModalOpen,
   } = useActionsBlockManager();
-  const { id } = employeeValues;
   const {
     button: { editText, deleteText },
   } = translations;
@@ -33,14 +30,14 @@ export const ActionsBlock: FC<ActionsBlockProps> = ({
       </div>
       <EditEmployeeModal
         employeeValues={employeeValues}
-        isOpen={isEditModalOpen}
+        isModalOpen={isEditModalOpen}
         handleClose={onEditModalClose}
       />
-      <DeleteEmployeeModal
+      {/* <DeleteEmployeeModal
         employeeId={id}
-        isOpen={isDeleteModalOpen}
+        isModalOpen={isDeleteModalOpen}
         handleClose={onDeleteModalClose}
-      />
+      />*/}
     </>
   );
 };

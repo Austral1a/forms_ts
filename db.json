@@ -16,7 +16,12 @@
       "email": "asdasd@asd.com",
       "password": "asdasdasd",
       "id": 2
-    }
+    },
+    {
+      "email": "dan@d.ccccccco",
+      "password": "2312312312312",
+      "id": 3
+    },
     {
       "email": "AAAAA@aaz.com",
       "password": "123456",
@@ -24,13 +29,6 @@
     }
   ],
   "employees": [
-    {
-      "firstName": "aa",
-      "lastName": "aa",
-      "email": "m@d.c",
-      "position": "manager",
-      "id": 10
-    },
     {
       "firstName": "asdsss",
       "lastName": "asd",
@@ -44,20 +42,6 @@
       "email": "zxczxcxc@zxcxcz.com",
       "position": "Developer",
       "id": 12
-    },
-    {
-      "firstName": "dasdqweqwesssAAAAA",
-      "lastName": "qweqweqw",
-      "email": "qwewe@sadasd.com",
-      "position": "QA",
-      "id": 13
-    },
-    {
-      "firstName": "FIRSTasd",
-      "lastName": "LAST",
-      "email": "last@last.com",
-      "position": "Developer",
-      "id": 14
     },
     {
       "firstName": "Kyle",
@@ -86,6 +70,20 @@
       "email": "aaa@d.com",
       "position": "Manager",
       "id": 18
+    },
+    {
+      "firstName": "First",
+      "lastName": "last",
+      "email": "first@last.com",
+      "position": "QA",
+      "id": 19
+    },
+    {
+      "firstName": "One",
+      "lastName": "Two",
+      "email": "three@c.ocm",
+      "position": "Manager",
+      "id": 20
     }
   ]
 }

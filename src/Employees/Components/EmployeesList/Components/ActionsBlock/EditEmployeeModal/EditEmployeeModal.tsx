@@ -4,13 +4,13 @@ import { EmployeeResponse } from "@StoreEmployees";
 import { useEditEmployeeManager } from "./hooks";
 
 interface EditEmployeeModalProps {
-  isOpen: boolean;
+  isModalOpen: boolean;
   handleClose: () => void;
   employeeValues: EmployeeResponse;
 }
 export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
   employeeValues,
-  isOpen,
+  isModalOpen,
   handleClose,
 }) => {
   const {
@@ -20,15 +20,12 @@ export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
   } = useEditEmployeeManager({ employeeValues });
 
   return (
-    <>
-      {isOpen && (
-        <EmployeeModal
-          submitBtnText={submitBtnText}
-          dispatchAction={editEmployee}
-          handleClose={handleClose}
-          employeeFieldsValues={employeeFieldsValues}
-        />
-      )}
-    </>
+    <EmployeeModal
+      isModalOpen={isModalOpen}
+      submitBtnText={submitBtnText}
+      dispatchAction={editEmployee}
+      handleClose={handleClose}
+      employeeFieldsValues={employeeFieldsValues}
+    />
   );
 };

@@ -9,7 +9,7 @@ interface Props {
   text: string;
   disabled?: boolean;
   className?: string;
-  onClick?: () => void;
+  onClick?: (...v: any) => void;
 }
 
 export const Button: FC<Props> = ({

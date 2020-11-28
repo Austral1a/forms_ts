@@ -3,15 +3,16 @@ import { Button } from "@Components";
 import { useDeleteEmployeeManager } from "./hooks";
 import { translations } from "@helpers";
 import "./DeleteEmployeeModal.scss";
+import Modal from "react-modal";
 
 interface DeleteEmployeeProps {
-  isOpen: boolean;
+  isModalOpen: boolean;
   handleClose: () => void;
   employeeId: number;
 }
 
 export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
-  isOpen,
+  isModalOpen,
   handleClose,
   employeeId,
 }) => {
@@ -25,21 +26,28 @@ export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
     handleClose();
   }, [handleClose, deleteEmployee]);
   return (
-    <>
-      {isOpen && (
-        //TODO: add class
-        <div>
-          <div className="modal-container__modal">
-            <div className="modal-container__delete-confirmation">
-              <h3>{deleteConfirm}</h3>
-              <div className="modal-container__delete-options">
-                <Button text={deleteText} onClick={onSubmit} type="button" />
-                <Button text={closeText} onClick={handleClose} type="button" />
-              </div>
-            </div>
-          </div>
+    <Modal
+      isOpen={isModalOpen}
+      style={{
+        overlay: {
+          backgroundColor: "rgba(0, 0, 0, .6)",
+        },
+        content: {
+          display: "flex",
+          alignContent: "center",
+          justifyContent: "center",
+          background: "none",
+          border: "none",
+        },
+      }}
+    >
+      <div className="modal-delete-confirmation">
+        <h3>{deleteConfirm}</h3>
+        <div className="modal-delete-confirmation__options">
+          <Button text={deleteText} onClick={onSubmit} type="button" />
+          <Button text={closeText} onClick={handleClose} type="button" />
         </div>
-      )}
-    </>
+      </div>
+    </Modal>
   );
 };

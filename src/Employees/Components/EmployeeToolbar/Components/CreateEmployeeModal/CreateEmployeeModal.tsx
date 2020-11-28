@@ -3,27 +3,24 @@ import { EmployeeModal } from "@Components";
 import { useCreateEmployeeManager } from "./hooks";
 
 interface CreateEmployeeModalProps {
-  isOpen: boolean;
+  isModalOpen: boolean;
   handleClose: () => void;
   className?: string;
 }
 
 export const CreateEmployeeModal: FC<CreateEmployeeModalProps> = ({
-  isOpen,
+  isModalOpen,
   handleClose,
   className,
 }) => {
   const { createEmployee, submitBtnText } = useCreateEmployeeManager();
   return (
-    <>
-      {isOpen && (
-        <EmployeeModal
-          className={className}
-          submitBtnText={submitBtnText}
-          dispatchAction={createEmployee}
-          handleClose={handleClose}
-        />
-      )}
-    </>
+    <EmployeeModal
+      isModalOpen={isModalOpen}
+      className={className}
+      submitBtnText={submitBtnText}
+      dispatchAction={createEmployee}
+      handleClose={handleClose}
+    />
   );
 };
