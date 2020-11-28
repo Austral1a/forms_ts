@@ -1,15 +1,14 @@
 import React, { FC, useCallback } from "react";
-import { Formik } from "formik";
-import { useValidations } from "./hooks";
-import "./Login.scss";
-import "../Components/common/Form/Form.scss";
+import { Formik, FormikProps } from "formik";
 import { usePasswordIconManagement } from "./hooks";
 import { useDispatch } from "react-redux";
 import { loginAction } from "@StoreLogin";
 import { translations } from "@helpers";
 import { LoginForm } from "./Components";
+import "../Components/common/Form/Form.scss";
+import "./Login.scss";
 
-interface Values {
+export interface LoginFormFieldsValues {
   email: string;
   password: string;
 }
@@ -24,9 +23,11 @@ export const Login: FC = () => {
 
   const dispatch = useDispatch();
   const login = useCallback(
-    (values: Values) => {
-      const { email, password } = values;
-      dispatch(loginAction(email, password));
+    (props: FormikProps<LoginFormFieldsValues>) => {
+      const {
+        values: { email, password },
+      } = props;
+      dispatch(loginAction({ email, password }));
     },
     [dispatch]
   );
@@ -35,13 +36,15 @@ export const Login: FC = () => {
     button: { createText },
   } = translations;
 
+  const initialValues: LoginFormFieldsValues = {
+    email: "",
+    password: "",
+  };
+
   return (
-    <Formik
-      initialValues={{ email: "", password: "" }}
-      onSubmit={login}
-      validate={useValidations}
-    >
-      <LoginForm submitBtnText={createText} />
+    // @ts-ignore
+    <Formik initialValues={initialValues} onSubmit={() => ""}>
+      <LoginForm dispatchAction={login} submitBtnText={createText} />
     </Formik>
   );
 };

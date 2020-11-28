@@ -5,6 +5,7 @@ import {
   createEmployeeSaga,
   deleteEmployeeSaga,
   editEmployeeSaga,
+  watchEmployeesSuccessChange,
 } from "./Employees";
 import { watchErrors } from "./Errors";
 import { takeEvery, all, takeLatest } from "redux-saga/effects";
@@ -17,5 +18,6 @@ export function* rootSaga() {
     yield takeLatest(EmployeeActionTypes.DELETE_EMPLOYEE, deleteEmployeeSaga),
     yield takeLatest(EmployeeActionTypes.EDIT_EMPLOYEE, editEmployeeSaga),
     watchErrors(),
+    watchEmployeesSuccessChange(),
   ]);
 }

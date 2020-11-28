@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useCallback } from "react";
-import { createEmployeeAction } from "../../../../../../Store/Employees";
-import { translations } from "../../../../../../helpers";
-import { EmployeeModalFormFields } from "../../../../../Employees";
+import { createEmployeeAction } from "@StoreEmployees";
+import { translations } from "@helpers";
+import { EmployeeModalFormFields } from "@Employees";
 
 interface CreateEmployeeManagerResult {
   createEmployee: (props: { values: EmployeeModalFormFields }) => void;

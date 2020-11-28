@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from "react";
-import { ActionsBlock } from "./Components";
+import { ActionsBlock, useActionsBlockManager } from "./Components";
 import { useEmployeesManager } from "./hooks";
 import { translations } from "@helpers";
 

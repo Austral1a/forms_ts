@@ -1,4 +1,4 @@
-import { call, put } from "redux-saga/effects";
+import { call, put, take } from "redux-saga/effects";
 import {
   createEmployeeFail,
   CreateEmployeeRequest,
@@ -9,14 +9,15 @@ import {
   editEmployeeFail,
   EditEmployeeRequest,
   editEmployeeSuccess,
+  EmployeeActionTypes,
   getEmployeeFail,
   getEmployeeSuccess,
 } from "./actions";
 import {
   createEmployee,
-  getEmployees,
-  editEmployee,
   deleteEmployee,
+  editEmployee,
+  getEmployees,
 } from "../../API";
 
 import { EmployeeResponse } from "./interfaces";
@@ -61,5 +62,17 @@ export function* deleteEmployeeSaga(action: DeleteEmployeeRequest) {
     yield put(deleteEmployeeSuccess());
   } catch (e) {
     yield put(deleteEmployeeFail(e));
+  }
+}
+
+export function* watchEmployeesSuccessChange() {
+  while (true) {
+    yield take([
+      EmployeeActionTypes.CREATE_EMPLOYEE_SUCCESS,
+      EmployeeActionTypes.EDIT_EMPLOYEE_SUCCESS,
+      EmployeeActionTypes.DELETE_EMPLOYEE_SUCCESS,
+    ]);
+    const employees: EmployeeResponse[] = yield call(getEmployees);
+    yield put(getEmployeeSuccess(employees));
   }
 }

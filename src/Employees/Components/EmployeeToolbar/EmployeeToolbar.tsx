@@ -22,6 +22,7 @@ export const EmployeeToolbar: FC = (): ReactElement => {
         text={createText}
       />
       <CreateEmployeeModal
+        className="employee-modal-overlay__form-modal"
         handleClose={handleCreateModalClose}
         isOpen={isCreateModalOpen}
       />

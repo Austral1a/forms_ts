@@ -14,7 +14,8 @@ export const Main: FC = () => {
   return (
     <>
       <ErrorHandler />
-      <Router>
+      <Employees />
+      {/*<Router>
         <Route path="/">
           {isUserLoggedIn ? (
             <Redirect to="/employees" />
@@ -28,7 +29,7 @@ export const Main: FC = () => {
         <Route path="/employees">
           <Employees />
         </Route>
-      </Router>
+      </Router>*/}
     </>
   );
 };

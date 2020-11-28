@@ -1,12 +1,15 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC, ReactElement, useCallback } from "react";
 import { Form, Button, InputField, useFields } from "@Components";
-import { useFormikContext } from "formik";
+import { FormikProps, useFormikContext } from "formik";
 import { translations } from "@helpers";
 import {
   email as emailSvg,
   pswd_visibility_off,
   pswd_visibility_on,
 } from "@Assets";
+import { loginAction } from "@StoreLogin";
+import { useDispatch } from "react-redux";
+import { LoginFormFieldsValues } from "../Login";
 
 enum LoginFormFields {
   PASSWORD = "password",
@@ -15,12 +18,14 @@ enum LoginFormFields {
 
 export interface LoginFormProps {
   submitBtnText: string;
+  dispatchAction: (props: FormikProps<LoginFormFieldsValues>) => void;
 }
 
 export const LoginForm: FC<LoginFormProps> = ({
   submitBtnText,
+  dispatchAction,
 }): ReactElement => {
-  const formikContext = useFormikContext();
+  const formikContext = useFormikContext<LoginFormFieldsValues>();
 
   const { passwordField, emailField } = useFields();
 
@@ -28,8 +33,13 @@ export const LoginForm: FC<LoginFormProps> = ({
     field: { passwordText, emailText },
   } = translations;
 
+  const onSubmit = useCallback(() => dispatchAction(formikContext), [
+    dispatchAction,
+    formikContext,
+  ]);
+
   return (
-    <Form isValid={formikContext.isValid}>
+    <Form onSubmit={onSubmit} isValid={formikContext.isValid}>
       <InputField
         name={LoginFormFields.EMAIL}
         touched={emailField.touched}

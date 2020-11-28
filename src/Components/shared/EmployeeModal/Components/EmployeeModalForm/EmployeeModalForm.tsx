@@ -1,10 +1,11 @@
-import React, { FC, ReactElement, useCallback } from "react";
+import React, { FC, PropsWithChildren, ReactElement, useCallback } from "react";
 import { Button, Form, SelectField, InputField, useFields } from "@Components";
 import { FormikProps, useFormikContext } from "formik";
 
 import { person as personSvg, email as emailSvg } from "@Assets";
 import { translations } from "@helpers";
 import { EmployeeModalFormFields } from "@Employees";
+import classNames from "classnames";
 
 export enum EmployeeFormFields {
   FIRST_NAME = "firstName",
@@ -16,6 +17,7 @@ export enum EmployeeFormFields {
 
 interface EmployeeModalFormProps {
   handleClose: () => void;
+  className?: string;
   submitBtnText: string;
   dispatchAction: (props: FormikProps<EmployeeModalFormFields>) => void;
 }
@@ -24,6 +26,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
   handleClose,
   dispatchAction,
   submitBtnText,
+  className,
 }): ReactElement => {
   const formikContext = useFormikContext<EmployeeModalFormFields>();
 
@@ -39,17 +42,23 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     button: { closeText },
   } = translations;
 
-  const onSubmit = useCallback(() => {
-    dispatchAction(formikContext);
-  }, [dispatchAction, formikContext]);
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      dispatchAction(formikContext);
+      handleClose();
+    },
+    [dispatchAction, formikContext, handleClose]
+  );
 
+  const customClasses = classNames("modal-container__modal form", className);
   return (
     <div className="employee-modal-overlay">
       <div className="employee-modal-overlay__container">
         <Form
           onSubmit={onSubmit}
           isValid={formikContext.isValid}
-          className="modal-container__modal form"
+          className={customClasses}
         >
           <Button
             text={closeText}

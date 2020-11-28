@@ -4,6 +4,7 @@ import { EmployeeActionTypes } from "@StoreEmployees";
 
 const fetchErrors = [
   EmployeeActionTypes.CREATE_EMPLOYEE_FAIL,
+  EmployeeActionTypes.DELETE_EMPLOYEE_FAIL,
   EmployeeActionTypes.GET_EMPLOYEES_FAIL,
 ];
 

@@ -7,6 +7,7 @@ import "./EmployeeModal.scss";
 interface EmployeeModalProps {
   employeeFieldsValues?: EmployeeModalFormFields;
   submitBtnText: string;
+  className?: string;
   handleClose: () => void;
   dispatchAction: (props: FormikProps<EmployeeModalFormFields>) => void;
 }
@@ -16,6 +17,7 @@ export const EmployeeModal: FC<EmployeeModalProps> = ({
   submitBtnText,
   handleClose,
   dispatchAction,
+  className,
 }) => {
   const employee: EmployeeModalFormFields = {
     firstName: employeeFieldsValues?.firstName || "",
@@ -27,6 +29,7 @@ export const EmployeeModal: FC<EmployeeModalProps> = ({
   return (
     <Formik initialValues={employee} onSubmit={handleClose}>
       <EmployeeModalForm
+        className={className}
         submitBtnText={submitBtnText}
         handleClose={handleClose}
         dispatchAction={dispatchAction}
