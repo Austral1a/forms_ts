@@ -1,5 +1,4 @@
 import { useState, useCallback } from "react";
-import { EmployeeResponse } from "@StoreEmployees";
 
 interface ActionsBlockManagerResult {
   isEditModalOpen: boolean;
@@ -7,12 +6,10 @@ interface ActionsBlockManagerResult {
   onEditModalOpen: () => void;
   isDeleteModalOpen: boolean;
   onDeleteModalClose: () => void;
-  onDeleteModalOpen: (employeeValues: EmployeeResponse) => void;
-  employeeId: number;
+  onDeleteModalOpen: () => void;
 }
 
 export const useActionsBlockManager = (): ActionsBlockManagerResult => {
-  const [employeeId, setEmployeeId] = useState<number>();
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   return {
@@ -21,11 +18,6 @@ export const useActionsBlockManager = (): ActionsBlockManagerResult => {
     onEditModalOpen: useCallback(() => setIsEditModalOpen(true), []),
     isDeleteModalOpen,
     onDeleteModalClose: useCallback(() => setIsDeleteModalOpen(false), []),
-    onDeleteModalOpen: useCallback((employee: EmployeeResponse) => {
-      const { id } = employee;
-      setEmployeeId(id);
-      setIsDeleteModalOpen(true);
-    }, []),
-    employeeId,
-  } as ActionsBlockManagerResult;
+    onDeleteModalOpen: useCallback(() => setIsDeleteModalOpen(true), []),
+  };
 };

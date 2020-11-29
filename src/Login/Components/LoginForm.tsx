@@ -2,14 +2,12 @@ import React, { FC, ReactElement, useCallback } from "react";
 import { Form, Button, InputField, useFields } from "@Components";
 import { FormikProps, useFormikContext } from "formik";
 import { translations } from "@helpers";
+import { LoginFormFieldsValues } from "@Login";
 import {
   email as emailSvg,
   pswd_visibility_off,
   pswd_visibility_on,
 } from "@Assets";
-import { loginAction } from "@StoreLogin";
-import { useDispatch } from "react-redux";
-import { LoginFormFieldsValues } from "../Login";
 
 enum LoginFormFields {
   PASSWORD = "password",
@@ -18,12 +16,12 @@ enum LoginFormFields {
 
 export interface LoginFormProps {
   submitBtnText: string;
-  dispatchAction: (props: FormikProps<LoginFormFieldsValues>) => void;
+  login: (props: FormikProps<LoginFormFieldsValues>) => void;
 }
 
 export const LoginForm: FC<LoginFormProps> = ({
   submitBtnText,
-  dispatchAction,
+  login,
 }): ReactElement => {
   const formikContext = useFormikContext<LoginFormFieldsValues>();
 
@@ -33,13 +31,25 @@ export const LoginForm: FC<LoginFormProps> = ({
     field: { passwordText, emailText },
   } = translations;
 
-  const onSubmit = useCallback(() => dispatchAction(formikContext), [
-    dispatchAction,
-    formikContext,
-  ]);
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      login(formikContext);
+    },
+    [login, formikContext]
+  );
+
+  const isFormValid =
+    // fields values must presence
+    !!formikContext.values.email &&
+    !!formikContext.values.password &&
+    // fields errors must absence
+    !formikContext.errors.email &&
+    !formikContext.errors.password;
 
   return (
-    <Form onSubmit={onSubmit} isValid={formikContext.isValid}>
+    <Form className="form-login" onSubmit={onSubmit} isValid={isFormValid}>
+      <h3>Login</h3>
       <InputField
         name={LoginFormFields.EMAIL}
         touched={emailField.touched}
@@ -48,11 +58,11 @@ export const LoginForm: FC<LoginFormProps> = ({
         placeholder={emailText}
         // TODO: Create visibility switcher
         icon={emailSvg}
-        handleChange={emailField.onChange}
-        handleBlur={emailField.onBlur}
+        onChange={emailField.onChange}
+        onBlur={emailField.onBlur}
       />
       <InputField
-        type={"password"}
+        type="password"
         name={LoginFormFields.PASSWORD}
         touched={passwordField.touched}
         error={passwordField.error}
@@ -60,10 +70,10 @@ export const LoginForm: FC<LoginFormProps> = ({
         placeholder={passwordText}
         // TODO: Create visibility switcher
         icon={pswd_visibility_off}
-        handleChange={passwordField.onChange}
-        handleBlur={passwordField.onBlur}
+        onChange={passwordField.onChange}
+        onBlur={passwordField.onBlur}
       />
-      <Button text={submitBtnText} type="submit" disabled={false} />
+      <Button text={submitBtnText} type="submit" disabled={!isFormValid} />
     </Form>
   );
 };

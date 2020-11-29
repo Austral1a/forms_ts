@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import { Button } from "@Components";
-import { CreateEmployeeModal } from "./Components";
-import { useCreateEmployeeBlockManager } from "./Components";
+import { CreateEmployeeModal, useCreateEmployeeManager } from "./Components";
+
 import { translations } from "@helpers";
 
 export const EmployeeToolbar: FC = (): ReactElement => {
@@ -9,7 +9,7 @@ export const EmployeeToolbar: FC = (): ReactElement => {
     isCreateModalOpen,
     handleCreateModalClose,
     handleCreateModalOpen,
-  } = useCreateEmployeeBlockManager();
+  } = useCreateEmployeeManager();
   const {
     button: { createText },
   } = translations;
@@ -22,9 +22,8 @@ export const EmployeeToolbar: FC = (): ReactElement => {
         text={createText}
       />
       <CreateEmployeeModal
-        className="employee-modal-overlay__form-modal"
         handleClose={handleCreateModalClose}
-        isModalOpen={isCreateModalOpen}
+        isCreateModalOpen={isCreateModalOpen}
       />
     </div>
   );

@@ -8,7 +8,10 @@ type ErrorOccurredAction = ErrorOccurredCommit;
 const initState: InitState = {
   errorMessage: "",
 };
-export const reducer = (state = initState, action: ErrorOccurredAction) => {
+export const errorsReducer = (
+  state = initState,
+  action: ErrorOccurredAction
+) => {
   switch (action.type) {
     case ERROR_OCCURRED:
       const {

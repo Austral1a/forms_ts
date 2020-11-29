@@ -1,4 +1,5 @@
-@import '../styles/variables';
+@import "../styles/variables";
+@import "../styles/mixins";
 
 .employees-container {
   display: grid;
@@ -17,47 +18,36 @@
 
   &__body {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    @include flexColumn;
     background-color: $secondary-bg-color;
-    border-radius: 4px;
+    border-radius: $main-border-radius;
     padding: 10px;
     overflow-y: auto;
-    -webkit-box-shadow: -1px 1px 8px 4px rgba(0,0,0,0.5);
-    box-shadow: -1px 1px 8px 4px rgba(0,0,0,0.5);
+    @include modalFormShadow;
     & > * {
       margin-bottom: 25px;
     }
     &-header {
-      // TODO: EXTRACT INTO MIXIN
-      display: grid;
-      justify-items: center;
-      align-items: center;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: 40px;
+      @include employeeElementGrid;
+      @include modalFormShadow;
+      border-radius: $main-border-radius;
+      background-color: $employee-block-header-el-bg-color;
       font-size: 1.2rem;
     }
 
     &-employee {
-      // TODO: EXTRACT INTO MIXIN
-      display: grid;
-      justify-items: center;
-      align-items: center;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: 40px;
-      border-radius: 4px;
+      @include employeeElementGrid;
+      border-radius: $main-border-radius;
+      @include employeeBlockShadow;
       opacity: 0.8;
-      -webkit-box-shadow: 0 12px 8px -4px rgba(0,0,0,0.43);
-      box-shadow: 0 12px 8px -4px rgba(0,0,0,0.43);
-      background-color: $employee-block-bg-color;
+      background-color: $employee-block-body-el-bg-color;
     }
   }
-
 }
 
 .modal-container__modal {
-  background-color: #8899ac;
-  border-radius: 4px;
+  background-color: $modal-bg-color;
+  border-radius: $main-border-radius;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 30px);
@@ -68,7 +58,7 @@
   height: 450px;
   width: 350px;
   position: relative;
-  
+
   .modal-container_close {
     position: absolute;
     right: 10px;

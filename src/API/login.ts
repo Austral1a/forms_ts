@@ -5,30 +5,26 @@ const url = `${home}/users`;
 const isUserExists = (email: string): Promise<boolean> => {
   return fetch(`${url}?email=${email}`)
     .then((res) => res.json())
-    .then((user) => user.length > 0);
+    .then((user) => !user.length);
 };
 
-export const login = (email: string, password: string) => {
-  isUserExists(email).then((isExists) => {
-    if (!isExists) {
-      fetch(url, {
-        method: "POST",
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      });
-      // TODO: Set something like session_id in storage to track if user is logged in
-      // .....code
-    } /* else {
-      fetch(`${url}?email=${email}`)
-          .then(res => res.json())
-          .then(user => {
+interface LoginParams {
+  email: string;
+  password: string;
+}
 
-          })
-    }*/
+export const login = async ({ email, password }: LoginParams) => {
+  const response = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify({
+      email,
+      password,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
   });
+  if (!response.ok) {
+    throw new Error("Failed to login");
+  }
 };

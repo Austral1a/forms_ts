@@ -1,18 +1,24 @@
-import { useDispatch } from "react-redux";
-import { useCallback } from "react";
 import { createEmployeeAction } from "@StoreEmployees";
-import { translations } from "@helpers";
 import { EmployeeModalFormFields } from "@Employees";
+import { useCallback, useState } from "react";
+import { useDispatch } from "react-redux";
+import { translations } from "@helpers";
+
+type CreateEmployeeProps = { values: EmployeeModalFormFields };
 
 interface CreateEmployeeManagerResult {
-  createEmployee: (props: { values: EmployeeModalFormFields }) => void;
+  createEmployee: (props: CreateEmployeeProps) => void;
   submitBtnText: string;
+  isCreateModalOpen: boolean;
+  handleCreateModalClose: () => void;
+  handleCreateModalOpen: () => void;
 }
 
 export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
   const dispatch = useDispatch();
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const createEmployee = useCallback(
-    (props: { values: EmployeeModalFormFields }) => {
+    (props: CreateEmployeeProps) => {
       const {
         values: { firstName, lastName, email, position },
       } = props;
@@ -26,5 +32,8 @@ export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
   return {
     createEmployee,
     submitBtnText: createText,
+    isCreateModalOpen,
+    handleCreateModalClose: useCallback(() => setIsCreateModalOpen(false), []),
+    handleCreateModalOpen: useCallback(() => setIsCreateModalOpen(true), []),
   };
 };

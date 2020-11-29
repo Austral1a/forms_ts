@@ -1,16 +1,9 @@
 import {
   EmployeeActionTypes,
-  GetEmployeesFail,
-  GetEmployeesSuccess,
-} from "./actions";
+  GetEmployeesAction,
+  GetEmployeeState,
+} from "@StoreEmployees";
 import { EmployeeModalFormFields } from "@Employees";
-
-interface GetEmployeeState {
-  employees: EmployeeModalFormFields[];
-  name: string;
-  message: string;
-}
-type GetEmployeesAction = GetEmployeesSuccess | GetEmployeesFail;
 
 const initState: GetEmployeeState = {
   employees: [],

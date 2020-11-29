@@ -1,7 +1,7 @@
-import { call, put, takeEvery } from "redux-saga/effects";
+import { call, put } from "redux-saga/effects";
 
-import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL } from "./actions";
-import { login as loginProcess } from "../../API";
+import { loginSuccess, loginFail } from "./actions";
+import { login } from "@API";
 
 interface Action {
   type: string;
@@ -9,17 +9,12 @@ interface Action {
 }
 
 // worker
-export function* login(action: Action) {
+export function* loginSaga(action: Action) {
   try {
-    const {
-      payload: { email, password },
-    } = action;
-    yield call(loginProcess, email, password);
-    yield put({
-      type: LOGIN_SUCCESS,
-      payload: { email, password },
-    });
+    const { payload } = action;
+    yield call(login, payload);
+    yield put(loginSuccess(payload));
   } catch (e) {
-    yield put({ type: LOGIN_FAIL, payload: { errorMessage: e.message } });
+    yield put(loginFail(e));
   }
 }

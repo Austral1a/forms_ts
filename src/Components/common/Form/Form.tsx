@@ -1,27 +1,25 @@
-import React, { FC, FormEventHandler, ReactNode } from "react";
-import classNames from "classnames/dedupe";
+import React, { FormHTMLAttributes, FC, ReactNode } from "react";
+import classNames from "classnames";
 import "./Form.scss";
 
-interface Props {
+interface FormHTMLElementProps extends FormHTMLAttributes<HTMLFormElement> {
   className?: string;
-  isValid: boolean;
-  action?: string;
   children: ReactNode;
-  onSubmit?: FormEventHandler<HTMLFormElement>;
 }
 
-export const Form: FC<Props> = ({
-  children,
-  onSubmit,
-  action,
-  className,
-  isValid,
-}) => {
+interface FormMetaProps {
+  isValid: boolean;
+}
+
+type FormProps = FormHTMLElementProps & FormMetaProps;
+
+export const Form: FC<FormProps> = ({ isValid, ...props }: FormProps) => {
+  const { className, children } = props;
   const customClasses = classNames("form", className, {
     form_success: isValid,
   });
   return (
-    <form className={customClasses} action={action} onSubmit={onSubmit}>
+    <form {...props} className={customClasses}>
       {children}
     </form>
   );

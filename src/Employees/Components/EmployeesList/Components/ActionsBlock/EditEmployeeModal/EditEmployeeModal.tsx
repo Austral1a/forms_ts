@@ -1,18 +1,18 @@
-import React, { FC } from "react";
-import { EmployeeModal } from "@Components";
 import { EmployeeResponse } from "@StoreEmployees";
 import { useEditEmployeeManager } from "./hooks";
+import React, { FC, ReactElement } from "react";
+import { EmployeeModal } from "@Components";
 
 interface EditEmployeeModalProps {
   isModalOpen: boolean;
-  handleClose: () => void;
+  handleEditModalClose: () => void;
   employeeValues: EmployeeResponse;
 }
 export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
   employeeValues,
   isModalOpen,
-  handleClose,
-}) => {
+  handleEditModalClose,
+}): ReactElement => {
   const {
     employeeFieldsValues,
     submitBtnText,
@@ -24,7 +24,7 @@ export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
       isModalOpen={isModalOpen}
       submitBtnText={submitBtnText}
       dispatchAction={editEmployee}
-      handleClose={handleClose}
+      handleClose={handleEditModalClose}
       employeeFieldsValues={employeeFieldsValues}
     />
   );

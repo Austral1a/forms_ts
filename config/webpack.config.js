@@ -338,7 +338,9 @@ module.exports = function (webpackEnv) {
         "@StoreErrors": path.resolve(__dirname, "../src/Store/Errors"),
         "@StoreLogin": path.resolve(__dirname, "../src/Store/Login"),
         "@Employees": path.resolve(__dirname, "../src/Employees/"),
+        "@Login": path.resolve(__dirname, "../src/Login/"),
         "@Assets": path.resolve(__dirname, "../src/assets/"),
+        "@API": path.resolve(__dirname, "../src/API/"),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

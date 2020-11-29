@@ -1,7 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { EmployeeResponse } from "../../../../Store/Employees/interfaces";
-import { getEmployeesAction } from "../../../../Store/Employees";
-import { selectEmployees } from "../../../../Store/Employees";
+import {
+  EmployeeResponse,
+  getEmployeesAction,
+  selectEmployees,
+} from "@StoreEmployees";
 import { useEffect } from "react";
 
 interface EmployeeManagerResult {

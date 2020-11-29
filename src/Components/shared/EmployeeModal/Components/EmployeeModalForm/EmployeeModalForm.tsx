@@ -1,11 +1,11 @@
-import React, { FC, PropsWithChildren, ReactElement, useCallback } from "react";
 import { Button, Form, SelectField, InputField, useFields } from "@Components";
-import { FormikProps, useFormikContext } from "formik";
-import Modal from "react-modal";
 import { person as personSvg, email as emailSvg } from "@Assets";
-import { translations } from "@helpers";
+import React, { FC, ReactElement, useCallback } from "react";
+import { FormikProps, useFormikContext } from "formik";
 import { EmployeeModalFormFields } from "@Employees";
+import { translations } from "@helpers";
 import classNames from "classnames";
+import Modal from "react-modal";
 
 export enum EmployeeFormFields {
   FIRST_NAME = "firstName",
@@ -51,10 +51,29 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
       e.preventDefault();
       dispatchAction(formikContext);
       handleClose();
+      const employeeModalFormFieldsInitValues = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        position: "",
+      };
+      formikContext.setFormikState((prevState) => {
+        prevState.values = { ...employeeModalFormFieldsInitValues };
+        return prevState;
+      });
     },
     [dispatchAction, formikContext, handleClose]
   );
 
+  const isFormValid =
+    // fields values must presence
+    !!formikContext.values.email &&
+    !!formikContext.values.firstName &&
+    !!formikContext.values.lastName &&
+    // fields errors must absence
+    !formikContext.errors.email &&
+    !formikContext.errors.firstName &&
+    !formikContext.errors.lastName;
   const customClasses = classNames("modal-container__modal form", className);
   return (
     <>
@@ -76,7 +95,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
         >
           <Form
             onSubmit={onSubmit}
-            isValid={formikContext.isValid}
+            isValid={isFormValid}
             className={customClasses}
           >
             <Button
@@ -92,8 +111,8 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
               value={firstNameField.value}
               touched={firstNameField.touched}
               error={firstNameField.error}
-              handleBlur={firstNameField.onBlur}
-              handleChange={firstNameField.onChange}
+              onBlur={firstNameField.onBlur}
+              onChange={firstNameField.onChange}
             />
             <InputField
               placeholder={lastNameText}
@@ -102,8 +121,8 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
               value={lastNameField.value}
               touched={lastNameField.touched}
               error={lastNameField.error}
-              handleBlur={lastNameField.onBlur}
-              handleChange={lastNameField.onChange}
+              onBlur={lastNameField.onBlur}
+              onChange={lastNameField.onChange}
             />
             <InputField
               placeholder={emailText}
@@ -112,23 +131,23 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
               value={emailField.value}
               touched={emailField.touched}
               error={emailField.error}
-              handleBlur={emailField.onBlur}
-              handleChange={emailField.onChange}
+              onBlur={emailField.onBlur}
+              onChange={emailField.onChange}
             />
             <SelectField
               name={EmployeeFormFields.POSITION}
               value={positionField.value}
               touched={positionField.touched}
               error={positionField.error}
-              handleBlur={positionField.onBlur}
-              handleChange={positionField.onChange}
+              onBlur={positionField.onBlur}
+              onChange={positionField.onChange}
               defaultValue={qa}
               selectOptions={[qa, dev, manager]}
             />
             <Button
               text={submitBtnText}
               type="submit"
-              disabled={!formikContext.isValid}
+              disabled={!isFormValid}
             />
           </Form>
         </Modal>

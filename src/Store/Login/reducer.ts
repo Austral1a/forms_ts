@@ -1,4 +1,4 @@
-import { LOGIN_FAIL, LOGIN_SUCCESS } from "./index";
+import { LoginActionTypes, LoginState } from "./index";
 
 interface Payload {
   isLogged: boolean;
@@ -19,9 +19,9 @@ const initState: Payload = {
   errorMessage: "",
 };
 
-export const reducer = (state = initState, action: Action) => {
+export const loginReducer = (state = initState, action: Action): LoginState => {
   switch (action.type) {
-    case LOGIN_SUCCESS:
+    case LoginActionTypes.LOGIN_SUCCESS:
       const {
         payload: { email, password },
       } = action;
@@ -31,7 +31,7 @@ export const reducer = (state = initState, action: Action) => {
         email,
         password,
       };
-    case LOGIN_FAIL:
+    case LoginActionTypes.LOGIN_FAIL:
       const {
         payload: { errorMessage },
       } = action;

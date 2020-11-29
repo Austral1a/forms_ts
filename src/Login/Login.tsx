@@ -42,9 +42,8 @@ export const Login: FC = () => {
   };
 
   return (
-    // @ts-ignore
-    <Formik initialValues={initialValues} onSubmit={() => ""}>
-      <LoginForm dispatchAction={login} submitBtnText={createText} />
+    <Formik initialValues={initialValues} onSubmit={() => {}}>
+      <LoginForm login={login} submitBtnText={createText} />
     </Formik>
   );
 };

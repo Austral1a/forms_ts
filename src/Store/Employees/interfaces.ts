@@ -1,10 +1,11 @@
 import { ErrorsWatcherState } from "@StoreErrors";
 import { LoginState } from "@StoreLogin";
+import { EmployeeModalFormFields } from "@Employees";
 
 export interface State {
   employeesReducer: EmployeesState;
   loginReducer: LoginState;
-  errorReducer: ErrorsWatcherState;
+  errorsReducer: ErrorsWatcherState;
 }
 
 export interface EmployeeAwareState {
@@ -42,3 +43,9 @@ export interface DeleteEmployeePayload {
   id: number;
 }
 ////////////////////////
+
+export interface GetEmployeeState {
+  employees: EmployeeModalFormFields[];
+  name: string;
+  message: string;
+}

@@ -1,9 +1,9 @@
-import React, { FC, ReactElement } from "react";
-import { Button } from "@Components";
 import { EditEmployeeModal, DeleteEmployeeModal } from "../index";
-import { useActionsBlockManager } from "./hooks";
 import { EmployeeResponse } from "@StoreEmployees";
+import { useActionsBlockManager } from "./hooks";
+import React, { FC, ReactElement } from "react";
 import { translations } from "@helpers";
+import { Button } from "@Components";
 import "./ActionsBlock.scss";
 
 interface ActionsBlockProps {
@@ -15,29 +15,42 @@ export const ActionsBlock: FC<ActionsBlockProps> = ({
 }): ReactElement => {
   const {
     isEditModalOpen,
+    isDeleteModalOpen,
+    onDeleteModalClose,
     onEditModalClose,
     onEditModalOpen,
     onDeleteModalOpen,
   } = useActionsBlockManager();
+  const { id } = employeeValues;
   const {
     button: { editText, deleteText },
   } = translations;
   return (
     <>
       <div className="employees-container__body-actions-block">
-        <Button text={editText} type={"button"} onClick={onEditModalOpen} />
-        <Button text={deleteText} type={"button"} onClick={onDeleteModalOpen} />
+        <Button
+          className="employees-container__body_edit-employee"
+          text={editText}
+          type={"button"}
+          onClick={onEditModalOpen}
+        />
+        <Button
+          className="employees-container__body_delete-employee"
+          text={deleteText}
+          type={"button"}
+          onClick={onDeleteModalOpen}
+        />
       </div>
       <EditEmployeeModal
         employeeValues={employeeValues}
         isModalOpen={isEditModalOpen}
-        handleClose={onEditModalClose}
+        handleEditModalClose={onEditModalClose}
       />
-      {/* <DeleteEmployeeModal
+      <DeleteEmployeeModal
         employeeId={id}
         isModalOpen={isDeleteModalOpen}
-        handleClose={onDeleteModalClose}
-      />*/}
+        handleDeleteModalClose={onDeleteModalClose}
+      />
     </>
   );
 };

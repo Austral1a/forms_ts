@@ -1,14 +1,15 @@
 import { put, take } from "redux-saga/effects";
 import { errorOccurred } from "./actions";
 import { EmployeeActionTypes } from "@StoreEmployees";
+import { LoginActionTypes } from "@StoreLogin";
 
 const fetchErrors = [
+  LoginActionTypes.LOGIN_FAIL,
   EmployeeActionTypes.CREATE_EMPLOYEE_FAIL,
   EmployeeActionTypes.DELETE_EMPLOYEE_FAIL,
   EmployeeActionTypes.GET_EMPLOYEES_FAIL,
 ];
 
-// TODO: Add watchers for SUCCESS
 export function* watchErrors() {
   while (true) {
     const action = yield take(fetchErrors);

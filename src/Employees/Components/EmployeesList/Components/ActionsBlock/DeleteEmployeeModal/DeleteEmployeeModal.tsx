@@ -1,19 +1,19 @@
-import React, { FC, useCallback } from "react";
-import { Button } from "@Components";
 import { useDeleteEmployeeManager } from "./hooks";
+import React, { FC, useCallback } from "react";
 import { translations } from "@helpers";
+import { Button } from "@Components";
 import "./DeleteEmployeeModal.scss";
 import Modal from "react-modal";
 
 interface DeleteEmployeeProps {
   isModalOpen: boolean;
-  handleClose: () => void;
+  handleDeleteModalClose: () => void;
   employeeId: number;
 }
 
 export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
   isModalOpen,
-  handleClose,
+  handleDeleteModalClose,
   employeeId,
 }) => {
   const { deleteEmployee } = useDeleteEmployeeManager(employeeId);
@@ -23,31 +23,39 @@ export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
   } = translations;
   const onSubmit = useCallback(() => {
     deleteEmployee();
-    handleClose();
-  }, [handleClose, deleteEmployee]);
+    handleDeleteModalClose();
+  }, [handleDeleteModalClose, deleteEmployee]);
   return (
-    <Modal
-      isOpen={isModalOpen}
-      style={{
-        overlay: {
-          backgroundColor: "rgba(0, 0, 0, .6)",
-        },
-        content: {
-          display: "flex",
-          alignContent: "center",
-          justifyContent: "center",
-          background: "none",
-          border: "none",
-        },
-      }}
-    >
-      <div className="modal-delete-confirmation">
-        <h3>{deleteConfirm}</h3>
-        <div className="modal-delete-confirmation__options">
-          <Button text={deleteText} onClick={onSubmit} type="button" />
-          <Button text={closeText} onClick={handleClose} type="button" />
-        </div>
-      </div>
-    </Modal>
+    <>
+      {isModalOpen && (
+        <Modal
+          isOpen={isModalOpen}
+          style={{
+            overlay: {
+              backgroundColor: "rgba(0, 0, 0, .6)",
+            },
+            content: {
+              display: "flex",
+              alignContent: "center",
+              justifyContent: "center",
+              background: "none",
+              border: "none",
+            },
+          }}
+        >
+          <div className="modal-delete-confirmation">
+            <h3 className="modal-delete-confirmation__text">{deleteConfirm}</h3>
+            <div className="modal-delete-confirmation__options">
+              <Button text={deleteText} onClick={onSubmit} type="button" />
+              <Button
+                text={closeText}
+                onClick={handleDeleteModalClose}
+                type="button"
+              />
+            </div>
+          </div>
+        </Modal>
+      )}
+    </>
   );
 };

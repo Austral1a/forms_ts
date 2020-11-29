@@ -12,7 +12,7 @@ import {
   EmployeeActionTypes,
   getEmployeeFail,
   getEmployeeSuccess,
-} from "./actions";
+} from "@StoreEmployees";
 import {
   createEmployee,
   deleteEmployee,
@@ -65,7 +65,7 @@ export function* deleteEmployeeSaga(action: DeleteEmployeeRequest) {
   }
 }
 
-export function* watchEmployeesSuccessChange() {
+export function* watchEmployees() {
   while (true) {
     yield take([
       EmployeeActionTypes.CREATE_EMPLOYEE_SUCCESS,

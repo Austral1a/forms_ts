@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 * {
   margin: 0;
@@ -13,7 +14,6 @@
   display: grid;
   position: relative;
   grid-template-columns: 1fr;
-  justify-items: center;
-  align-items: center;
+  @include justifyAlignItemsCenter;
   background-color: $body-bg-color;
 }

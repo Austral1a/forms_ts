@@ -1,32 +1,17 @@
-import React, { FC, MouseEventHandler } from "react";
+import React, { ButtonHTMLAttributes, FC } from "react";
 import classNames from "classnames/dedupe";
 import "./Button.scss";
 
-type ButtonType = "button" | "submit" | "reset";
-
-interface Props {
-  type: ButtonType;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
-  disabled?: boolean;
   className?: string;
-  onClick?: (...v: any) => void;
 }
 
-export const Button: FC<Props> = ({
-  type,
-  text,
-  onClick,
-  disabled,
-  className,
-}) => {
+export const Button: FC<ButtonProps> = (props: ButtonProps) => {
+  const { text, className } = props;
   const customClasses: string = classNames("button", className);
   return (
-    <button
-      type={type}
-      className={customClasses}
-      onClick={onClick}
-      disabled={disabled}
-    >
+    <button {...props} className={customClasses}>
       {text}
     </button>
   );

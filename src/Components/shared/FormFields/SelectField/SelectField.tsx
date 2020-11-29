@@ -1,16 +1,16 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC, ReactElement, SelectHTMLAttributes } from "react";
 import { FormikHandlers } from "formik";
 import { Option } from "@Components";
 
-interface SelectFieldProps {
+interface SelectFieldProps extends SelectHTMLAttributes<HTMLSelectElement> {
   selectOptions: string[];
   defaultValue: string;
   name: string;
   error: string | undefined;
   touched: boolean;
   value: string;
-  handleBlur: FormikHandlers["handleBlur"];
-  handleChange: FormikHandlers["handleChange"];
+  onBlur: FormikHandlers["handleBlur"];
+  onChange: FormikHandlers["handleChange"];
 }
 
 export const SelectField: FC<SelectFieldProps> = ({
@@ -20,16 +20,16 @@ export const SelectField: FC<SelectFieldProps> = ({
   value,
   error,
   touched,
-  handleChange,
-  handleBlur,
+  onChange,
+  onBlur,
 }): ReactElement => {
   return (
     <div className="select-container">
       <select
         className="select-container__select"
         name={name}
-        onBlur={handleBlur}
-        onChange={handleChange}
+        onBlur={onBlur}
+        onChange={onChange}
         value={value}
       >
         {selectOptions.map((optionText, id) => {

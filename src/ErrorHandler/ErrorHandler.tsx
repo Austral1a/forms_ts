@@ -1,6 +1,6 @@
 import React, { FC, ReactElement, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { selectError } from "@StoreErrors";
+import { useSelector } from "react-redux";
 import "./ErrorHandler.scss";
 
 export const ErrorHandler: FC = (): ReactElement => {

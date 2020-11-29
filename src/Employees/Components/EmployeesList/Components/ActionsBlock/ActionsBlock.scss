@@ -1,4 +1,4 @@
+@import '../../../../../styles/mixins';
 .employees-container__body-actions-block {
-  display: flex;
-  flex-direction: row;
+  @include flexRow
 }

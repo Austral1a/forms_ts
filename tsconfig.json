@@ -14,7 +14,9 @@
       "@StoreErrors": ["src/Store/Errors/"],
       "@StoreLogin": ["src/Store/Login/"],
       "@Employees": ["src/Employees/"],
-      "@Assets": ["src/assets/"]
+      "@Login": ["src/Login/"],
+      "@Assets": ["src/assets/"],
+      "@API": ["src/API/"],
     },
     "allowJs": true,
     "skipLibCheck": true,

@@ -149,3 +149,5 @@ export const deleteEmployeeFail = (error: Error): DeleteEmployeeFail => ({
   error: true,
 });
 ///////////////////////////////////////////
+
+export type GetEmployeesAction = GetEmployeesSuccess | GetEmployeesFail;

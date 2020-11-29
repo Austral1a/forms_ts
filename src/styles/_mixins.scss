@@ -1,0 +1,31 @@
+@mixin justifyAlignItemsCenter {
+  align-items: center;
+  justify-items: center;
+}
+
+@mixin modalFormShadow {
+  -webkit-box-shadow: -1px 1px 8px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: -1px 1px 8px 4px rgba(0, 0, 0, 0.5);
+}
+
+@mixin employeeBlockShadow {
+  -webkit-box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.42);
+  box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.42);
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin employeeElementGrid {
+  display: grid;
+  @include justifyAlignItemsCenter;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 40px;
+}
