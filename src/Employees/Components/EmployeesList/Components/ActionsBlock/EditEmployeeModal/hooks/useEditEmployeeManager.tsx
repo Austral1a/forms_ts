@@ -22,19 +22,7 @@ export const useEditEmployeeManager = ({
   const dispatch = useDispatch();
   const { id } = employeeValues;
   const { firstName, lastName, email, position } = employeeValues;
-  const [
-    employeeFieldsValues,
-    setEmployeeFieldValues,
-  ] = useState<EmployeeModalFormFields>({
-    firstName: firstName,
-    lastName: lastName,
-    email: email,
-    position: position,
-  });
-  useEffect(() => {
-    setEmployeeFieldValues({ firstName, lastName, email, position });
-    console.log(firstName, lastName, email, position);
-  }, [firstName, lastName, email, position]);
+  const employeeFieldsValues = { firstName, lastName, email, position };
   const {
     button: { editText },
   } = translations;

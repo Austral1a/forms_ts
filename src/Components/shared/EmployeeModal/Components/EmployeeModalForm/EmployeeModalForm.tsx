@@ -51,16 +51,6 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
       e.preventDefault();
       dispatchAction(formikContext);
       handleClose();
-      const employeeModalFormFieldsInitValues = {
-        firstName: "",
-        lastName: "",
-        email: "",
-        position: "",
-      };
-      formikContext.setFormikState((prevState) => {
-        prevState.values = { ...employeeModalFormFieldsInitValues };
-        return prevState;
-      });
     },
     [dispatchAction, formikContext, handleClose]
   );
