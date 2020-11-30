@@ -12,8 +12,18 @@ export interface EmployeeAwareState {
   employeesReducer: EmployeesState;
 }
 
+export interface EmployeePositionsAwareState {
+  employeePositionsReducer: EmployeePositionsState;
+}
+
 export interface EmployeesState {
   employees: EmployeeResponse[];
+  name: string;
+  message: string;
+}
+
+export interface EmployeePositionsState {
+  employee_positions: EmployeePositions;
   name: string;
   message: string;
 }
@@ -45,13 +55,20 @@ export interface DeleteEmployeePayload {
 ////////////////////////
 
 //////EMPLOYEE POSITIONS///
+export type EmployeePositions = string[] | [];
 export interface GetEmployeePositionsSuccessPayload {
-  employee_positions: string[];
+  employee_positions: EmployeePositions;
 }
 ///////////////////////
 
 export interface GetEmployeeState {
   employees: EmployeeModalFormFields[];
+  name: string;
+  message: string;
+}
+
+export interface GetEmployeePositionsState {
+  employee_positions: EmployeePositions;
   name: string;
   message: string;
 }
