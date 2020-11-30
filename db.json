@@ -91,6 +91,11 @@
       "email": "asdasd@asd.com",
       "password": "asdasdasd",
       "id": 17
+    },
+    {
+      "email": "wdd@d.com",
+      "password": "wwwwwww",
+      "id": 18
     }
   ],
   "employees": [
@@ -165,11 +170,18 @@
       "id": 39
     },
     {
-      "firstName": "JOHN",
+      "firstName": "JOHNs",
       "lastName": "GETRID",
       "email": "rid@di.com",
-      "position": "Developer",
+      "position": "QA",
       "id": 40
+    },
+    {
+      "firstName": "john",
+      "lastName": "smith",
+      "email": "smith@johnc.om",
+      "position": "Developer",
+      "id": 41
     }
   ]
 }

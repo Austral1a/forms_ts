@@ -3,12 +3,7 @@ import { Form, Button, InputField, useFields } from "@Components";
 import { FormikProps, useFormikContext } from "formik";
 import { translations } from "@helpers";
 import { LoginFormFieldsValues, usePasswordIconManager } from "@Login";
-import {
-  email as emailSvg,
-  pswd_visibility_off,
-  pswd_visibility_on,
-  password as passwordSvg,
-} from "@Assets";
+import { email as emailSvg, password as passwordSvg } from "@Assets";
 
 enum LoginFormFields {
   PASSWORD = "password",
@@ -41,10 +36,10 @@ export const LoginForm: FC<LoginFormProps> = ({
   );
 
   const {
-    handlePswdIconMouseDown,
-    handlePswdIconMouseUp,
+    handlePswdVisibilityIconMouseDown,
+    handlePswdVisibilityIconMouseUp,
     pswdInputType,
-    setPswdIcon,
+    setPswdVisibilityIcon,
   } = usePasswordIconManager();
   const isFormValid =
     // fields values must presence
@@ -69,9 +64,9 @@ export const LoginForm: FC<LoginFormProps> = ({
       />
       <InputField
         type={pswdInputType}
-        passwordVisibilityIcon={setPswdIcon}
-        handlePswdIconMouseDown={handlePswdIconMouseDown}
-        handlePswdIconMouseUp={handlePswdIconMouseUp}
+        passwordVisibilityIcon={setPswdVisibilityIcon}
+        handlePswdIconMouseDown={handlePswdVisibilityIconMouseDown}
+        handlePswdIconMouseUp={handlePswdVisibilityIconMouseUp}
         name={LoginFormFields.PASSWORD}
         touched={passwordField.touched}
         error={passwordField.error}
