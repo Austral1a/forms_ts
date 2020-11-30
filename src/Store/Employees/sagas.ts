@@ -12,15 +12,26 @@ import {
   EmployeeActionTypes,
   getEmployeeFail,
   getEmployeeSuccess,
+  EmployeeResponse,
+  getEmployeePositionsSuccess,
+  getEmployeePositionsFail,
 } from "@StoreEmployees";
 import {
   createEmployee,
   deleteEmployee,
   editEmployee,
   getEmployees,
-} from "../../API";
+  getEmployeePositions,
+} from "@API";
 
-import { EmployeeResponse } from "./interfaces";
+export function* getEmployeePositionsSaga() {
+  try {
+    const employee_positions = yield call(getEmployeePositions);
+    yield put(getEmployeePositionsSuccess(employee_positions));
+  } catch (e) {
+    yield put(getEmployeePositionsFail(e));
+  }
+}
 
 export function* createEmployeeSaga(action: CreateEmployeeRequest) {
   try {
