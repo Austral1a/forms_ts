@@ -8,6 +8,7 @@ const fetchErrors = [
   EmployeeActionTypes.CREATE_EMPLOYEE_FAIL,
   EmployeeActionTypes.DELETE_EMPLOYEE_FAIL,
   EmployeeActionTypes.GET_EMPLOYEES_FAIL,
+  EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_FAIL,
 ];
 
 export function* watchErrors() {
