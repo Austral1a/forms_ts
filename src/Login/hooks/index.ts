@@ -1,1 +1,2 @@
-export * from "./usePasswordIconManagement";
+export * from "./usePasswordIconManager";
+export * from "./useLoginManager";

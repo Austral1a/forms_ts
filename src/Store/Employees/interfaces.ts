@@ -12,8 +12,18 @@ export interface EmployeeAwareState {
   employeesReducer: EmployeesState;
 }
 
+export interface EmployeePositionsAwareState {
+  employeePositionsReducer: EmployeePositionsState;
+}
+
 export interface EmployeesState {
   employees: EmployeeResponse[];
+  name: string;
+  message: string;
+}
+
+export interface EmployeePositionsState {
+  employee_positions: EmployeePositions;
   name: string;
   message: string;
 }
@@ -27,14 +37,22 @@ export interface EmployeeResponse {
 }
 
 /////CREATE EMPLOYEE///////////
-export interface CreateEmployeePayload {
-  employee: EmployeeResponse;
+export interface CreateEmployeeSuccessPayload {
+  employee: EmployeeModalFormFields;
+}
+export interface CreateEmployeeFailPayload {
+  name: string;
+  message: string;
 }
 /////////////////////////////
 
 //////GET EMPLOYEES//////////////
-export interface GetEmployeesPayload {
+export interface GetEmployeesSuccessPayload {
   employees: EmployeeResponse[];
+}
+export interface GetEmployeesFailPayload {
+  name: string;
+  message: string;
 }
 /////////////////////////////
 
@@ -44,8 +62,21 @@ export interface DeleteEmployeePayload {
 }
 ////////////////////////
 
+//////EMPLOYEE POSITIONS///
+export type EmployeePositions = string[] | [];
+export interface GetEmployeePositionsSuccessPayload {
+  employee_positions: EmployeePositions;
+}
+///////////////////////
+
 export interface GetEmployeeState {
   employees: EmployeeModalFormFields[];
+  name: string;
+  message: string;
+}
+
+export interface GetEmployeePositionsState {
+  employee_positions: EmployeePositions;
   name: string;
   message: string;
 }

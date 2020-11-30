@@ -1,0 +1,14 @@
+@import "../../../../styles/variables";
+.select-container {
+  display: grid;
+  grid-template-columns: 195px;
+  grid-template-rows: 30px 20px;
+  &__select {
+    padding: 4px 2px;
+    border-radius: $main-border-radius;
+  }
+  &__error {
+    width: 100%;
+    color: $text-error;
+  }
+}

@@ -1,32 +1,33 @@
 @import "../../../../styles/variables";
+@import "../../../../styles/mixins";
 
 .input-container {
   display: grid;
-  grid-template-columns: 1fr;
+  // TODO: Extract 195px into var
+  grid-template-columns: 195px;
   grid-template-rows: 30px 50px;
   position: relative;
 
-  .input-container__input {
-    padding: 3px 0 3px 25px;
+  &__input {
+    padding: 3px 25px 3px 25px;
     border-radius: 4px;
   }
 
-  .input-container__error {
+  &__error {
     color: $text-error;
   }
 
-  .input-container__input_error {
+  &__input_error {
     border-bottom: 2px solid $input-error;
   }
 
-  .input-container__icon {
-    img {
-      width: 20px;
-      height: 20px;
-      opacity: 0.8;
-    }
-    position: absolute;
-    top: 5px;
+  &__icon {
+    @include inputFieldIcon;
     left: 5px;
+  }
+
+  &__pswd-visibility-icon {
+    @include inputFieldIcon;
+    right: 5px;
   }
 }

@@ -2,12 +2,8 @@ import React, { FC, ReactElement, useCallback } from "react";
 import { Form, Button, InputField, useFields } from "@Components";
 import { FormikProps, useFormikContext } from "formik";
 import { translations } from "@helpers";
-import { LoginFormFieldsValues } from "@Login";
-import {
-  email as emailSvg,
-  pswd_visibility_off,
-  pswd_visibility_on,
-} from "@Assets";
+import { LoginFormFieldsValues, usePasswordIconManager } from "@Login";
+import { email as emailSvg, password as passwordSvg } from "@Assets";
 
 enum LoginFormFields {
   PASSWORD = "password",
@@ -39,6 +35,12 @@ export const LoginForm: FC<LoginFormProps> = ({
     [login, formikContext]
   );
 
+  const {
+    handlePswdVisibilityIconMouseDown,
+    handlePswdVisibilityIconMouseUp,
+    pswdInputType,
+    setPswdVisibilityIcon,
+  } = usePasswordIconManager();
   const isFormValid =
     // fields values must presence
     !!formikContext.values.email &&
@@ -56,20 +58,21 @@ export const LoginForm: FC<LoginFormProps> = ({
         error={emailField.error}
         value={emailField.value}
         placeholder={emailText}
-        // TODO: Create visibility switcher
         icon={emailSvg}
         onChange={emailField.onChange}
         onBlur={emailField.onBlur}
       />
       <InputField
-        type="password"
+        type={pswdInputType}
+        passwordVisibilityIcon={setPswdVisibilityIcon}
+        handlePswdVisibilityIconMouseDown={handlePswdVisibilityIconMouseDown}
+        handlePswdVisibilityIconMouseUp={handlePswdVisibilityIconMouseUp}
         name={LoginFormFields.PASSWORD}
         touched={passwordField.touched}
         error={passwordField.error}
         value={passwordField.value}
         placeholder={passwordText}
-        // TODO: Create visibility switcher
-        icon={pswd_visibility_off}
+        icon={passwordSvg}
         onChange={passwordField.onChange}
         onBlur={passwordField.onBlur}
       />

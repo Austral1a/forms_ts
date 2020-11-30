@@ -9,6 +9,7 @@ interface EmployeeModalProps {
   className?: string;
   isModalOpen: boolean;
   handleClose: () => void;
+  cleanFormFieldValues?: boolean;
   dispatchAction: (props: FormikProps<EmployeeModalFormFields>) => void;
 }
 
@@ -19,6 +20,7 @@ export const EmployeeModal: FC<EmployeeModalProps> = ({
   dispatchAction,
   isModalOpen,
   className,
+  cleanFormFieldValues,
 }) => {
   const employee: EmployeeModalFormFields = {
     firstName: employeeFieldsValues?.firstName || "",
@@ -29,6 +31,7 @@ export const EmployeeModal: FC<EmployeeModalProps> = ({
   return (
     <Formik initialValues={employee} onSubmit={handleClose}>
       <EmployeeModalForm
+        cleanFormFieldValues={cleanFormFieldValues}
         isModalOpen={isModalOpen}
         className={className}
         submitBtnText={submitBtnText}

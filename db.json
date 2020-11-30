@@ -1,6 +1,6 @@
 {
   "meta": {
-    "employees_positions": [
+    "employee_positions": [
       "Manager",
       "Developer",
       "QA"
@@ -9,7 +9,42 @@
   "users": [
 
   ],
-  "employees": [
 
+  "employees": [
+    {
+      "firstName": "AAA",
+      "lastName": "AAA",
+      "email": "aa@d.comk",
+      "position": "QA",
+      "id": 31
+    },
+    {
+      "firstName": "johns",
+      "lastName": "smiths",
+      "email": "smith@smic.om",
+      "position": "Manager",
+      "id": 37
+    },
+    {
+      "firstName": "JOHN",
+      "lastName": "smith",
+      "email": "smigh@c.om",
+      "position": "Developer",
+      "id": 39
+    },
+    {
+      "firstName": "JOHNs",
+      "lastName": "GETRID",
+      "email": "rid@di.com",
+      "position": "QA",
+      "id": 40
+    },
+    {
+      "firstName": "john",
+      "lastName": "smith",
+      "email": "smith@johnc.om",
+      "position": "Developer",
+      "id": 41
+    }
   ]
 }
