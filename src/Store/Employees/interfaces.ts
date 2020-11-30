@@ -37,14 +37,22 @@ export interface EmployeeResponse {
 }
 
 /////CREATE EMPLOYEE///////////
-export interface CreateEmployeePayload {
+export interface CreateEmployeeSuccessPayload {
   employee: EmployeeModalFormFields;
+}
+export interface CreateEmployeeFailPayload {
+  name: string;
+  message: string;
 }
 /////////////////////////////
 
 //////GET EMPLOYEES//////////////
-export interface GetEmployeesPayload {
+export interface GetEmployeesSuccessPayload {
   employees: EmployeeResponse[];
+}
+export interface GetEmployeesFailPayload {
+  name: string;
+  message: string;
 }
 /////////////////////////////
 

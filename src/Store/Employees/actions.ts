@@ -1,9 +1,10 @@
 import {
   CreateEmployeePayload,
   DeleteEmployeePayload,
-  GetEmployeesPayload,
+  GetEmployeesSuccessPayload,
   EmployeeResponse,
   GetEmployeePositionsSuccessPayload,
+  GetEmployeesFailPayload,
 } from "./interfaces";
 import { ErrorFSAAuto, FSAAuto } from "flux-standard-action";
 import { EmployeeModalFormFields } from "@Employees";
@@ -43,14 +44,11 @@ export const getEmployeePositionsAction = (): GetEmployeePositionsRequest => ({
   type: EmployeeActionTypes.GET_EMPLOYEE_POSITIONS,
 });
 export const getEmployeePositionsSuccess = (
-  positions: GetEmployeePositionsSuccessPayload
+  payload: GetEmployeePositionsSuccessPayload
 ): GetEmployeePositionsSuccess => {
-  const { employee_positions } = positions;
   return {
     type: EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_SUCCESS,
-    payload: {
-      employee_positions,
-    },
+    payload,
   };
 };
 export const getEmployeePositionsFail = (
@@ -82,7 +80,7 @@ export type CreateEmployeeFail = ErrorFSAAuto<
   Error
 >;
 export const createEmployeeAction = (
-  employee: EmployeeModalFormFields
+  payload:
 ): CreateEmployeeRequest => ({
   type: EmployeeActionTypes.CREATE_EMPLOYEE,
   payload: {
@@ -109,7 +107,7 @@ export type GetEmployeeRequest = FSAAuto<
 >;
 export type GetEmployeesSuccess = FSAAuto<
   typeof EmployeeActionTypes.GET_EMPLOYEES_SUCCESS,
-  GetEmployeesPayload
+  GetEmployeesSuccessPayload
 >;
 export type GetEmployeesFail = ErrorFSAAuto<
   typeof EmployeeActionTypes.GET_EMPLOYEES_FAIL,
@@ -120,18 +118,17 @@ export const getEmployeesAction = (): GetEmployeeRequest => ({
 });
 
 export const getEmployeeSuccess = (
-  employees: EmployeeResponse[]
+  payload: GetEmployeesSuccessPayload
 ): GetEmployeesSuccess => ({
   type: EmployeeActionTypes.GET_EMPLOYEES_SUCCESS,
-  payload: { employees },
+  payload,
 });
 
-export const getEmployeeFail = (error: Error): GetEmployeesFail => ({
+export const getEmployeeFail = (
+  payload: GetEmployeesFailPayload
+): GetEmployeesFail => ({
   type: EmployeeActionTypes.GET_EMPLOYEES_FAIL,
-  payload: {
-    name: error.name,
-    message: error.message,
-  },
+  payload,
   error: true,
 });
 ////////////////////////////////////////////

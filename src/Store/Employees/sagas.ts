@@ -48,7 +48,7 @@ export function* createEmployeeSaga(action: CreateEmployeeRequest) {
 export function* getEmployeesSaga() {
   try {
     const employees: EmployeeResponse[] = yield call(getEmployees);
-    yield put(getEmployeeSuccess(employees));
+    yield put(getEmployeeSuccess({ employees }));
   } catch (e) {
     yield put(getEmployeeFail(e));
   }
@@ -84,6 +84,6 @@ export function* watchEmployees() {
       EmployeeActionTypes.DELETE_EMPLOYEE_SUCCESS,
     ]);
     const employees: EmployeeResponse[] = yield call(getEmployees);
-    yield put(getEmployeeSuccess(employees));
+    yield put(getEmployeeSuccess({ employees }));
   }
 }
