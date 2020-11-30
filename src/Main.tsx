@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Login } from "@Login";
 import { Employees } from "@Employees";
@@ -6,14 +6,13 @@ import { useSelector } from "react-redux";
 import { ErrorHandler } from "./ErrorHandler";
 import { selectIsUserLoggedIn } from "@StoreLogin";
 
-export const Main: FC = () => {
-  const isUserLoggedIn = useSelector(selectIsUserLoggedIn);
-
+export const Main: FC = (): ReactElement => {
+  // const isUserLoggedIn = useSelector(selectIsUserLoggedIn);
+  const isUserLoggedIn = true;
   return (
     <>
       <ErrorHandler />
-      <Employees />
-      {/*<Router>
+      <Router>
         <Route path="/">
           {isUserLoggedIn ? (
             <Redirect to="/employees" />
@@ -27,7 +26,7 @@ export const Main: FC = () => {
         <Route path="/employees">
           <Employees />
         </Route>
-      </Router>*/}
+      </Router>
     </>
   );
 };

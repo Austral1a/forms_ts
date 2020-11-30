@@ -3,12 +3,11 @@ import { useMemo } from "react";
 import {
   emailValidationRule,
   nameValidationRule,
-  passwordValidationRule,
   positionsValidationRule,
 } from "@helpers";
 import { EmployeeFormFields } from "@Components";
 
-export interface FieldValues {
+export interface EmployeeFormFieldValues {
   value: string;
   touched: boolean;
   error: string | undefined;
@@ -17,29 +16,22 @@ export interface FieldValues {
   onChange: FormikHandlers["handleChange"];
 }
 
-export interface FieldsResult {
-  firstNameField: FieldValues;
-  lastNameField: FieldValues;
-  positionField: FieldValues;
-  passwordField: FieldValues;
-  emailField: FieldValues;
+export interface EmployeeFormFieldsResult {
+  firstNameField: EmployeeFormFieldValues;
+  lastNameField: EmployeeFormFieldValues;
+  positionField: EmployeeFormFieldValues;
+  emailField: EmployeeFormFieldValues;
 }
 
-export const useFields = (): FieldsResult => {
+export const useEmployeeFormFields = (): EmployeeFormFieldsResult => {
   const emailValidator = useMemo(() => emailValidationRule(), []);
   const nameValidator = useMemo(() => nameValidationRule(), []);
-  const passwordValidator = useMemo(() => passwordValidationRule(), []);
   const positionsValidator = useMemo(() => positionsValidationRule(), []);
 
   const [fieldEmail, metaEmail, helperEmail] = useField<string>({
     id: EmployeeFormFields.EMAIL,
     name: EmployeeFormFields.EMAIL,
     validate: emailValidator,
-  });
-  const [fieldPassword, metaPassword, helperPassword] = useField<string>({
-    id: EmployeeFormFields.PASSWORD,
-    name: EmployeeFormFields.PASSWORD,
-    validate: passwordValidator,
   });
   const [fieldPosition, metaPosition, helperPosition] = useField<string>({
     id: EmployeeFormFields.POSITION,
@@ -88,14 +80,6 @@ export const useFields = (): FieldsResult => {
       error: metaPosition.error,
       onBlur: fieldPosition.onBlur,
       onChange: fieldPosition.onChange,
-    },
-    passwordField: {
-      value: fieldPassword.value,
-      touched: metaPassword.touched,
-      setValue: helperPassword.setValue,
-      error: metaPassword.error,
-      onBlur: fieldPassword.onBlur,
-      onChange: fieldPassword.onChange,
     },
   };
 };

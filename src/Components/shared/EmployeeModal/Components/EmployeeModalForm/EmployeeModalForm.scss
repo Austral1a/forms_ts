@@ -1,0 +1,12 @@
+.employee-modal {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  &:first-child {
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border: none;
+  }
+}

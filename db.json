@@ -7,27 +7,16 @@
     ]
   },
   "users": [
-
+    {
+      "email": "dasda@asd.com",
+      "password": "asdasdsad",
+      "id": 1
+    }
   ],
-
   "employees": [
     {
-      "firstName": "AAA",
-      "lastName": "AAA",
-      "email": "aa@d.comk",
-      "position": "QA",
-      "id": 31
-    },
-    {
-      "firstName": "johns",
+      "firstName": "JOHNxx",
       "lastName": "smiths",
-      "email": "smith@smic.om",
-      "position": "Manager",
-      "id": 37
-    },
-    {
-      "firstName": "JOHN",
-      "lastName": "smith",
       "email": "smigh@c.om",
       "position": "Developer",
       "id": 39
@@ -45,6 +34,20 @@
       "email": "smith@johnc.om",
       "position": "Developer",
       "id": 41
+    },
+    {
+      "firstName": "MUST",
+      "lastName": "BE",
+      "email": "CLEAN@clean.ua",
+      "position": "Manager",
+      "id": 42
+    },
+    {
+      "firstName": "a",
+      "lastName": "tak",
+      "email": "a@a.com",
+      "position": "Manager",
+      "id": 43
     }
   ]
 }

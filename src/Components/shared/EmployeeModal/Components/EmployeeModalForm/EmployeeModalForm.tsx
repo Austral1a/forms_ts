@@ -1,25 +1,24 @@
-import { Button, Form, SelectField, InputField, useFields } from "@Components";
-import { person as personSvg, email as emailSvg } from "@Assets";
-import React, { FC, ReactElement, useCallback, useEffect } from "react";
+import React, { FC, ReactElement, useCallback } from "react";
+import { Button, Form, SelectField, InputField } from "@Components";
+import { useEmployeeFormFields } from "./hooks";
+import { useDispatch, useSelector } from "react-redux";
+import { personIcon, emailIcon } from "@Assets";
 import { FormikProps, useFormikContext } from "formik";
 import { EmployeeModalFormFields } from "@Employees";
 import { translations } from "@helpers";
 import classNames from "classnames";
 import Modal from "react-modal";
+import "./EmployeeModalForm.scss";
 import {
-  createEmployeeAction,
   getEmployeePositionsAction,
-  getEmployeesAction,
   selectEmployeePositions,
 } from "@StoreEmployees";
-import { useDispatch, useSelector } from "react-redux";
 
 export enum EmployeeFormFields {
   FIRST_NAME = "firstName",
   LAST_NAME = "lastName",
   EMAIL = "email",
   POSITION = "position",
-  PASSWORD = "password",
 }
 
 interface EmployeeModalFormProps {
@@ -27,7 +26,6 @@ interface EmployeeModalFormProps {
   isModalOpen: boolean;
   className?: string;
   submitBtnText: string;
-  cleanFormFieldValues?: boolean;
   dispatchAction: (props: FormikProps<EmployeeModalFormFields>) => void;
 }
 
@@ -39,7 +37,6 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
   submitBtnText,
   className,
   isModalOpen,
-  cleanFormFieldValues,
 }): ReactElement => {
   const formikContext = useFormikContext<EmployeeModalFormFields>();
   const dispatch = useDispatch();
@@ -49,7 +46,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     firstNameField,
     lastNameField,
     positionField,
-  } = useFields();
+  } = useEmployeeFormFields();
   const {
     field: { firstNameText, lastNameText, emailText },
     button: { closeText },
@@ -63,57 +60,31 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     },
     [dispatchAction, formikContext, handleClose]
   );
-  const onAfterModalOpen = useCallback(
+  const onModalOpen = useCallback(
     () => dispatch(getEmployeePositionsAction()),
     [dispatch]
   );
 
-  const onAfterModalClose = useCallback(() => {
-    const employeeModalFormFieldsInitValues = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      position: "",
-    };
-    cleanFormFieldValues &&
-      formikContext.setFormikState((prevState) => {
-        prevState.values = { ...employeeModalFormFieldsInitValues };
-        return prevState;
-      });
-  }, [formikContext, cleanFormFieldValues]);
+  const onModalClose = useCallback(() => {
+    formikContext.resetForm({
+      values: { ...formikContext.initialValues },
+      errors: { ...formikContext.initialErrors },
+    });
+  }, [formikContext]);
 
   const employeePositions = useSelector(selectEmployeePositions);
   const isFormValid =
-    // fields values must presence
-    !!formikContext.values.email &&
-    !!formikContext.values.firstName &&
-    !!formikContext.values.lastName &&
-    !!formikContext.values.position &&
-    // fields errors must absence
-    !formikContext.errors.email &&
-    !formikContext.errors.firstName &&
-    !formikContext.errors.lastName &&
-    !formikContext.errors.position;
+    !Object.values(formikContext.values).includes("") &&
+    !Object.keys(formikContext.errors).length;
   const customClasses = classNames("modal-container__modal form", className);
   return (
     <>
       {isModalOpen && (
         <Modal
-          onAfterOpen={onAfterModalOpen}
-          onAfterClose={onAfterModalClose}
+          onAfterOpen={onModalOpen}
+          onAfterClose={onModalClose}
           isOpen={isModalOpen}
-          style={{
-            overlay: {
-              backgroundColor: "rgba(0, 0, 0, .6)",
-            },
-            content: {
-              display: "flex",
-              alignContent: "center",
-              justifyContent: "center",
-              background: "none",
-              border: "none",
-            },
-          }}
+          className="employee-modal"
         >
           <Form
             onSubmit={onSubmit}
@@ -128,7 +99,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
             />
             <InputField
               placeholder={firstNameText}
-              icon={personSvg}
+              icon={personIcon}
               name={EmployeeFormFields.FIRST_NAME}
               value={firstNameField.value}
               touched={firstNameField.touched}
@@ -138,7 +109,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
             />
             <InputField
               placeholder={lastNameText}
-              icon={personSvg}
+              icon={personIcon}
               name={EmployeeFormFields.LAST_NAME}
               value={lastNameField.value}
               touched={lastNameField.touched}
@@ -148,7 +119,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
             />
             <InputField
               placeholder={emailText}
-              icon={emailSvg}
+              icon={emailIcon}
               name={EmployeeFormFields.EMAIL}
               value={emailField.value}
               touched={emailField.touched}

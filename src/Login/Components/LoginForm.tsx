@@ -1,13 +1,18 @@
 import React, { FC, ReactElement, useCallback } from "react";
-import { Form, Button, InputField, useFields } from "@Components";
+import { Form, Button, InputField } from "@Components";
+import { useLoginFormFields, usePasswordIconManager } from "@Login";
 import { FormikProps, useFormikContext } from "formik";
 import { translations } from "@helpers";
-import { LoginFormFieldsValues, usePasswordIconManager } from "@Login";
-import { email as emailSvg, password as passwordSvg } from "@Assets";
+import { emailIcon, passwordIcon } from "@Assets";
 
-enum LoginFormFields {
+export enum LoginFormFields {
   PASSWORD = "password",
   EMAIL = "email",
+}
+
+export interface LoginFormFieldsValues {
+  email: string;
+  password: string;
 }
 
 export interface LoginFormProps {
@@ -21,7 +26,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 }): ReactElement => {
   const formikContext = useFormikContext<LoginFormFieldsValues>();
 
-  const { passwordField, emailField } = useFields();
+  const { passwordField, emailField } = useLoginFormFields();
 
   const {
     field: { passwordText, emailText },
@@ -42,12 +47,8 @@ export const LoginForm: FC<LoginFormProps> = ({
     setPswdVisibilityIcon,
   } = usePasswordIconManager();
   const isFormValid =
-    // fields values must presence
-    !!formikContext.values.email &&
-    !!formikContext.values.password &&
-    // fields errors must absence
-    !formikContext.errors.email &&
-    !formikContext.errors.password;
+    !Object.values(formikContext.values).includes("") &&
+    !Object.keys(formikContext.errors).length;
 
   return (
     <Form className="form-login" onSubmit={onSubmit} isValid={isFormValid}>
@@ -58,7 +59,7 @@ export const LoginForm: FC<LoginFormProps> = ({
         error={emailField.error}
         value={emailField.value}
         placeholder={emailText}
-        icon={emailSvg}
+        icon={emailIcon}
         onChange={emailField.onChange}
         onBlur={emailField.onBlur}
       />
@@ -72,7 +73,7 @@ export const LoginForm: FC<LoginFormProps> = ({
         error={passwordField.error}
         value={passwordField.value}
         placeholder={passwordText}
-        icon={passwordSvg}
+        icon={passwordIcon}
         onChange={passwordField.onChange}
         onBlur={passwordField.onBlur}
       />

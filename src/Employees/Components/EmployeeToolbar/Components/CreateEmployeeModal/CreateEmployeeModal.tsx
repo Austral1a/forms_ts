@@ -16,7 +16,6 @@ export const CreateEmployeeModal: FC<CreateEmployeeModalProps> = ({
   const { createEmployee, submitBtnText } = useCreateEmployeeManager();
   return (
     <EmployeeModal
-      cleanFormFieldValues={true}
       isModalOpen={isCreateModalOpen}
       submitBtnText={submitBtnText}
       dispatchAction={createEmployee}

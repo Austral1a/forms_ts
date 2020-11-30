@@ -1,3 +1,3 @@
 export * from "./Components";
 export * from "./EmployeeModal";
-export * from "../FormFields/hooks";
+export * from "./Components/EmployeeModalForm/hooks";
