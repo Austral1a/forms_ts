@@ -3,16 +3,20 @@ import { FormikHandlers } from "formik";
 import { Option } from "@Components";
 import "./SelectField.scss";
 
-interface SelectFieldProps extends SelectHTMLAttributes<HTMLSelectElement> {
-  selectOptions: string[];
-  defaultValue?: string;
-  name: string;
-  error: string | undefined;
-  touched: boolean;
-  value: string;
+interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   onBlur: FormikHandlers["handleBlur"];
   onChange: FormikHandlers["handleChange"];
+  name: string;
+  value: string;
 }
+
+interface SelectFieldMetaProps {
+  selectOptions: string[];
+  error: string | undefined;
+  touched: boolean;
+}
+
+type SelectFieldProps = SelectProps & SelectFieldMetaProps;
 
 export const SelectField: FC<SelectFieldProps> = ({
   selectOptions,
