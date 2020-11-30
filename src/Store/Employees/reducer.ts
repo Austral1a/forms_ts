@@ -1,9 +1,10 @@
 import {
   EmployeeActionTypes,
+  GetEmployeePositionsAction,
+  GetEmployeePositionsState,
   GetEmployeesAction,
   GetEmployeeState,
 } from "@StoreEmployees";
-import { EmployeeModalFormFields } from "@Employees";
 
 const initState: GetEmployeeState = {
   employees: [],
@@ -36,5 +37,36 @@ export const employeesReducer = (
       };
     default:
       return state;
+  }
+};
+
+const employeePositionsInitState: GetEmployeePositionsState = {
+  employee_positions: [],
+  name: "",
+  message: "",
+};
+
+export const employeePositionsReducer = (
+  state = employeePositionsInitState,
+  action: GetEmployeePositionsAction
+) => {
+  switch (action.type) {
+    case EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_SUCCESS:
+      const {
+        payload: { employee_positions },
+      } = action;
+      return {
+        ...employeePositionsInitState,
+        employee_positions,
+      };
+    case EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_FAIL:
+      const {
+        payload: { name, message },
+      } = action;
+      return {
+        ...employeePositionsInitState,
+        name,
+        message,
+      };
   }
 };
