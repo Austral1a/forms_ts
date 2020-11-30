@@ -1,13 +1,23 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC, OptionHTMLAttributes, ReactElement } from "react";
 
-interface OptionProps {
+interface OptionProps extends OptionHTMLAttributes<HTMLOptionElement> {
   value: string;
+}
+
+interface OptionMetaProps {
   optionText: string;
 }
 
-export const Option: FC<OptionProps> = ({
+type OptionFieldProps = OptionProps & OptionMetaProps;
+
+export const Option: FC<OptionFieldProps> = ({
   value,
   optionText,
+  ...props
 }): ReactElement => {
-  return <option value={value}>{optionText}</option>;
+  return (
+    <option {...props} value={value}>
+      {optionText}
+    </option>
+  );
 };
