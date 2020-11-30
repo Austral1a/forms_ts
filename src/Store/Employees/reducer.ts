@@ -68,5 +68,7 @@ export const employeePositionsReducer = (
         name,
         message,
       };
+    default:
+      return state;
   }
 };
