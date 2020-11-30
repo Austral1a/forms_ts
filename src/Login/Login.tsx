@@ -1,6 +1,5 @@
 import React, { FC, useCallback } from "react";
 import { Formik, FormikProps } from "formik";
-import { usePasswordIconManagement } from "./hooks";
 import { useDispatch } from "react-redux";
 import { loginAction } from "@StoreLogin";
 import { translations } from "@helpers";
@@ -14,13 +13,6 @@ export interface LoginFormFieldsValues {
 }
 
 export const Login: FC = () => {
-  const {
-    setPswdIcon,
-    pswdInputType,
-    handlePswdIconMouseUp,
-    handlePswdIconMouseDown,
-  } = usePasswordIconManagement();
-
   const dispatch = useDispatch();
   const login = useCallback(
     (props: FormikProps<LoginFormFieldsValues>) => {

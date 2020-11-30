@@ -2,5 +2,9 @@ export interface LoginState {
   isLogged: boolean;
   email: string;
   password: string;
-  errorMessage: string;
+  name: string;
+  message: string;
+}
+export interface LoginAwareState {
+  loginReducer: LoginState;
 }

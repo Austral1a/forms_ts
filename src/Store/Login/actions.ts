@@ -34,8 +34,13 @@ export const loginSuccess = ({
   payload: { email, password } as LoginPayload,
 });
 
-export const loginFail = (error: Error): LoginFail => ({
-  type: LoginActionTypes.LOGIN_FAIL,
-  payload: { name: error.name, message: error.message },
-  error: true,
-});
+export const loginFail = (error: Error): LoginFail => {
+  const { name, message } = error;
+  return {
+    type: LoginActionTypes.LOGIN_FAIL,
+    payload: { name, message },
+    error: true,
+  };
+};
+
+export type LoginAction = LoginSuccess | LoginFail;
