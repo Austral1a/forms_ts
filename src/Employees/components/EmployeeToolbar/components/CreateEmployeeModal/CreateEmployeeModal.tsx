@@ -1,8 +1,6 @@
-import React, { FC, ReactElement, useCallback } from "react";
+import React, { FC, ReactElement } from "react";
 import { EmployeeModal } from "@Components";
 import { useCreateEmployeeManager } from "./hooks";
-import { useFormikContext } from "formik";
-import { EmployeeModalFormFields } from "../../../../Employees";
 
 interface CreateEmployeeModalProps {
   isCreateModalOpen: boolean;

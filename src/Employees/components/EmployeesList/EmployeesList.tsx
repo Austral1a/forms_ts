@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from "react";
 import { useEmployeesManager } from "./hooks";
-import { ActionsBlock } from "./Components";
+import { ActionsBlock } from "./components";
 import { translations } from "@helpers";
 
 export const EmployeesList: FC = (): ReactElement => {

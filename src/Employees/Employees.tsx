@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from "react";
-import { EmployeesList, EmployeeToolbar } from "./Components";
+import { EmployeesList, EmployeeToolbar } from "./components";
 import "./Employees.scss";
 
 export interface EmployeeModalFormFields {

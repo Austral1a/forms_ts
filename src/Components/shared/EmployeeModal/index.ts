@@ -1,3 +1,2 @@
-export * from "./Components";
+export * from "./components";
 export * from "./EmployeeModal";
-export * from "./Components/EmployeeModalForm/hooks";
