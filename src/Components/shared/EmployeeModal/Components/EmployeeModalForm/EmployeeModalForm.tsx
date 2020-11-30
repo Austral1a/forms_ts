@@ -1,11 +1,17 @@
 import { Button, Form, SelectField, InputField, useFields } from "@Components";
 import { person as personSvg, email as emailSvg } from "@Assets";
-import React, { FC, ReactElement, useCallback } from "react";
+import React, { FC, ReactElement, useCallback, useEffect } from "react";
 import { FormikProps, useFormikContext } from "formik";
 import { EmployeeModalFormFields } from "@Employees";
 import { translations } from "@helpers";
 import classNames from "classnames";
 import Modal from "react-modal";
+import {
+  getEmployeePositionsAction,
+  getEmployeesAction,
+  selectEmployeePositions,
+} from "@StoreEmployees";
+import { useDispatch, useSelector } from "react-redux";
 
 export enum EmployeeFormFields {
   FIRST_NAME = "firstName",
@@ -33,6 +39,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
   isModalOpen,
 }): ReactElement => {
   const formikContext = useFormikContext<EmployeeModalFormFields>();
+  const dispatch = useDispatch();
 
   const {
     emailField,
@@ -54,7 +61,10 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     },
     [dispatchAction, formikContext, handleClose]
   );
-
+  const onAfterModalOpen = () => {
+    dispatch(getEmployeePositionsAction());
+  };
+  const employeePositions = useSelector(selectEmployeePositions);
   const isFormValid =
     // fields values must presence
     !!formikContext.values.email &&
@@ -69,6 +79,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     <>
       {isModalOpen && (
         <Modal
+          onAfterOpen={onAfterModalOpen}
           isOpen={isModalOpen}
           style={{
             overlay: {
@@ -132,7 +143,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
               onBlur={positionField.onBlur}
               onChange={positionField.onChange}
               defaultValue={qa}
-              selectOptions={[qa, dev, manager]}
+              selectOptions={employeePositions}
             />
             <Button
               text={submitBtnText}
