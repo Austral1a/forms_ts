@@ -20,10 +20,9 @@ export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
 
   const createEmployee = useCallback(
     (props: CreateEmployeeProps) => {
-      const {
-        values: { firstName, lastName, email, position },
-      } = props;
-      dispatch(createEmployeeAction({ firstName, lastName, email, position }));
+      const { values } = props;
+      const employee = values;
+      dispatch(createEmployeeAction({ employee }));
     },
     [dispatch]
   );

@@ -1,10 +1,10 @@
 import {
-  CreateEmployeePayload,
   DeleteEmployeePayload,
   GetEmployeesSuccessPayload,
   EmployeeResponse,
   GetEmployeePositionsSuccessPayload,
   GetEmployeesFailPayload,
+  CreateEmployeeSuccessPayload,
 } from "./interfaces";
 import { ErrorFSAAuto, FSAAuto } from "flux-standard-action";
 import { EmployeeModalFormFields } from "@Employees";
@@ -69,7 +69,7 @@ export const getEmployeePositionsFail = (
 ///////CREATE EMPLOYEE///////////////////////////////////
 export type CreateEmployeeRequest = FSAAuto<
   typeof EmployeeActionTypes.CREATE_EMPLOYEE,
-  CreateEmployeePayload
+  CreateEmployeeSuccessPayload
 >;
 
 export type CreateEmployeeSuccess = FSAAuto<
@@ -80,12 +80,10 @@ export type CreateEmployeeFail = ErrorFSAAuto<
   Error
 >;
 export const createEmployeeAction = (
-  payload:
+  payload: CreateEmployeeSuccessPayload
 ): CreateEmployeeRequest => ({
   type: EmployeeActionTypes.CREATE_EMPLOYEE,
-  payload: {
-    employee,
-  },
+  payload,
 });
 export const createEmployeeSuccess = (): CreateEmployeeSuccess => ({
   type: EmployeeActionTypes.CREATE_EMPLOYEE_SUCCESS,
