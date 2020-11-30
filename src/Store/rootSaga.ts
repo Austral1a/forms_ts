@@ -6,6 +6,7 @@ import {
   deleteEmployeeSaga,
   editEmployeeSaga,
   watchEmployees,
+  getEmployeePositionsSaga,
 } from "./Employees";
 import { watchErrors } from "./Errors";
 import { all, takeLatest } from "redux-saga/effects";
@@ -17,6 +18,10 @@ export function* rootSaga() {
     yield takeLatest(EmployeeActionTypes.CREATE_EMPLOYEE, createEmployeeSaga),
     yield takeLatest(EmployeeActionTypes.DELETE_EMPLOYEE, deleteEmployeeSaga),
     yield takeLatest(EmployeeActionTypes.EDIT_EMPLOYEE, editEmployeeSaga),
+    yield takeLatest(
+      EmployeeActionTypes.GET_EMPLOYEE_POSITIONS,
+      getEmployeePositionsSaga
+    ),
     watchEmployees(),
     watchErrors(),
   ]);
