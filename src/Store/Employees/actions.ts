@@ -3,7 +3,6 @@ import {
   DeleteEmployeePayload,
   GetEmployeesPayload,
   EmployeeResponse,
-  GetEmployeePositions,
   GetEmployeePositionsSuccessPayload,
 } from "./interfaces";
 import { ErrorFSAAuto, FSAAuto } from "flux-standard-action";
