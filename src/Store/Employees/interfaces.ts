@@ -28,7 +28,7 @@ export interface EmployeeResponse {
 
 /////CREATE EMPLOYEE///////////
 export interface CreateEmployeePayload {
-  employee: EmployeeResponse;
+  employee: EmployeeModalFormFields;
 }
 /////////////////////////////
 
@@ -43,6 +43,12 @@ export interface DeleteEmployeePayload {
   id: number;
 }
 ////////////////////////
+
+//////EMPLOYEE POSITIONS///
+export interface GetEmployeePositionsSuccessPayload {
+  employee_positions: string[];
+}
+///////////////////////
 
 export interface GetEmployeeState {
   employees: EmployeeModalFormFields[];
