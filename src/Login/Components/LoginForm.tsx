@@ -65,14 +65,13 @@ export const LoginForm: FC<LoginFormProps> = ({
       <InputField
         type={pswdInputType}
         passwordVisibilityIcon={setPswdVisibilityIcon}
-        handlePswdIconMouseDown={handlePswdVisibilityIconMouseDown}
-        handlePswdIconMouseUp={handlePswdVisibilityIconMouseUp}
+        handlePswdVisibilityIconMouseDown={handlePswdVisibilityIconMouseDown}
+        handlePswdVisibilityIconMouseUp={handlePswdVisibilityIconMouseUp}
         name={LoginFormFields.PASSWORD}
         touched={passwordField.touched}
         error={passwordField.error}
         value={passwordField.value}
         placeholder={passwordText}
-        // TODO: Create visibility switcher
         icon={passwordSvg}
         onChange={passwordField.onChange}
         onBlur={passwordField.onBlur}

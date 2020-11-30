@@ -19,10 +19,10 @@ interface InputFieldMetaProps {
   error: string | undefined;
   icon: string;
   passwordVisibilityIcon?: string;
-  handlePswdIconMouseDown?: (
+  handlePswdVisibilityIconMouseDown?: (
     event: SyntheticEvent<HTMLImageElement, MouseEvent>
   ) => void;
-  handlePswdIconMouseUp?: (
+  handlePswdVisibilityIconMouseUp?: (
     event: SyntheticEvent<HTMLImageElement, MouseEvent>
   ) => void;
 }
@@ -34,8 +34,8 @@ export const InputField: FC<InputFieldProps> = ({
   error,
   icon,
   passwordVisibilityIcon,
-  handlePswdIconMouseDown,
-  handlePswdIconMouseUp,
+  handlePswdVisibilityIconMouseDown,
+  handlePswdVisibilityIconMouseUp,
   ...props
 }: InputFieldProps): ReactElement => {
   const { name, onBlur, onChange, className } = props;
@@ -58,8 +58,8 @@ export const InputField: FC<InputFieldProps> = ({
         <span className="input-container__pswd-visibility-icon">
           <img
             draggable={false}
-            onMouseDown={handlePswdIconMouseDown}
-            onMouseUp={handlePswdIconMouseUp}
+            onMouseDown={handlePswdVisibilityIconMouseDown}
+            onMouseUp={handlePswdVisibilityIconMouseUp}
             src={passwordVisibilityIcon}
             alt={"pswd_visibility"}
           />

@@ -100,27 +100,6 @@
   ],
   "employees": [
     {
-      "firstName": "Keekxwx",
-      "lastName": "lool",
-      "email": "lol@kek.com",
-      "position": "Manager",
-      "id": 26
-    },
-    {
-      "firstName": "NEWa",
-      "lastName": "employee",
-      "email": "new@d.com",
-      "position": "Developer",
-      "id": 27
-    },
-    {
-      "firstName": "Smith",
-      "lastName": "John",
-      "email": "john@com.com",
-      "position": "Developer",
-      "id": 28
-    },
-    {
       "firstName": "AAA",
       "lastName": "AAA",
       "email": "aa@d.comk",
@@ -128,39 +107,11 @@
       "id": 31
     },
     {
-      "firstName": "xzc",
-      "lastName": "zxc",
-      "email": "zxc@zxc.o",
-      "position": "QA",
-      "id": 33
-    },
-    {
-      "firstName": "xzc",
-      "lastName": "zxc",
-      "email": "zxc@zxc.o",
-      "position": "QA",
-      "id": 34
-    },
-    {
-      "firstName": "Uru",
-      "lastName": "rur",
-      "email": "uru@d.com",
-      "position": "Developer",
-      "id": 36
-    },
-    {
       "firstName": "johns",
       "lastName": "smiths",
       "email": "smith@smic.om",
       "position": "Manager",
       "id": 37
-    },
-    {
-      "firstName": "zxc",
-      "lastName": "zxc",
-      "email": "xzc@xzc.om",
-      "position": "Developer",
-      "id": 38
     },
     {
       "firstName": "JOHN",
