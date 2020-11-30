@@ -1,4 +1,4 @@
 export * from "./hooks";
 export * from "./ActionsBlock";
-export * from "./DeleteEmployeeModal";
-export * from "./EditEmployeeModal";
+export * from "./components/DeleteEmployeeModal";
+export * from "./components/EditEmployeeModal";

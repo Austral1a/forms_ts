@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Formik } from "formik";
-import { LoginForm } from "./Components";
+import { LoginForm } from "./components";
 import "../Components/common/Form/Form.scss";
 import "./Login.scss";
 import { useLoginManager } from "./hooks";

@@ -7,13 +7,13 @@ import { ErrorHandler } from "./ErrorHandler";
 import { selectIsUserLoggedIn } from "@StoreLogin";
 
 export const Main: FC = () => {
-  const isUserLoggedIn = useSelector(selectIsUserLoggedIn);
+  // const isUserLoggedIn = useSelector(selectIsUserLoggedIn);
+  const isUserLoggedIn = true;
 
   return (
     <>
       <ErrorHandler />
-      <Employees />
-      {/*<Router>
+      <Router>
         <Route path="/">
           {isUserLoggedIn ? (
             <Redirect to="/employees" />
@@ -27,7 +27,7 @@ export const Main: FC = () => {
         <Route path="/employees">
           <Employees />
         </Route>
-      </Router>*/}
+      </Router>
     </>
   );
 };

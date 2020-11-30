@@ -1,9 +1,11 @@
 import React, { FC, ReactElement, useCallback } from "react";
-import { Form, Button, InputField, useFields } from "@Components";
+import { Form, Button, InputField } from "@Components";
 import { FormikProps, useFormikContext } from "formik";
 import { translations } from "@helpers";
 import { LoginFormFieldsValues, usePasswordIconManager } from "@Login";
-import { email as emailSvg, password as passwordSvg } from "@Assets";
+import { emailIcon, password as passwordSvg } from "@Assets";
+import {useLoginFormFields} from './hooks';
+
 
 enum LoginFormFields {
   PASSWORD = "password",
@@ -21,7 +23,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 }): ReactElement => {
   const formikContext = useFormikContext<LoginFormFieldsValues>();
 
-  const { passwordField, emailField } = useFields();
+  const { passwordField, emailField } = useLoginFormFields();
 
   const {
     field: { passwordText, emailText },
@@ -58,7 +60,7 @@ export const LoginForm: FC<LoginFormProps> = ({
         error={emailField.error}
         value={emailField.value}
         placeholder={emailText}
-        icon={emailSvg}
+        icon={emailIcon}
         onChange={emailField.onChange}
         onBlur={emailField.onBlur}
       />
