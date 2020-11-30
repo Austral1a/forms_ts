@@ -1,10 +1,11 @@
 import React, { FC, ReactElement, SelectHTMLAttributes } from "react";
 import { FormikHandlers } from "formik";
 import { Option } from "@Components";
+import "./SelectField.scss";
 
 interface SelectFieldProps extends SelectHTMLAttributes<HTMLSelectElement> {
   selectOptions: string[];
-  defaultValue: string;
+  defaultValue?: string;
   name: string;
   error: string | undefined;
   touched: boolean;
@@ -15,7 +16,6 @@ interface SelectFieldProps extends SelectHTMLAttributes<HTMLSelectElement> {
 
 export const SelectField: FC<SelectFieldProps> = ({
   selectOptions,
-  defaultValue,
   name,
   value,
   error,

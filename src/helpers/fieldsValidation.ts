@@ -34,3 +34,12 @@ export const passwordValidationRule = () => {
     return;
   };
 };
+
+export const positionsValidationRule = () => {
+  return (positionsVal: string) => {
+    if (positionsVal === "Chose position") {
+      return ValidationMessages.invalidPosition;
+    }
+    return;
+  };
+};
