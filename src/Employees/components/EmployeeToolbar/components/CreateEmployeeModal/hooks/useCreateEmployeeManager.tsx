@@ -1,13 +1,11 @@
 import { createEmployeeAction } from "@StoreEmployees";
-import { EmployeeModalFormFields } from "@Employees";
 import { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
 import { translations } from "@helpers";
-
-type CreateEmployeeProps = { values: EmployeeModalFormFields };
+import { EmployeeModalFormFormikProps } from "@Components";
 
 interface CreateEmployeeManagerResult {
-  createEmployee: (props: CreateEmployeeProps) => void;
+  createEmployee: (props: EmployeeModalFormFormikProps) => void;
   submitBtnText: string;
   isCreateModalOpen: boolean;
   handleCreateModalClose: () => void;
@@ -19,7 +17,7 @@ export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
   const createEmployee = useCallback(
-    (props: CreateEmployeeProps) => {
+    (props: EmployeeModalFormFormikProps) => {
       const { values } = props;
       const employee = values;
       dispatch(createEmployeeAction({ employee }));

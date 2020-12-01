@@ -23,15 +23,18 @@ export const EmployeesList: FC = (): ReactElement => {
         <h4>{positionText}</h4>
         <h4>{actionsText}</h4>
       </div>
-      {employeesList.map((employee) => (
-        <div key={employee.id} className="employees-container__body-employee">
-          <h4>{employee.firstName}</h4>
-          <h4>{employee.lastName}</h4>
-          <h4>{employee.email}</h4>
-          <h4>{employee.position}</h4>
-          <ActionsBlock employeeValues={employee} />
-        </div>
-      ))}
+      {employeesList.map((employee) => {
+        const { firstName, lastName, email, position, id } = employee;
+        return (
+          <div key={id} className="employees-container__body-employee">
+            <h4>{firstName}</h4>
+            <h4>{lastName}</h4>
+            <h4>{email}</h4>
+            <h4>{position}</h4>
+            <ActionsBlock employeeValues={employee} />
+          </div>
+        );
+      })}
     </div>
   );
 };

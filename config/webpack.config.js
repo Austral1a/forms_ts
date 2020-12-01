@@ -333,7 +333,7 @@ module.exports = function (webpackEnv) {
         }),
         ...(modules.webpackAliases || {}),
         "@helpers": path.resolve(__dirname, "../src/helpers/"),
-        "@Components": path.resolve(__dirname, "../src/components/"),
+        "@Components": path.resolve(__dirname, "../src/Components/"),
         "@StoreEmployees": path.resolve(__dirname, "../src/Store/Employees/"),
         "@StoreErrors": path.resolve(__dirname, "../src/Store/Errors"),
         "@StoreLogin": path.resolve(__dirname, "../src/Store/Login"),

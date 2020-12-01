@@ -1,9 +1,15 @@
 import React, { FC, ReactElement, useCallback } from "react";
-import { Button, Form, SelectField, InputField } from "@Components";
+import {
+  Button,
+  Form,
+  SelectField,
+  InputField,
+  EmployeeModalFormFormikProps,
+} from "@Components";
 import { useEmployeeFormFields } from "./hooks";
 import { useDispatch, useSelector } from "react-redux";
 import { personIcon, emailIcon } from "@Assets";
-import { FormikProps, useFormikContext } from "formik";
+import { useFormikContext } from "formik";
 import { EmployeeModalFormFields } from "@Employees";
 import { translations } from "@helpers";
 import classNames from "classnames";
@@ -26,7 +32,7 @@ interface EmployeeModalFormProps {
   isModalOpen: boolean;
   className?: string;
   submitBtnText: string;
-  dispatchAction: (props: FormikProps<EmployeeModalFormFields>) => void;
+  dispatchAction: (props: EmployeeModalFormFormikProps) => void;
 }
 
 Modal.setAppElement("#root");
@@ -48,7 +54,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     positionField,
   } = useEmployeeFormFields();
   const {
-    field: { firstNameText, lastNameText, emailText },
+    field: { firstNameText, lastNameText, emailText, chosePositionText },
     button: { closeText },
   } = translations;
 
@@ -60,18 +66,16 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     },
     [dispatchAction, formikContext, handleClose]
   );
-  const onModalOpen = useCallback(
-    () => dispatch(getEmployeePositionsAction()),
-    [dispatch]
-  );
+  const onModalOpen = useCallback(() => {
+    dispatch(getEmployeePositionsAction());
+  }, [dispatch]);
 
   const onModalClose = useCallback(() => {
+    // TODO: edit employee doesnt update
     formikContext.resetForm({
       values: { ...formikContext.initialValues },
-      errors: { ...formikContext.initialErrors },
     });
   }, [formikContext]);
-
   const employeePositions = useSelector(selectEmployeePositions);
   const isFormValid =
     !Object.values(formikContext.values).includes("") &&
@@ -134,7 +138,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
               error={positionField.error}
               onBlur={positionField.onBlur}
               onChange={positionField.onChange}
-              selectOptions={["Chose position", ...employeePositions]}
+              selectOptions={[chosePositionText, ...employeePositions]}
             />
             <Button
               text={submitBtnText}

@@ -1,20 +1,23 @@
-import { call, put } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 
-import { loginSuccess, loginFail } from "./actions";
+import {
+  loginSuccess,
+  loginFail,
+  LoginRequest,
+  LoginActionTypes,
+} from "./actions";
 import { login } from "@API";
 
-interface Action {
-  type: string;
-  payload: { email: string; password: string; errorMessage: string };
-}
-
-// worker
-export function* loginSaga(action: Action) {
+export function* loginSaga(action: LoginRequest) {
   try {
     const { payload } = action;
     yield call(login, payload);
     yield put(loginSuccess(payload));
-  } catch (e) {
-    yield put(loginFail(e));
+  } catch (error) {
+    yield put(loginFail(error));
   }
+}
+
+export function* loginRootSaga() {
+  yield takeLatest(LoginActionTypes.LOGIN, loginSaga);
 }

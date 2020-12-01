@@ -13,7 +13,8 @@ interface LoginParams {
   password: string;
 }
 
-export const login = async ({ email, password }: LoginParams) => {
+export const login = async (loginValues: LoginParams) => {
+  const { email, password } = loginValues;
   const response = await fetch(url, {
     method: "POST",
     body: JSON.stringify({

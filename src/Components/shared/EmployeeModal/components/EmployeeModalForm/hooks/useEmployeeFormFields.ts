@@ -12,7 +12,6 @@ export interface EmployeeFormFieldValues {
   touched: boolean;
   error: string | undefined;
   onBlur: FormikHandlers["handleBlur"];
-  setValue: (value: string, shouldValidate?: boolean) => void;
   onChange: FormikHandlers["handleChange"];
 }
 
@@ -28,22 +27,22 @@ export const useEmployeeFormFields = (): EmployeeFormFieldsResult => {
   const nameValidator = useMemo(() => nameValidationRule(), []);
   const positionsValidator = useMemo(() => positionsValidationRule(), []);
 
-  const [fieldEmail, metaEmail, helperEmail] = useField<string>({
+  const [fieldEmail, metaEmail] = useField<string>({
     id: EmployeeFormFields.EMAIL,
     name: EmployeeFormFields.EMAIL,
     validate: emailValidator,
   });
-  const [fieldPosition, metaPosition, helperPosition] = useField<string>({
+  const [fieldPosition, metaPosition] = useField<string>({
     id: EmployeeFormFields.POSITION,
     name: EmployeeFormFields.POSITION,
     validate: positionsValidator,
   });
-  const [fieldLastName, metaLastName, helperLastName] = useField<string>({
+  const [fieldLastName, metaLastName] = useField<string>({
     id: EmployeeFormFields.LAST_NAME,
     name: EmployeeFormFields.LAST_NAME,
     validate: nameValidator,
   });
-  const [fieldFirstName, metaFirstName, helperFirstName] = useField<string>({
+  const [fieldFirstName, metaFirstName] = useField<string>({
     id: EmployeeFormFields.FIRST_NAME,
     name: EmployeeFormFields.FIRST_NAME,
     validate: nameValidator,
@@ -52,7 +51,6 @@ export const useEmployeeFormFields = (): EmployeeFormFieldsResult => {
     firstNameField: {
       value: fieldFirstName.value,
       touched: metaFirstName.touched,
-      setValue: helperFirstName.setValue,
       error: metaFirstName.error,
       onBlur: fieldFirstName.onBlur,
       onChange: fieldFirstName.onChange,
@@ -60,7 +58,6 @@ export const useEmployeeFormFields = (): EmployeeFormFieldsResult => {
     lastNameField: {
       value: fieldLastName.value,
       touched: metaLastName.touched,
-      setValue: helperLastName.setValue,
       error: metaLastName.error,
       onBlur: fieldLastName.onBlur,
       onChange: fieldLastName.onChange,
@@ -68,7 +65,6 @@ export const useEmployeeFormFields = (): EmployeeFormFieldsResult => {
     emailField: {
       value: fieldEmail.value,
       touched: metaEmail.touched,
-      setValue: helperEmail.setValue,
       error: metaEmail.error,
       onBlur: fieldEmail.onBlur,
       onChange: fieldEmail.onChange,
@@ -76,7 +72,6 @@ export const useEmployeeFormFields = (): EmployeeFormFieldsResult => {
     positionField: {
       value: fieldPosition.value,
       touched: metaPosition.touched,
-      setValue: helperPosition.setValue,
       error: metaPosition.error,
       onBlur: fieldPosition.onBlur,
       onChange: fieldPosition.onChange,

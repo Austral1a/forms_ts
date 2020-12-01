@@ -31,13 +31,13 @@ export const ActionsBlock: FC<ActionsBlockProps> = ({
         <Button
           className="employees-container__body_edit-employee"
           text={editText}
-          type={"button"}
+          type="button"
           onClick={onEditModalOpen}
         />
         <Button
           className="employees-container__body_delete-employee"
           text={deleteText}
-          type={"button"}
+          type="button"
           onClick={onDeleteModalOpen}
         />
       </div>

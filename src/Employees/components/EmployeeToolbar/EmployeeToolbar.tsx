@@ -1,7 +1,6 @@
 import React, { FC, ReactElement } from "react";
 import { Button } from "@Components";
 import { CreateEmployeeModal, useCreateEmployeeManager } from "./components";
-
 import { translations } from "@helpers";
 
 export const EmployeeToolbar: FC = (): ReactElement => {

@@ -1,10 +1,10 @@
 import { home } from "../url";
-import { GetEmployeePositionsSuccessPayload } from "@StoreEmployees";
+import { EmployeePositions } from "@StoreEmployees";
 
 export const getEmployeePositions = async (): Promise<
-  GetEmployeePositionsSuccessPayload | Error
+  EmployeePositions | Error
 > => {
-  const resource = `${home}/meta?=employee_positions`;
+  const resource = `${home}/meta?=employeePositions`;
   const response = await fetch(resource);
   if (!response.ok) {
     throw new Error("Failed to fetch employee positions");

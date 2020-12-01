@@ -3,6 +3,7 @@ import { ERROR_OCCURRED, ErrorOccurredCommit } from "./actions";
 interface InitState {
   errorMessage: string;
 }
+
 type ErrorOccurredAction = ErrorOccurredCommit;
 
 const initState: InitState = {

@@ -10,6 +10,8 @@ export enum LoginFormFields {
   EMAIL = "email",
 }
 
+export type LoginFormFormikProps = FormikProps<LoginFormFieldsValues>;
+
 export interface LoginFormFieldsValues {
   email: string;
   password: string;
@@ -17,7 +19,7 @@ export interface LoginFormFieldsValues {
 
 export interface LoginFormProps {
   submitBtnText: string;
-  login: (props: FormikProps<LoginFormFieldsValues>) => void;
+  login: (props: LoginFormFormikProps) => void;
 }
 
 export const LoginForm: FC<LoginFormProps> = ({

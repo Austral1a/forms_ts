@@ -28,21 +28,7 @@ export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
   return (
     <>
       {isModalOpen && (
-        <Modal
-          isOpen={isModalOpen}
-          style={{
-            overlay: {
-              backgroundColor: "rgba(0, 0, 0, .6)",
-            },
-            content: {
-              display: "flex",
-              alignContent: "center",
-              justifyContent: "center",
-              background: "none",
-              border: "none",
-            },
-          }}
-        >
+        <Modal isOpen={isModalOpen} className="employee-modal">
           <div className="modal-delete-confirmation">
             <h3 className="modal-delete-confirmation__text">{deleteConfirm}</h3>
             <div className="modal-delete-confirmation__options">

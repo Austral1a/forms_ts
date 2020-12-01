@@ -1,12 +1,11 @@
 import { useDispatch } from "react-redux";
 import { useCallback } from "react";
-import { FormikProps } from "formik";
 import { loginAction } from "@StoreLogin";
 import { translations } from "@helpers";
-import { LoginFormFieldsValues } from "@Login";
+import { LoginFormFormikProps } from "@Login";
 
 interface LoginManagerResult {
-  login: (props: FormikProps<LoginFormFieldsValues>) => void;
+  login: (props: LoginFormFormikProps) => void;
   createText: string;
   initialLoginFieldValues: {
     email: string;
