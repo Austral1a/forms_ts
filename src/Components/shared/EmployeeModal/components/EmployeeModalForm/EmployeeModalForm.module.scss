@@ -1,0 +1,35 @@
+@import "../../../../../styles/variables";
+.employee-modal {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  &:first-child {
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border: none;
+  }
+  &__form {
+    border-radius: $main-border-radius;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+    grid-template-rows: repeat(5, min-content);
+    justify-items: center;
+    align-content: center;
+    align-self: center;
+    height: 450px;
+    width: 350px;
+    position: relative;
+
+    &_close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    &_submit-btn {
+      margin-top: 25px;
+    }
+  }
+}

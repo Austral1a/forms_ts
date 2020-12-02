@@ -15,17 +15,10 @@
   ],
   "employees": [
     {
-      "firstName": "manageraaaa",
-      "lastName": "manage",
-      "email": "manager@m.com",
-      "position": "Developer",
-      "id": 43
-    },
-    {
-      "firstName": "NewNew",
+      "firstName": "NewNews",
       "lastName": "employee",
       "email": "new@new.com",
-      "position": "Developer",
+      "position": "Manager",
       "id": 44
     },
     {
@@ -132,6 +125,13 @@
       "email": "a@a.s",
       "position": "QA",
       "id": 59
+    },
+    {
+      "firstName": "d",
+      "lastName": "d",
+      "email": "d@d.com",
+      "position": "QA",
+      "id": 60
     }
   ]
 }

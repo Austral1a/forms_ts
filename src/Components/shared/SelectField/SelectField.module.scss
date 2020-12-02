@@ -1,11 +1,11 @@
 @import "../../../styles/variables";
 .select-container {
-  display: grid;
-  grid-template-columns: 195px;
-  grid-template-rows: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  width: $form-column-main-w;
   &__select {
-    padding: 4px 2px;
     border-radius: $main-border-radius;
+    height: 30px;
   }
   &__error {
     width: 100%;

@@ -2,6 +2,7 @@ import React, { FC, ReactElement } from "react";
 import { useEmployeesManager } from "./hooks";
 import { ActionsBlock } from "./components";
 import { translations } from "@helpers";
+import EmployeesStyles from "../../Employees.module.scss";
 
 export const EmployeesList: FC = (): ReactElement => {
   const { employeesList } = useEmployeesManager();
@@ -15,8 +16,8 @@ export const EmployeesList: FC = (): ReactElement => {
     },
   } = translations;
   return (
-    <div className="employees-container__body">
-      <div className="employees-container__body-header">
+    <div className={EmployeesStyles["employees-container__body"]}>
+      <div className={EmployeesStyles["employees-container__body-header"]}>
         <h4>{firstNameText}</h4>
         <h4>{lastNameText}</h4>
         <h4>{emailText}</h4>
@@ -26,7 +27,10 @@ export const EmployeesList: FC = (): ReactElement => {
       {employeesList.map((employee) => {
         const { firstName, lastName, email, position, id } = employee;
         return (
-          <div key={id} className="employees-container__body-employee">
+          <div
+            key={id}
+            className={EmployeesStyles["employees-container__body-employee"]}
+          >
             <h4>{firstName}</h4>
             <h4>{lastName}</h4>
             <h4>{email}</h4>

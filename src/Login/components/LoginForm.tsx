@@ -4,6 +4,7 @@ import { useLoginFormFields, usePasswordIconManager } from "@Login";
 import { FormikProps, useFormikContext } from "formik";
 import { translations } from "@helpers";
 import { emailIcon, passwordIcon } from "@Assets";
+import LoginStyles from "./LoginForm.module.scss";
 
 export enum LoginFormFields {
   PASSWORD = "password",
@@ -53,7 +54,11 @@ export const LoginForm: FC<LoginFormProps> = ({
     !Object.keys(formikContext.errors).length;
 
   return (
-    <Form className="form-login" onSubmit={onSubmit} isValid={isFormValid}>
+    <Form
+      className={LoginStyles["form-login"]}
+      onSubmit={onSubmit}
+      isValid={isFormValid}
+    >
       <h3>Login</h3>
       <InputField
         name={LoginFormFields.EMAIL}

@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from "react";
 import { EmployeesList, EmployeeToolbar } from "./components";
-import "./Employees.scss";
+import EmployeesStyles from "./Employees.module.scss";
 
 export interface EmployeeModalFormFields {
   firstName: string;
@@ -11,7 +11,7 @@ export interface EmployeeModalFormFields {
 
 export const Employees: FC = (): ReactElement => {
   return (
-    <div className="employees-container">
+    <div className={EmployeesStyles["employees-container"]}>
       <EmployeeToolbar />
       <EmployeesList />
     </div>

@@ -44,24 +44,3 @@
     }
   }
 }
-
-.modal-container__modal {
-  background-color: $modal-bg-color;
-  border-radius: $main-border-radius;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, 30px);
-  grid-gap: 20px;
-  justify-items: center;
-  align-content: center;
-  align-self: center;
-  height: 450px;
-  width: 350px;
-  position: relative;
-
-  .modal-container_close {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-  }
-}

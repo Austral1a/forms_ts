@@ -14,7 +14,7 @@ import { EmployeeModalFormFields } from "@Employees";
 import { translations } from "@helpers";
 import classNames from "classnames";
 import Modal from "react-modal";
-import "./EmployeeModalForm.scss";
+import EmployeeModalFormStyles from "./EmployeeModalForm.module.scss";
 import {
   getEmployeePositionsAction,
   selectEmployeePositions,
@@ -70,25 +70,21 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     dispatch(getEmployeePositionsAction());
   }, [dispatch]);
 
-  const onModalClose = useCallback(() => {
-    // TODO: edit employee doesnt update
-    formikContext.resetForm({
-      values: { ...formikContext.initialValues },
-    });
-  }, [formikContext]);
   const employeePositions = useSelector(selectEmployeePositions);
   const isFormValid =
     !Object.values(formikContext.values).includes("") &&
     !Object.keys(formikContext.errors).length;
-  const customClasses = classNames("modal-container__modal form", className);
+  const customClasses = classNames(
+    EmployeeModalFormStyles["employee-modal__form"],
+    className
+  );
   return (
     <>
       {isModalOpen && (
         <Modal
           onAfterOpen={onModalOpen}
-          onAfterClose={onModalClose}
           isOpen={isModalOpen}
-          className="employee-modal"
+          className={EmployeeModalFormStyles["employee-modal"]}
         >
           <Form
             onSubmit={onSubmit}
@@ -98,7 +94,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
             <Button
               text={closeText}
               type="button"
-              className="modal-container_close"
+              className={EmployeeModalFormStyles["employee-modal__form_close"]}
               onClick={handleClose}
             />
             <InputField
@@ -144,6 +140,9 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
               text={submitBtnText}
               type="submit"
               disabled={!isFormValid}
+              className={
+                EmployeeModalFormStyles["employee-modal__form_submit-btn"]
+              }
             />
           </Form>
         </Modal>
