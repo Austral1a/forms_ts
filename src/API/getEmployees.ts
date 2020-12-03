@@ -11,6 +11,7 @@ interface EmployeeResponse {
 export async function getEmployees(): Promise<EmployeeResponse> {
   const resource: string = `${home}/employees`;
   const response = await fetch(resource);
+
   if (response.ok) {
     return await response.json();
   } else {

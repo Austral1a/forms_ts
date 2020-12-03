@@ -39,10 +39,12 @@ export const InputField: FC<InputFieldProps> = ({
   ...props
 }: InputFieldProps): ReactElement => {
   const { name, onBlur, onChange, className } = props;
+
   const customClasses = classNames(
     InputFieldStyles["input-container__input"],
     className
   );
+
   return (
     <div className={InputFieldStyles["input-container"]}>
       {icon && (

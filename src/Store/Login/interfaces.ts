@@ -5,6 +5,7 @@ export interface LoginState {
   name: string;
   message: string;
 }
+
 export interface LoginAwareState {
   loginReducer: LoginState;
 }

@@ -5,5 +5,6 @@ import ErrorStyles from "./ErrorHandler.module.scss";
 
 export const ErrorHandler: FC = (): ReactElement => {
   const error = useSelector(selectError);
+
   return <>{error && <div className={ErrorStyles["error"]}>{error}</div>}</>;
 };

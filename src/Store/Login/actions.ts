@@ -10,14 +10,17 @@ interface LoginPayload {
   email: string;
   password: string;
 }
+
 interface LoginSuccessPayload extends LoginPayload {}
 interface LoginSuccessResponse extends LoginPayload {}
 
 export type LoginRequest = FSAAuto<LoginActionTypes.LOGIN, LoginPayload>;
+
 export type LoginSuccess = FSAAuto<
   LoginActionTypes.LOGIN_SUCCESS,
   LoginSuccessResponse
 >;
+
 export type LoginFail = ErrorFSAAuto<LoginActionTypes.LOGIN_FAIL, Error>;
 
 export const loginAction = (payload: LoginSuccessPayload): LoginRequest => ({

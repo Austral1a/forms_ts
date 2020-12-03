@@ -6,6 +6,7 @@ export const editEmployee = async (
 ): Promise<void> => {
   const { id, firstName, lastName, email, position } = employeeValues;
   const resource = `${home}/employees/${id}`;
+
   const fetchInit = {
     method: "PATCH",
     body: JSON.stringify({
@@ -18,6 +19,7 @@ export const editEmployee = async (
       "Content-type": "application/json; charset=UTF-8",
     },
   };
+
   const response = await fetch(resource, fetchInit);
   if (!response.ok) {
     throw new Error("Couldn't update employee");

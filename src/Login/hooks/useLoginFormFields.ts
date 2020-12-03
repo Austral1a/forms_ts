@@ -25,11 +25,13 @@ export const useLoginFormFields = (): LoginFormFieldsResult => {
     name: LoginFormFields.EMAIL,
     validate: emailValidator,
   });
+
   const [fieldPassword, metaPassword] = useField<string>({
     id: LoginFormFields.PASSWORD,
     name: LoginFormFields.PASSWORD,
     validate: passwordValidator,
   });
+
   return {
     passwordField: {
       value: fieldPassword.value,

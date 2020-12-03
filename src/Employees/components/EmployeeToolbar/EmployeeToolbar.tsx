@@ -10,9 +10,11 @@ export const EmployeeToolbar: FC = (): ReactElement => {
     handleCreateModalClose,
     handleCreateModalOpen,
   } = useCreateEmployeeManager();
+
   const {
     button: { createText },
   } = translations;
+
   return (
     <div className={EmployeesStyles["employees-container__toolbar"]}>
       <Button

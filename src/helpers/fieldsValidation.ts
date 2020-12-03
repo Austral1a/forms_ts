@@ -7,6 +7,7 @@ import {
 
 export const emailValidationRule = () => {
   const { email } = patternNames;
+
   return (emailVal: string) => {
     if (!isInputValid(patterns[email], emailVal)) {
       return ValidationMessages.invalidEmail;
@@ -17,6 +18,7 @@ export const emailValidationRule = () => {
 
 export const nameValidationRule = () => {
   const { name } = patternNames;
+
   return (nameVal: string) => {
     if (!isInputValid(patterns[name], nameVal)) {
       return ValidationMessages.invalidName;
@@ -27,6 +29,7 @@ export const nameValidationRule = () => {
 
 export const passwordValidationRule = () => {
   const { password } = patternNames;
+
   return (passwordVal: string) => {
     if (!isInputValid(patterns[password], passwordVal)) {
       return ValidationMessages.invalidPassword;

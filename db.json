@@ -18,7 +18,7 @@
       "firstName": "NewNews",
       "lastName": "employee",
       "email": "new@new.com",
-      "position": "Manager",
+      "position": "QA",
       "id": 44
     },
     {
@@ -132,6 +132,13 @@
       "email": "d@d.com",
       "position": "QA",
       "id": 60
+    },
+    {
+      "firstName": "d",
+      "lastName": "dd",
+      "email": "d@d.com",
+      "position": "Developer",
+      "id": 61
     }
   ]
 }

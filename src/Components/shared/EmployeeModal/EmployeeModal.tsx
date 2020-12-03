@@ -28,6 +28,7 @@ export const EmployeeModal: FC<EmployeeModalProps> = ({
     email: employeeFieldsValues?.email || "",
     position: employeeFieldsValues?.position || "",
   };
+
   return (
     <Formik initialValues={employee} onSubmit={handleClose}>
       <EmployeeModalForm

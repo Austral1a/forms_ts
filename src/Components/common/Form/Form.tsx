@@ -15,9 +15,11 @@ type FormProps = FormHTMLElementProps & FormMetaProps;
 
 export const Form: FC<FormProps> = ({ isValid, ...props }: FormProps) => {
   const { className, children } = props;
+
   const customClasses = classNames(FormStyles["form"], className, {
     form_success: isValid,
   });
+
   return (
     <form {...props} className={customClasses}>
       {children}

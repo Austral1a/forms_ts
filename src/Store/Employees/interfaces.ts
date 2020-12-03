@@ -9,6 +9,7 @@ export interface EmployeesState {
   name: string;
   message: string;
 }
+
 export interface EmployeeResponse {
   firstName: string;
   lastName: string;
@@ -31,6 +32,7 @@ export interface CreateEmployeePayload {
 export interface GetEmployeesSuccessResponse {
   employees: EmployeeResponse[];
 }
+
 export interface GetEmployeesFailResponse {
   name: string;
   message: string;

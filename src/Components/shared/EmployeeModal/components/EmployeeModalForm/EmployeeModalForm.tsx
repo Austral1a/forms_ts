@@ -44,8 +44,9 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
   className,
   isModalOpen,
 }): ReactElement => {
-  const formikContext = useFormikContext<EmployeeModalFormFields>();
   const dispatch = useDispatch();
+  const formikContext = useFormikContext<EmployeeModalFormFields>();
+  const employeePositions = useSelector(selectEmployeePositions);
 
   const {
     emailField,
@@ -53,6 +54,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     lastNameField,
     positionField,
   } = useEmployeeFormFields();
+
   const {
     field: { firstNameText, lastNameText, emailText, chosePositionText },
     button: { closeText },
@@ -66,18 +68,20 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     },
     [dispatchAction, formikContext, handleClose]
   );
+
   const onModalOpen = useCallback(() => {
     dispatch(getEmployeePositionsAction());
   }, [dispatch]);
 
-  const employeePositions = useSelector(selectEmployeePositions);
   const isFormValid =
     !Object.values(formikContext.values).includes("") &&
     !Object.keys(formikContext.errors).length;
+
   const customClasses = classNames(
     EmployeeModalFormStyles["employee-modal__form"],
     className
   );
+
   return (
     <>
       {isModalOpen && (

@@ -9,6 +9,7 @@ type ErrorOccurredAction = ErrorOccurredCommit;
 const initState: InitState = {
   errorMessage: "",
 };
+
 export const errorsReducer = (
   state = initState,
   action: ErrorOccurredAction

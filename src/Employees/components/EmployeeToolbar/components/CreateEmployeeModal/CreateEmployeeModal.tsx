@@ -12,6 +12,7 @@ export const CreateEmployeeModal: FC<CreateEmployeeModalProps> = ({
   isCreateModalOpen,
 }): ReactElement => {
   const { createEmployee, submitBtnText } = useCreateEmployeeManager();
+
   return (
     <EmployeeModal
       isModalOpen={isCreateModalOpen}

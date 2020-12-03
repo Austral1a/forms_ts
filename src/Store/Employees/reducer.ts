@@ -10,6 +10,7 @@ const employeeInitState: EmployeesState = {
   name: "",
   message: "",
 };
+
 export const employeesReducer = (
   state = employeeInitState,
   action: EmployeesAction

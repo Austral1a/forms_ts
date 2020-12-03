@@ -15,9 +15,11 @@ interface LoginManagerResult {
 
 export const useLoginManager = (): LoginManagerResult => {
   const dispatch = useDispatch();
+
   const {
     button: { createText },
   } = translations;
+
   return {
     initialLoginFieldValues: {
       email: "",

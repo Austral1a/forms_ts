@@ -27,9 +27,11 @@ export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
     },
     [dispatch]
   );
+
   const {
     button: { createText },
   } = translations;
+
   return {
     createEmployee,
     submitBtnText: createText,

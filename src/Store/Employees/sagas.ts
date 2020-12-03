@@ -23,6 +23,7 @@ import {
   getEmployees,
   getEmployeePositions,
 } from "@API";
+
 export function* getEmployeePositionsSaga() {
   try {
     const employeePositions = yield call(getEmployeePositions);
