@@ -12,9 +12,12 @@ interface ActionsBlockManagerResult {
 export const useActionsBlockManager = (): ActionsBlockManagerResult => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+
+  // TODO: extact logic into vars
+  const onEditModalClose = useCallback(() => setIsEditModalOpen(false), []);
   return {
     isEditModalOpen,
-    onEditModalClose: useCallback(() => setIsEditModalOpen(false), []),
+    onEditModalClose,
     onEditModalOpen: useCallback(() => setIsEditModalOpen(true), []),
     isDeleteModalOpen,
     onDeleteModalClose: useCallback(() => setIsDeleteModalOpen(false), []),

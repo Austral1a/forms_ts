@@ -21,10 +21,13 @@ export const ActionsBlock: FC<ActionsBlockProps> = ({
     onEditModalOpen,
     onDeleteModalOpen,
   } = useActionsBlockManager();
+
   const { id } = employeeValues;
+
   const {
     button: { editText, deleteText },
   } = translations;
+
   return (
     <>
       <div

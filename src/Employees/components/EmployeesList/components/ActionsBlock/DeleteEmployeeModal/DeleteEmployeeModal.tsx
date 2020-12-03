@@ -18,17 +18,22 @@ export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
   employeeId,
 }) => {
   const { deleteEmployee } = useDeleteEmployeeManager(employeeId);
+
   const {
     button: { deleteText, closeText },
     modal: { deleteConfirm },
   } = translations;
+
   const onSubmit = useCallback(() => {
+    // TODO: id in here rather than in useDeleteEmployeeModal
     deleteEmployee();
     handleDeleteModalClose();
   }, [handleDeleteModalClose, deleteEmployee]);
+
   return (
     <>
       {isModalOpen && (
+        // TODO: wrap Modal
         <Modal
           isOpen={isModalOpen}
           className={EmployeeModalFormStyles["employee-modal"]}

@@ -6,9 +6,10 @@ import EmployeesStyles from "../../Employees.module.scss";
 
 export const EmployeeToolbar: FC = (): ReactElement => {
   const {
+    //TODO: rename
     isCreateModalOpen,
-    handleCreateModalClose,
-    handleCreateModalOpen,
+    handleClose,
+    handleOpen,
   } = useCreateEmployeeManager();
 
   const {
@@ -21,12 +22,12 @@ export const EmployeeToolbar: FC = (): ReactElement => {
         className={
           EmployeesStyles["employees-container__toolbar_create-employee"]
         }
-        onClick={handleCreateModalOpen}
+        onClick={handleOpen}
         type="button"
         text={createText}
       />
       <CreateEmployeeModal
-        handleClose={handleCreateModalClose}
+        handleClose={handleClose}
         isCreateModalOpen={isCreateModalOpen}
       />
     </div>

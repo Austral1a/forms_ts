@@ -1,16 +1,16 @@
 import { FSAAuto } from "flux-standard-action";
 import { ErrorOccurredActionPayload } from "./interfaces";
 
-export const ERROR_OCCURRED: string = "ERROR_OCCURRED";
+export const ERROR_OCCURRED = "ERROR_OCCURRED";
 
-export type ErrorOccurredCommit = FSAAuto<
+export type ErrorOccurredAction = FSAAuto<
   typeof ERROR_OCCURRED,
   ErrorOccurredActionPayload
 >;
 
 export const errorOccurredAction = (
   payload: ErrorOccurredActionPayload
-): ErrorOccurredCommit => ({
+): ErrorOccurredAction => ({
   type: ERROR_OCCURRED,
   payload,
 });

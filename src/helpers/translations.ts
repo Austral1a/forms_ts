@@ -11,7 +11,7 @@ export const translations: TranslationsDictionary = {
     closeText: "Close",
     editText: "Edit",
     deleteText: "Delete",
-    createText: "Create",
+    textCreate: "Create",
   },
   field: {
     firstNameText: "First Name",

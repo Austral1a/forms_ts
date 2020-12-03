@@ -8,8 +8,8 @@ interface CreateEmployeeManagerResult {
   createEmployee: (props: EmployeeModalFormFormikProps) => void;
   submitBtnText: string;
   isCreateModalOpen: boolean;
-  handleCreateModalClose: () => void;
-  handleCreateModalOpen: () => void;
+  handleClose: () => void;
+  handleOpen: () => void;
 }
 
 export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
@@ -19,8 +19,8 @@ export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
   const createEmployee = useCallback(
     (props: EmployeeModalFormFormikProps) => {
       const { values } = props;
-      const employee = values;
-      dispatch(createEmployeeAction({ employee }));
+
+      dispatch(createEmployeeAction({ employee: values }));
       props.resetForm({
         values: { ...props.initialValues },
       });
@@ -36,7 +36,7 @@ export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
     createEmployee,
     submitBtnText: createText,
     isCreateModalOpen,
-    handleCreateModalClose: useCallback(() => setIsCreateModalOpen(false), []),
-    handleCreateModalOpen: useCallback(() => setIsCreateModalOpen(true), []),
+    handleClose: useCallback(() => setIsCreateModalOpen(false), []),
+    handleOpen: useCallback(() => setIsCreateModalOpen(true), []),
   };
 };

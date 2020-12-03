@@ -14,7 +14,7 @@
   border-bottom: 3px solid $form-bg-color;
   @include modalFormShadow;
   position: absolute;
-}
-.form_success {
-  border-bottom: 3px solid $form-valid;
+  &_valid {
+    border-bottom: 3px solid $form-valid;
+  }
 }

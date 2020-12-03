@@ -40,6 +40,7 @@ export const passwordValidationRule = () => {
 
 export const positionsValidationRule = () => {
   return (positionsVal: string) => {
+    // TODO: change option 'Chose position' to empty string
     if (positionsVal === "Chose position") {
       return ValidationMessages.invalidPosition;
     }

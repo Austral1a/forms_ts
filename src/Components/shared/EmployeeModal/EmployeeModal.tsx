@@ -36,6 +36,7 @@ export const EmployeeModal: FC<EmployeeModalProps> = ({
         className={className}
         submitBtnText={submitBtnText}
         handleClose={handleClose}
+        //TODO: rename onSubmit
         dispatchAction={dispatchAction}
       />
     </Formik>

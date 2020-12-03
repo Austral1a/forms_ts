@@ -6,6 +6,7 @@ import { translations } from "@helpers";
 import { emailIcon, passwordIcon } from "@Assets";
 import LoginStyles from "./LoginForm.module.scss";
 
+// TODO: rename, LoginFieldName
 export enum LoginFormFields {
   PASSWORD = "password",
   EMAIL = "email",
@@ -44,11 +45,13 @@ export const LoginForm: FC<LoginFormProps> = ({
   );
 
   const {
+    //TODO: rename showPassword, hidePassword, passwordIconName, passwordInputType
     handlePswdVisibilityIconMouseDown,
     handlePswdVisibilityIconMouseUp,
     pswdInputType,
     setPswdVisibilityIcon,
   } = usePasswordIconManager();
+
   const isFormValid =
     !Object.values(formikContext.values).includes("") &&
     !Object.keys(formikContext.errors).length;
