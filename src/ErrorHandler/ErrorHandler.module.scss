@@ -1,0 +1,11 @@
+@import "../styles/_variables.scss";
+.error {
+  position: fixed;
+  top: 9%;
+  left: 10%;
+  color: $error-block-text-color;
+  border: 1px solid $error-block-bg-color;
+  background-color: $error-block-bg-color;
+  border-radius: 1rem;
+  padding: 5px 8px 5px 8px;
+}

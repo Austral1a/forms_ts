@@ -3,7 +3,7 @@ import { EmployeeModalFormFields } from "@Employees";
 
 export const createEmployee = async (
   employee: EmployeeModalFormFields
-): Promise<void | Error> => {
+): Promise<void> => {
   const url = `${home}/employees`;
   const response = await fetch(url, {
     method: "POST",

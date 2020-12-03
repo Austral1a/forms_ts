@@ -8,7 +8,6 @@ export interface LoginFormFieldValues {
   touched: boolean;
   error: string | undefined;
   onBlur: FormikHandlers["handleBlur"];
-  setValue: (value: string, shouldValidate?: boolean) => void;
   onChange: FormikHandlers["handleChange"];
 }
 
@@ -21,12 +20,12 @@ export const useLoginFormFields = (): LoginFormFieldsResult => {
   const emailValidator = useMemo(() => emailValidationRule(), []);
   const passwordValidator = useMemo(() => passwordValidationRule(), []);
 
-  const [fieldEmail, metaEmail, helperEmail] = useField<string>({
+  const [fieldEmail, metaEmail] = useField<string>({
     id: LoginFormFields.EMAIL,
     name: LoginFormFields.EMAIL,
     validate: emailValidator,
   });
-  const [fieldPassword, metaPassword, helperPassword] = useField<string>({
+  const [fieldPassword, metaPassword] = useField<string>({
     id: LoginFormFields.PASSWORD,
     name: LoginFormFields.PASSWORD,
     validate: passwordValidator,
@@ -35,7 +34,6 @@ export const useLoginFormFields = (): LoginFormFieldsResult => {
     passwordField: {
       value: fieldPassword.value,
       touched: metaPassword.touched,
-      setValue: helperPassword.setValue,
       error: metaPassword.error,
       onBlur: fieldPassword.onBlur,
       onChange: fieldPassword.onChange,
@@ -43,7 +41,6 @@ export const useLoginFormFields = (): LoginFormFieldsResult => {
     emailField: {
       value: fieldEmail.value,
       touched: metaEmail.touched,
-      setValue: helperEmail.setValue,
       error: metaEmail.error,
       onBlur: fieldEmail.onBlur,
       onChange: fieldEmail.onChange,

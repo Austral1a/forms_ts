@@ -6,7 +6,7 @@
   min-height: 450px;
   max-height: 450px;
   display: grid;
-  grid-template-columns: 195px;
+  grid-template-columns: $form-column-main-w;
   background-color: $form-bg-color;
   justify-content: center;
   @include justifyAlignItemsCenter;

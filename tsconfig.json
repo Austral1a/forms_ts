@@ -16,7 +16,7 @@
       "@Employees": ["src/Employees/"],
       "@Login": ["src/Login/"],
       "@Assets": ["src/assets/"],
-      "@API": ["src/API/"],
+      "@API": ["src/API/"]
     },
     "allowJs": true,
     "skipLibCheck": true,

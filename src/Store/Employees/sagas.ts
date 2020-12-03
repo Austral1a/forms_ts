@@ -1,4 +1,4 @@
-import { call, put, take } from "redux-saga/effects";
+import { call, put, takeLatest, all } from "redux-saga/effects";
 import {
   createEmployeeFail,
   CreateEmployeeRequest,
@@ -11,7 +11,7 @@ import {
   editEmployeeSuccess,
   EmployeeActionTypes,
   getEmployeeFail,
-  getEmployeeSuccess,
+  getEmployeesSuccess,
   EmployeeResponse,
   getEmployeePositionsSuccess,
   getEmployeePositionsFail,
@@ -23,13 +23,12 @@ import {
   getEmployees,
   getEmployeePositions,
 } from "@API";
-
 export function* getEmployeePositionsSaga() {
   try {
-    const employee_positions = yield call(getEmployeePositions);
-    yield put(getEmployeePositionsSuccess(employee_positions));
-  } catch (e) {
-    yield put(getEmployeePositionsFail(e));
+    const employeePositions = yield call(getEmployeePositions);
+    yield put(getEmployeePositionsSuccess(employeePositions));
+  } catch (error) {
+    yield put(getEmployeePositionsFail(error));
   }
 }
 
@@ -40,17 +39,17 @@ export function* createEmployeeSaga(action: CreateEmployeeRequest) {
     } = action;
     yield call(createEmployee, employee);
     yield put(createEmployeeSuccess());
-  } catch (e) {
-    yield put(createEmployeeFail(e));
+  } catch (error) {
+    yield put(createEmployeeFail(error));
   }
 }
 
 export function* getEmployeesSaga() {
   try {
     const employees: EmployeeResponse[] = yield call(getEmployees);
-    yield put(getEmployeeSuccess({ employees }));
-  } catch (e) {
-    yield put(getEmployeeFail(e));
+    yield put(getEmployeesSuccess({ employees }));
+  } catch (error) {
+    yield put(getEmployeeFail(error));
   }
 }
 
@@ -59,8 +58,8 @@ export function* editEmployeeSaga(action: EditEmployeeRequest) {
     const { payload } = action;
     yield call(editEmployee, payload);
     yield put(editEmployeeSuccess());
-  } catch (e) {
-    yield put(editEmployeeFail(e));
+  } catch (error) {
+    yield put(editEmployeeFail(error));
   }
 }
 
@@ -71,19 +70,28 @@ export function* deleteEmployeeSaga(action: DeleteEmployeeRequest) {
     } = action;
     yield call(deleteEmployee, id);
     yield put(deleteEmployeeSuccess());
-  } catch (e) {
-    yield put(deleteEmployeeFail(e));
+  } catch (error) {
+    yield put(deleteEmployeeFail(error));
   }
 }
 
-export function* watchEmployees() {
-  while (true) {
-    yield take([
-      EmployeeActionTypes.CREATE_EMPLOYEE_SUCCESS,
-      EmployeeActionTypes.EDIT_EMPLOYEE_SUCCESS,
-      EmployeeActionTypes.DELETE_EMPLOYEE_SUCCESS,
-    ]);
-    const employees: EmployeeResponse[] = yield call(getEmployees);
-    yield put(getEmployeeSuccess({ employees }));
-  }
+export function* employeeRootSaga() {
+  return all([
+    yield takeLatest(EmployeeActionTypes.GET_EMPLOYEES, getEmployeesSaga),
+    yield takeLatest(EmployeeActionTypes.CREATE_EMPLOYEE, createEmployeeSaga),
+    yield takeLatest(EmployeeActionTypes.DELETE_EMPLOYEE, deleteEmployeeSaga),
+    yield takeLatest(EmployeeActionTypes.EDIT_EMPLOYEE, editEmployeeSaga),
+    yield takeLatest(
+      EmployeeActionTypes.GET_EMPLOYEE_POSITIONS,
+      getEmployeePositionsSaga
+    ),
+    yield takeLatest(
+      [
+        EmployeeActionTypes.CREATE_EMPLOYEE_SUCCESS,
+        EmployeeActionTypes.EDIT_EMPLOYEE_SUCCESS,
+        EmployeeActionTypes.DELETE_EMPLOYEE_SUCCESS,
+      ],
+      getEmployeesSaga
+    ),
+  ]);
 }

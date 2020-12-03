@@ -3,11 +3,9 @@
 
 .input-container {
   display: grid;
-  // TODO: Extract 195px into var
-  grid-template-columns: 195px;
-  grid-template-rows: 30px 50px;
+  grid-template-columns: $form-column-main-w;
+  grid-template-rows: 30px 45px;
   position: relative;
-
   &__input {
     padding: 3px 25px 3px 25px;
     border-radius: 4px;

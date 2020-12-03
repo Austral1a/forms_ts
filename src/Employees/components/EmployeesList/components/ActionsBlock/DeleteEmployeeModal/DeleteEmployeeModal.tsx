@@ -2,8 +2,9 @@ import { useDeleteEmployeeManager } from "./hooks";
 import React, { FC, useCallback } from "react";
 import { translations } from "@helpers";
 import { Button } from "@Components";
-import "./DeleteEmployeeModal.scss";
 import Modal from "react-modal";
+import DeleteEmployeeModalStyles from "./DeleteEmployeeModal.module.scss";
+import EmployeeModalFormStyles from "../../../../../../Components/shared/EmployeeModal/components/EmployeeModalForm/EmployeeModalForm.module.scss";
 
 interface DeleteEmployeeProps {
   isModalOpen: boolean;
@@ -30,22 +31,23 @@ export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
       {isModalOpen && (
         <Modal
           isOpen={isModalOpen}
-          style={{
-            overlay: {
-              backgroundColor: "rgba(0, 0, 0, .6)",
-            },
-            content: {
-              display: "flex",
-              alignContent: "center",
-              justifyContent: "center",
-              background: "none",
-              border: "none",
-            },
-          }}
+          className={EmployeeModalFormStyles["employee-modal"]}
         >
-          <div className="modal-delete-confirmation">
-            <h3 className="modal-delete-confirmation__text">{deleteConfirm}</h3>
-            <div className="modal-delete-confirmation__options">
+          <div
+            className={DeleteEmployeeModalStyles["modal-delete-confirmation"]}
+          >
+            <h3
+              className={
+                DeleteEmployeeModalStyles["modal-delete-confirmation__text"]
+              }
+            >
+              {deleteConfirm}
+            </h3>
+            <div
+              className={
+                DeleteEmployeeModalStyles["modal-delete-confirmation__options"]
+              }
+            >
               <Button text={deleteText} onClick={onSubmit} type="button" />
               <Button
                 text={closeText}

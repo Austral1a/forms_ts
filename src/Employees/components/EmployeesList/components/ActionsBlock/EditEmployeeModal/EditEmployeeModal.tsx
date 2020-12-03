@@ -13,21 +13,15 @@ export const EditEmployeeModal: FC<EditEmployeeModalProps> = ({
   isModalOpen,
   handleEditModalClose,
 }): ReactElement => {
-  const {
-    employeeFieldsValues,
-    submitBtnText,
-    editEmployee,
-  } = useEditEmployeeManager({ employeeValues });
-
-  const { firstName, lastName, position, email } = employeeValues;
-
+  const { id } = employeeValues;
+  const { submitBtnText, editEmployee } = useEditEmployeeManager(id);
   return (
     <EmployeeModal
       isModalOpen={isModalOpen}
       submitBtnText={submitBtnText}
       dispatchAction={editEmployee}
       handleClose={handleEditModalClose}
-      employeeFieldsValues={{ firstName, lastName, position, email }}
+      employeeFieldsValues={employeeValues}
     />
   );
 };

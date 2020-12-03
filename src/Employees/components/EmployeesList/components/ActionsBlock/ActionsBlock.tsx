@@ -4,7 +4,7 @@ import { useActionsBlockManager } from "./hooks";
 import React, { FC, ReactElement } from "react";
 import { translations } from "@helpers";
 import { Button } from "@Components";
-import "./ActionsBlock.scss";
+import ActionsBlockStyles from "./ActionsBlock.module.scss";
 
 interface ActionsBlockProps {
   employeeValues: EmployeeResponse;
@@ -27,17 +27,25 @@ export const ActionsBlock: FC<ActionsBlockProps> = ({
   } = translations;
   return (
     <>
-      <div className="employees-container__body-actions-block">
+      <div
+        className={
+          ActionsBlockStyles["employees-container__body-actions-block"]
+        }
+      >
         <Button
-          className="employees-container__body_edit-employee"
+          className={
+            ActionsBlockStyles["employees-container__body_edit-employee"]
+          }
           text={editText}
-          type={"button"}
+          type="button"
           onClick={onEditModalOpen}
         />
         <Button
-          className="employees-container__body_delete-employee"
+          className={
+            ActionsBlockStyles["employees-container__body_delete-employee"]
+          }
           text={deleteText}
-          type={"button"}
+          type="button"
           onClick={onDeleteModalOpen}
         />
       </div>

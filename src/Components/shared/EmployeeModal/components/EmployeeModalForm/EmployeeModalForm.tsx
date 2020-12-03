@@ -1,14 +1,20 @@
 import React, { FC, ReactElement, useCallback } from "react";
-import { Button, Form, SelectField, InputField } from "@Components";
+import {
+  Button,
+  Form,
+  SelectField,
+  InputField,
+  EmployeeModalFormFormikProps,
+} from "@Components";
 import { useEmployeeFormFields } from "./hooks";
 import { useDispatch, useSelector } from "react-redux";
 import { personIcon, emailIcon } from "@Assets";
-import { FormikProps, useFormikContext } from "formik";
+import { useFormikContext } from "formik";
 import { EmployeeModalFormFields } from "@Employees";
 import { translations } from "@helpers";
 import classNames from "classnames";
 import Modal from "react-modal";
-import "./EmployeeModalForm.scss";
+import EmployeeModalFormStyles from "./EmployeeModalForm.module.scss";
 import {
   getEmployeePositionsAction,
   selectEmployeePositions,
@@ -26,7 +32,7 @@ interface EmployeeModalFormProps {
   isModalOpen: boolean;
   className?: string;
   submitBtnText: string;
-  dispatchAction: (props: FormikProps<EmployeeModalFormFields>) => void;
+  dispatchAction: (props: EmployeeModalFormFormikProps) => void;
 }
 
 Modal.setAppElement("#root");
@@ -48,7 +54,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     positionField,
   } = useEmployeeFormFields();
   const {
-    field: { firstNameText, lastNameText, emailText },
+    field: { firstNameText, lastNameText, emailText, chosePositionText },
     button: { closeText },
   } = translations;
 
@@ -60,31 +66,25 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     },
     [dispatchAction, formikContext, handleClose]
   );
-  const onModalOpen = useCallback(
-    () => dispatch(getEmployeePositionsAction()),
-    [dispatch]
-  );
-
-  const onModalClose = useCallback(() => {
-    formikContext.resetForm({
-      values: { ...formikContext.initialValues },
-      errors: { ...formikContext.initialErrors },
-    });
-  }, [formikContext]);
+  const onModalOpen = useCallback(() => {
+    dispatch(getEmployeePositionsAction());
+  }, [dispatch]);
 
   const employeePositions = useSelector(selectEmployeePositions);
   const isFormValid =
     !Object.values(formikContext.values).includes("") &&
     !Object.keys(formikContext.errors).length;
-  const customClasses = classNames("modal-container__modal form", className);
+  const customClasses = classNames(
+    EmployeeModalFormStyles["employee-modal__form"],
+    className
+  );
   return (
     <>
       {isModalOpen && (
         <Modal
           onAfterOpen={onModalOpen}
-          onAfterClose={onModalClose}
           isOpen={isModalOpen}
-          className="employee-modal"
+          className={EmployeeModalFormStyles["employee-modal"]}
         >
           <Form
             onSubmit={onSubmit}
@@ -94,7 +94,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
             <Button
               text={closeText}
               type="button"
-              className="modal-container_close"
+              className={EmployeeModalFormStyles["employee-modal__form_close"]}
               onClick={handleClose}
             />
             <InputField
@@ -134,12 +134,15 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
               error={positionField.error}
               onBlur={positionField.onBlur}
               onChange={positionField.onChange}
-              selectOptions={["Chose position", ...employeePositions]}
+              selectOptions={[chosePositionText, ...employeePositions]}
             />
             <Button
               text={submitBtnText}
               type="submit"
               disabled={!isFormValid}
+              className={
+                EmployeeModalFormStyles["employee-modal__form_submit-btn"]
+              }
             />
           </Form>
         </Modal>

@@ -4,11 +4,14 @@ import { useLoginFormFields, usePasswordIconManager } from "@Login";
 import { FormikProps, useFormikContext } from "formik";
 import { translations } from "@helpers";
 import { emailIcon, passwordIcon } from "@Assets";
+import LoginStyles from "./LoginForm.module.scss";
 
 export enum LoginFormFields {
   PASSWORD = "password",
   EMAIL = "email",
 }
+
+export type LoginFormFormikProps = FormikProps<LoginFormFieldsValues>;
 
 export interface LoginFormFieldsValues {
   email: string;
@@ -17,7 +20,7 @@ export interface LoginFormFieldsValues {
 
 export interface LoginFormProps {
   submitBtnText: string;
-  login: (props: FormikProps<LoginFormFieldsValues>) => void;
+  login: (props: LoginFormFormikProps) => void;
 }
 
 export const LoginForm: FC<LoginFormProps> = ({
@@ -51,7 +54,11 @@ export const LoginForm: FC<LoginFormProps> = ({
     !Object.keys(formikContext.errors).length;
 
   return (
-    <Form className="form-login" onSubmit={onSubmit} isValid={isFormValid}>
+    <Form
+      className={LoginStyles["form-login"]}
+      onSubmit={onSubmit}
+      isValid={isFormValid}
+    >
       <h3>Login</h3>
       <InputField
         name={LoginFormFields.EMAIL}

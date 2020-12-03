@@ -1,22 +1,19 @@
 import {
   EmployeeActionTypes,
-  GetEmployeePositionsAction,
-  GetEmployeePositionsState,
-  GetEmployeesAction,
-  GetEmployeeState,
+  EmployeesState,
+  EmployeesAction,
 } from "@StoreEmployees";
 
-const initState: GetEmployeeState = {
+const employeeInitState: EmployeesState = {
   employees: [],
+  employeePositions: [],
   name: "",
   message: "",
 };
-
 export const employeesReducer = (
-  state = initState,
-  action: GetEmployeesAction
+  state = employeeInitState,
+  action: EmployeesAction
 ) => {
-  // TODO: Add action type
   switch (action.type) {
     case EmployeeActionTypes.GET_EMPLOYEES_SUCCESS:
       const {
@@ -26,7 +23,15 @@ export const employeesReducer = (
         ...state,
         employees,
       };
-    case EmployeeActionTypes.GET_EMPLOYEES_FAIL:
+    case EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_SUCCESS:
+      const {
+        payload: { employeePositions },
+      } = action;
+      return {
+        ...state,
+        employeePositions,
+      };
+    case EmployeeActionTypes.GET_EMPLOYEES_FAIL: {
       const {
         payload: { name, message },
       } = action;
@@ -35,39 +40,17 @@ export const employeesReducer = (
         name,
         message,
       };
-    default:
-      return state;
-  }
-};
-
-const employeePositionsInitState: GetEmployeePositionsState = {
-  employee_positions: [],
-  name: "",
-  message: "",
-};
-
-export const employeePositionsReducer = (
-  state = employeePositionsInitState,
-  action: GetEmployeePositionsAction
-) => {
-  switch (action.type) {
-    case EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_SUCCESS:
-      const {
-        payload: { employee_positions },
-      } = action;
-      return {
-        ...employeePositionsInitState,
-        employee_positions,
-      };
-    case EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_FAIL:
+    }
+    case EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_FAIL: {
       const {
         payload: { name, message },
       } = action;
       return {
-        ...employeePositionsInitState,
+        ...state,
         name,
         message,
       };
+    }
     default:
       return state;
   }

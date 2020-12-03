@@ -3,13 +3,15 @@ import { Formik, FormikProps } from "formik";
 import { EmployeeModalForm } from "@Components";
 import { EmployeeModalFormFields } from "@Employees";
 
+export type EmployeeModalFormFormikProps = FormikProps<EmployeeModalFormFields>;
+
 interface EmployeeModalProps {
   employeeFieldsValues?: EmployeeModalFormFields;
   submitBtnText: string;
   className?: string;
   isModalOpen: boolean;
   handleClose: () => void;
-  dispatchAction: (props: FormikProps<EmployeeModalFormFields>) => void;
+  dispatchAction: (props: EmployeeModalFormFormikProps) => void;
 }
 
 export const EmployeeModal: FC<EmployeeModalProps> = ({

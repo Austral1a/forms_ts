@@ -6,7 +6,7 @@ import React, {
 } from "react";
 import classNames from "classnames";
 import { FormikHandlers } from "formik";
-import "./InputField.scss";
+import InputFieldStyles from "./InputField.module.scss";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
@@ -39,11 +39,14 @@ export const InputField: FC<InputFieldProps> = ({
   ...props
 }: InputFieldProps): ReactElement => {
   const { name, onBlur, onChange, className } = props;
-  const customClasses = classNames("input-container__input", className);
+  const customClasses = classNames(
+    InputFieldStyles["input-container__input"],
+    className
+  );
   return (
-    <div className="input-container">
+    <div className={InputFieldStyles["input-container"]}>
       {icon && (
-        <span className="input-container__icon">
+        <span className={InputFieldStyles["input-container__icon"]}>
           <img draggable={false} alt={name} src={icon} />
         </span>
       )}
@@ -55,7 +58,9 @@ export const InputField: FC<InputFieldProps> = ({
         onChange={onChange}
       />
       {passwordVisibilityIcon && (
-        <span className="input-container__pswd-visibility-icon">
+        <span
+          className={InputFieldStyles["input-container__pswd-visibility-icon"]}
+        >
           <img
             draggable={false}
             onMouseDown={handlePswdVisibilityIconMouseDown}
@@ -65,7 +70,9 @@ export const InputField: FC<InputFieldProps> = ({
           />
         </span>
       )}
-      {touched && !!error && <p className="input-container__error">{error}</p>}
+      {touched && !!error && (
+        <p className={InputFieldStyles["input-container__error"]}>{error}</p>
+      )}
     </div>
   );
 };

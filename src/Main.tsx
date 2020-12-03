@@ -5,12 +5,13 @@ import { Employees } from "@Employees";
 import { useSelector } from "react-redux";
 import { ErrorHandler } from "./ErrorHandler";
 import { selectIsUserLoggedIn } from "@StoreLogin";
+import mainStyles from "./styles/main.module.scss";
 
 export const Main: FC = (): ReactElement => {
   // const isUserLoggedIn = useSelector(selectIsUserLoggedIn);
   const isUserLoggedIn = true;
   return (
-    <>
+    <div className={mainStyles["main"]}>
       <ErrorHandler />
       <Router>
         <Route path="/">
@@ -27,6 +28,6 @@ export const Main: FC = (): ReactElement => {
           <Employees />
         </Route>
       </Router>
-    </>
+    </div>
   );
 };

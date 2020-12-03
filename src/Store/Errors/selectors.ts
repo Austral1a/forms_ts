@@ -1,7 +1,7 @@
 import { createSelector } from "reselect";
-import { State } from "@StoreEmployees";
+import { ErrorsWatcherAwareState } from "./interfaces";
 
 export const selectError = createSelector(
-  (state: State) => state.errorsReducer.errorMessage,
+  (state: ErrorsWatcherAwareState) => state.errorsReducer.errorMessage,
   (errorMessage) => errorMessage
 );

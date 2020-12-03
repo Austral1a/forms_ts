@@ -23,7 +23,7 @@ export const translations: TranslationsDictionary = {
     qa: "QA",
     dev: "Developer",
     manager: "Manager",
-    inputTypePassword: "password",
+    chosePositionText: "Chose position",
   },
   modal: {
     deleteConfirm: "Are you sure you want to delete that employee?",
