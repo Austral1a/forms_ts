@@ -3,7 +3,7 @@ import { EmployeeResponse } from "@StoreEmployees";
 
 export const editEmployee = async (
   employeeValues: EmployeeResponse
-): Promise<void | Error> => {
+): Promise<void> => {
   const { id, firstName, lastName, email, position } = employeeValues;
   const resource = `${home}/employees/${id}`;
   const fetchInit = {
