@@ -3,6 +3,7 @@ import { EmployeeModalFormFields } from "@Employees";
 export interface EmployeeAwareState {
   employeesReducer: EmployeesState;
 }
+
 export interface EmployeesState {
   employees: EmployeeResponse[];
   employeePositions: EmployeePositions;

@@ -12,9 +12,12 @@ interface EmployeeManagerResult {
 
 export const useEmployeesManager = (): EmployeeManagerResult => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getEmployeesAction());
   }, [dispatch]);
+
   const employeesList: EmployeeResponse[] = useSelector(selectEmployees);
+
   return { employeesList };
 };

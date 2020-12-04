@@ -2,10 +2,11 @@ import React, { FC, ReactElement } from "react";
 import { useEmployeesManager } from "./hooks";
 import { ActionsBlock } from "./components";
 import { translations } from "@helpers";
-import EmployeesStyles from "../../Employees.module.scss";
+import classes from "../../Employees.module.scss";
 
 export const EmployeesList: FC = (): ReactElement => {
   const { employeesList } = useEmployeesManager();
+
   const {
     field: {
       lastNameText,
@@ -15,9 +16,10 @@ export const EmployeesList: FC = (): ReactElement => {
       actionsText,
     },
   } = translations;
+
   return (
-    <div className={EmployeesStyles["employees-container__body"]}>
-      <div className={EmployeesStyles["employees-container__body-header"]}>
+    <div className={classes["employees-container__body"]}>
+      <div className={classes["employees-container__body-header"]}>
         <h4>{firstNameText}</h4>
         <h4>{lastNameText}</h4>
         <h4>{emailText}</h4>
@@ -28,7 +30,7 @@ export const EmployeesList: FC = (): ReactElement => {
         return (
           <div
             key={employee.id}
-            className={EmployeesStyles["employees-container__body-employee"]}
+            className={classes["employees-container__body-employee"]}
           >
             <h4>{employee.firstName}</h4>
             <h4>{employee.lastName}</h4>

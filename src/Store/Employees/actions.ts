@@ -26,7 +26,7 @@ export enum EmployeeActionType {
   GET_EMPLOYEE_POSITIONS_FAIL = "GET_EMPLOYEE_POSITIONS_FAIL",
 }
 
-//////GET EMPLOYEE POSITION////////////////////////////
+// get employee position
 export type GetEmployeePositionsRequest = FSAAuto<
   typeof EmployeeActionType.GET_EMPLOYEE_POSITIONS
 >;
@@ -53,6 +53,7 @@ export const getEmployeePositionsSuccess = (
     payload,
   };
 };
+
 export const getEmployeePositionsFail = (
   payload: Error
 ): GetEmployeePositionsFail => {
@@ -62,9 +63,8 @@ export const getEmployeePositionsFail = (
     error: true,
   };
 };
-///////////////////////////////////////////////////
 
-///////CREATE EMPLOYEE///////////////////////////////////
+// create employee
 export type CreateEmployeeRequest = FSAAuto<
   typeof EmployeeActionType.CREATE_EMPLOYEE,
   CreateEmployeePayload
@@ -95,10 +95,8 @@ export const createEmployeeFail = (payload: Error): CreateEmployeeFail => ({
   payload,
   error: true,
 });
-//////////////////////////////////////////////////////////
 
-//////////GET EMPLOYEES//////////////////////////////////
-
+// get employees
 export type GetEmployeeRequest = FSAAuto<
   typeof EmployeeActionType.GET_EMPLOYEES
 >;
@@ -131,9 +129,8 @@ export const getEmployeeFail = (
   payload,
   error: true,
 });
-////////////////////////////////////////////
 
-////////////EDIT EMPLOYEE////////////////////
+// edit employee
 export type EditEmployeeRequest = FSAAuto<
   typeof EmployeeActionType.EDIT_EMPLOYEE,
   EmployeeResponse
@@ -168,9 +165,7 @@ export const editEmployeeFail = (payload: Error): EditEmployeeFail => {
     error: true,
   };
 };
-////////////////////////////////////////////////
-
-/////DELETE EMPLOYEE///////////////////////
+// delete employee
 export type DeleteEmployeeRequest = FSAAuto<
   typeof EmployeeActionType.DELETE_EMPLOYEE,
   DeleteEmployeePayload

@@ -32,21 +32,25 @@ export const useEmployeeFormFields = (): EmployeeFormFieldsResult => {
     name: EmployeeFieldName.EMAIL,
     validate: emailValidator,
   });
+
   const [fieldPosition, metaPosition] = useField<string>({
     id: EmployeeFieldName.POSITION,
     name: EmployeeFieldName.POSITION,
     validate: positionsValidator,
   });
+
   const [fieldLastName, metaLastName] = useField<string>({
     id: EmployeeFieldName.LAST_NAME,
     name: EmployeeFieldName.LAST_NAME,
     validate: nameValidator,
   });
+
   const [fieldFirstName, metaFirstName] = useField<string>({
     id: EmployeeFieldName.FIRST_NAME,
     name: EmployeeFieldName.FIRST_NAME,
     validate: nameValidator,
   });
+
   return {
     firstNameField: {
       value: fieldFirstName.value,

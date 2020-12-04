@@ -1,5 +1,4 @@
 import { editEmployeeAction } from "@StoreEmployees";
-import { EmployeeModalFormFields } from "@Employees";
 import { useDispatch } from "react-redux";
 import { translations } from "@helpers";
 import { useCallback } from "react";

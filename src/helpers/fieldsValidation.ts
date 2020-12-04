@@ -3,8 +3,12 @@ import {
   patterns,
   patternNames,
   ValidationMessages,
+  translations,
 } from "@helpers";
 
+const {
+  button: { chosePositionText },
+} = translations;
 export const emailValidationRule = () => {
   const { email } = patternNames;
 
@@ -40,8 +44,7 @@ export const passwordValidationRule = () => {
 
 export const positionsValidationRule = () => {
   return (positionsVal: string) => {
-    //  TODO: change option 'Chose position' to empty string
-    if (positionsVal === "Chose position") {
+    if (positionsVal === chosePositionText) {
       return ValidationMessages.invalidPosition;
     }
     return;

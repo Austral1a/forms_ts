@@ -15,7 +15,7 @@ import { EmployeeModalFormFields } from "@Employees";
 import { translations } from "@helpers";
 import classNames from "classnames";
 import Modal from "react-modal";
-import classes from "../../../../common/Modal/Modal.module.scss";
+import classes from "./EmployeeModalForm.module.scss";
 import {
   getEmployeePositionsAction,
   selectEmployeePositions,

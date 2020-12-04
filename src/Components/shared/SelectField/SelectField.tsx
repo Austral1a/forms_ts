@@ -1,7 +1,7 @@
 import React, { FC, ReactElement, SelectHTMLAttributes } from "react";
 import { FormikHandlers } from "formik";
 import { Option } from "@Components";
-import SelectFieldStyles from "./SelectField.module.scss";
+import classes from "./SelectField.module.scss";
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   onBlur: FormikHandlers["handleBlur"];
@@ -28,9 +28,9 @@ export const SelectField: FC<SelectFieldProps> = ({
   onBlur,
 }): ReactElement => {
   return (
-    <div className={SelectFieldStyles["select-container"]}>
+    <div className={classes["select-container"]}>
       <select
-        className={SelectFieldStyles["select-container__select"]}
+        className={classes["select-container__select"]}
         name={name}
         onBlur={onBlur}
         onChange={onChange}
@@ -47,7 +47,7 @@ export const SelectField: FC<SelectFieldProps> = ({
         })}
       </select>
       {touched && !!error && (
-        <p className={SelectFieldStyles["select-container__error"]}>{error}</p>
+        <p className={classes["select-container__error"]}>{error}</p>
       )}
     </div>
   );
