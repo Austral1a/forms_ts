@@ -9,6 +9,7 @@ import {
 const {
   button: { chosePositionText },
 } = translations;
+
 export const emailValidationRule = () => {
   const { email } = patternName;
 
@@ -44,7 +45,7 @@ export const passwordValidationRule = () => {
 
 export const positionsValidationRule = () => {
   return (positionsVal: string) => {
-    if (positionsVal === chosePositionText) {
+    if (!positionsVal) {
       return ValidationMessages.invalidPosition;
     }
     return;

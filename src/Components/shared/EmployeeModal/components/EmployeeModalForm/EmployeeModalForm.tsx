@@ -59,7 +59,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
 
   const {
     field: { firstNameText, lastNameText, emailText, chosePositionText },
-    button: { closeText },
+    button: { textClose },
   } = translations;
 
   const handleSubmit = useCallback(
@@ -91,7 +91,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
             className={customClasses}
           >
             <Button
-              text={closeText}
+              text={textClose}
               type="button"
               className={classes["employee-modal__form_close"]}
               onClick={handleClose}
@@ -133,7 +133,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
               error={positionField.error}
               onBlur={positionField.onBlur}
               onChange={positionField.onChange}
-              selectOptions={[chosePositionText, ...employeePositions]}
+              selectOptions={[...employeePositions]}
             />
             <Button
               text={submitBtnText}

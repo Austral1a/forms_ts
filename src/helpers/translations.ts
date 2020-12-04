@@ -8,9 +8,9 @@ interface TranslationsDictionary {
 
 export const translations: TranslationsDictionary = {
   button: {
-    closeText: "Close",
-    editText: "Edit",
-    deleteText: "Delete",
+    textClose: "Close",
+    textEdit: "Edit",
+    textDelete: "Delete",
     textCreate: "Create",
   },
   field: {

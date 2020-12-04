@@ -33,12 +33,12 @@ export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
   const handleOpen = useCallback(() => setIsModalOpen(true), []);
 
   const {
-    button: { createText },
+    button: { textCreate },
   } = translations;
 
   return {
     createEmployee,
-    submitBtnText: createText,
+    submitBtnText: textCreate,
     isModalOpen,
     handleClose,
     handleOpen,

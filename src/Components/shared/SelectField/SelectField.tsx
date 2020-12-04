@@ -36,6 +36,7 @@ export const SelectField: FC<SelectFieldProps> = ({
         onChange={onChange}
         value={value}
       >
+        <option value="">Chose Position</option>
         {selectOptions.map((optionText, id) => {
           return (
             <Option

@@ -18,7 +18,7 @@ export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
   const { deleteEmployee } = useDeleteEmployeeManager();
 
   const {
-    button: { deleteText, closeText },
+    button: { textDelete, textClose },
     modal: { deleteConfirm },
   } = translations;
 
@@ -36,9 +36,9 @@ export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
               {deleteConfirm}
             </h3>
             <div className={classes["modal-delete-confirmation__options"]}>
-              <Button text={deleteText} onClick={onSubmit} type="button" />
+              <Button text={textDelete} onClick={onSubmit} type="button" />
               <Button
-                text={closeText}
+                text={textClose}
                 onClick={handleDeleteModalClose}
                 type="button"
               />

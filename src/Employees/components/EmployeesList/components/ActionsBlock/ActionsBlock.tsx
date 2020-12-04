@@ -25,7 +25,7 @@ export const ActionsBlock: FC<ActionsBlockProps> = ({
   const { id } = employeeValues;
 
   const {
-    button: { editText, deleteText },
+    button: { textEdit, textDelete },
   } = translations;
 
   return (
@@ -33,13 +33,13 @@ export const ActionsBlock: FC<ActionsBlockProps> = ({
       <div className={classes["employees-container__body-actions-block"]}>
         <Button
           className={classes["employees-container__body_edit-employee"]}
-          text={editText}
+          text={textEdit}
           type="button"
           onClick={onEditModalOpen}
         />
         <Button
           className={classes["employees-container__body_delete-employee"]}
-          text={deleteText}
+          text={textDelete}
           type="button"
           onClick={onDeleteModalOpen}
         />

@@ -14,7 +14,7 @@ export const useEditEmployeeManager = (
   const dispatch = useDispatch();
 
   const {
-    button: { editText },
+    button: { textEdit },
   } = translations;
 
   const editEmployee = useCallback(
@@ -34,7 +34,7 @@ export const useEditEmployeeManager = (
   );
 
   return {
-    submitBtnText: editText,
+    submitBtnText: textEdit,
     editEmployee,
   };
 };
