@@ -29,6 +29,7 @@ export const loginSuccess = (payload: LoginPayload): LoginSuccess => ({
 
 export const loginFail = (error: Error): LoginFail => {
   const { name, message } = error;
+
   return {
     type: LoginActionType.LOGIN_FAIL,
     payload: { name, message },

@@ -38,6 +38,7 @@ export function* createEmployeeSaga(action: CreateEmployeeRequest) {
     const {
       payload: { employee },
     } = action;
+
     yield call(createEmployee, employee);
     yield put(createEmployeeSuccess());
   } catch (error) {
@@ -48,6 +49,7 @@ export function* createEmployeeSaga(action: CreateEmployeeRequest) {
 export function* getEmployeesSaga() {
   try {
     const employees: EmployeeResponse[] = yield call(getEmployees);
+
     yield put(getEmployeesSuccess({ employees }));
   } catch (error) {
     yield put(getEmployeeFail(error));
@@ -57,6 +59,7 @@ export function* getEmployeesSaga() {
 export function* editEmployeeSaga(action: EditEmployeeRequest) {
   try {
     const { payload } = action;
+
     yield call(editEmployee, payload);
     yield put(editEmployeeSuccess());
   } catch (error) {
@@ -69,6 +72,7 @@ export function* deleteEmployeeSaga(action: DeleteEmployeeRequest) {
     const {
       payload: { id },
     } = action;
+
     yield call(deleteEmployee, id);
     yield put(deleteEmployeeSuccess());
   } catch (error) {

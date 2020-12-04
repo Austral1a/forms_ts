@@ -46,6 +46,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
   isModalOpen,
 }): ReactElement => {
   const dispatch = useDispatch();
+
   const formikContext = useFormikContext<EmployeeModalFormFields>();
   const employeePositions = useSelector(selectEmployeePositions);
 

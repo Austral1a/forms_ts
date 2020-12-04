@@ -3,8 +3,10 @@ import { errorOccurredAction } from "./actions";
 
 export function* takexSaga(pattern: RegExp) {
   let action;
+
   while (true) {
     action = yield take("*");
+
     if (pattern.test(action.type)) {
       break;
     }
@@ -21,6 +23,7 @@ const failedActionTypePattern = /FAIL$/;
 export function* watchErrors() {
   while (true) {
     const action = yield takex(failedActionTypePattern);
+
     if (action.error) {
       yield put(errorOccurredAction({ errorMessage: action.payload.message }));
     }

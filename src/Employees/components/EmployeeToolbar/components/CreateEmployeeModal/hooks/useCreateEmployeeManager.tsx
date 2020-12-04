@@ -21,6 +21,7 @@ export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
       const { values } = props;
 
       dispatch(createEmployeeAction({ employee: values }));
+
       props.resetForm({
         values: { ...props.initialValues },
       });
