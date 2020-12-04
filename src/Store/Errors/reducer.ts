@@ -1,7 +1,6 @@
 import { ERROR_OCCURRED, ErrorOccurredAction } from "./actions";
 import { LoginInitState } from "./interfaces";
 
-//TODO: rename
 const loginInitState: LoginInitState = {
   errorMessage: "",
 };

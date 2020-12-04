@@ -1,10 +1,8 @@
 import { useDeleteEmployeeManager } from "./hooks";
 import React, { FC, useCallback } from "react";
 import { translations } from "@helpers";
-import { Button } from "@Components";
-import Modal from "react-modal";
-import DeleteEmployeeModalStyles from "./DeleteEmployeeModal.module.scss";
-import EmployeeModalFormStyles from "../../../../../../Components/shared/EmployeeModal/components/EmployeeModalForm/EmployeeModalForm.module.scss";
+import { Button, CustomModal } from "@Components";
+import classes from "./DeleteEmployeeModal.module.scss";
 
 interface DeleteEmployeeProps {
   isModalOpen: boolean;
@@ -17,7 +15,7 @@ export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
   handleDeleteModalClose,
   employeeId,
 }) => {
-  const { deleteEmployee } = useDeleteEmployeeManager(employeeId);
+  const { deleteEmployee } = useDeleteEmployeeManager();
 
   const {
     button: { deleteText, closeText },
@@ -25,34 +23,19 @@ export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
   } = translations;
 
   const onSubmit = useCallback(() => {
-    // TODO: id in here rather than in useDeleteEmployeeModal
-    deleteEmployee();
+    deleteEmployee(employeeId);
     handleDeleteModalClose();
-  }, [handleDeleteModalClose, deleteEmployee]);
+  }, [handleDeleteModalClose, deleteEmployee, employeeId]);
 
   return (
     <>
       {isModalOpen && (
-        // TODO: wrap Modal
-        <Modal
-          isOpen={isModalOpen}
-          className={EmployeeModalFormStyles["employee-modal"]}
-        >
-          <div
-            className={DeleteEmployeeModalStyles["modal-delete-confirmation"]}
-          >
-            <h3
-              className={
-                DeleteEmployeeModalStyles["modal-delete-confirmation__text"]
-              }
-            >
+        <CustomModal isOpen={isModalOpen}>
+          <div className={classes["modal-delete-confirmation"]}>
+            <h3 className={classes["modal-delete-confirmation__text"]}>
               {deleteConfirm}
             </h3>
-            <div
-              className={
-                DeleteEmployeeModalStyles["modal-delete-confirmation__options"]
-              }
-            >
+            <div className={classes["modal-delete-confirmation__options"]}>
               <Button text={deleteText} onClick={onSubmit} type="button" />
               <Button
                 text={closeText}
@@ -61,7 +44,7 @@ export const DeleteEmployeeModal: FC<DeleteEmployeeProps> = ({
               />
             </div>
           </div>
-        </Modal>
+        </CustomModal>
       )}
     </>
   );

@@ -8,7 +8,7 @@ import {
 } from "./interfaces";
 import { ErrorFSAAuto, FSAAuto } from "flux-standard-action";
 
-export enum EmployeeActionTypes {
+export enum EmployeeActionType {
   CREATE_EMPLOYEE = "CREATE_EMPLOYEE",
   CREATE_EMPLOYEE_SUCCESS = "CREATE_EMPLOYEE_SUCCESS",
   CREATE_EMPLOYEE_FAIL = "CREATE_EMPLOYEE_FAIL",
@@ -28,28 +28,28 @@ export enum EmployeeActionTypes {
 
 //////GET EMPLOYEE POSITION////////////////////////////
 export type GetEmployeePositionsRequest = FSAAuto<
-  typeof EmployeeActionTypes.GET_EMPLOYEE_POSITIONS
+  typeof EmployeeActionType.GET_EMPLOYEE_POSITIONS
 >;
 
 export type GetEmployeePositionsSuccess = FSAAuto<
-  typeof EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_SUCCESS,
+  typeof EmployeeActionType.GET_EMPLOYEE_POSITIONS_SUCCESS,
   GetEmployeePositionsSuccessResponse
 >;
 
 export type GetEmployeePositionsFail = ErrorFSAAuto<
-  typeof EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_FAIL,
+  typeof EmployeeActionType.GET_EMPLOYEE_POSITIONS_FAIL,
   Error
 >;
 
 export const getEmployeePositionsAction = (): GetEmployeePositionsRequest => ({
-  type: EmployeeActionTypes.GET_EMPLOYEE_POSITIONS,
+  type: EmployeeActionType.GET_EMPLOYEE_POSITIONS,
 });
 
 export const getEmployeePositionsSuccess = (
   payload: GetEmployeePositionsSuccessResponse
 ): GetEmployeePositionsSuccess => {
   return {
-    type: EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_SUCCESS,
+    type: EmployeeActionType.GET_EMPLOYEE_POSITIONS_SUCCESS,
     payload,
   };
 };
@@ -57,7 +57,7 @@ export const getEmployeePositionsFail = (
   payload: Error
 ): GetEmployeePositionsFail => {
   return {
-    type: EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_FAIL,
+    type: EmployeeActionType.GET_EMPLOYEE_POSITIONS_FAIL,
     payload,
     error: true,
   };
@@ -66,32 +66,32 @@ export const getEmployeePositionsFail = (
 
 ///////CREATE EMPLOYEE///////////////////////////////////
 export type CreateEmployeeRequest = FSAAuto<
-  typeof EmployeeActionTypes.CREATE_EMPLOYEE,
+  typeof EmployeeActionType.CREATE_EMPLOYEE,
   CreateEmployeePayload
 >;
 
 export type CreateEmployeeSuccess = FSAAuto<
-  typeof EmployeeActionTypes.CREATE_EMPLOYEE_SUCCESS
+  typeof EmployeeActionType.CREATE_EMPLOYEE_SUCCESS
 >;
 
 export type CreateEmployeeFail = ErrorFSAAuto<
-  typeof EmployeeActionTypes.CREATE_EMPLOYEE_FAIL,
+  typeof EmployeeActionType.CREATE_EMPLOYEE_FAIL,
   Error
 >;
 
 export const createEmployeeAction = (
   payload: CreateEmployeePayload
 ): CreateEmployeeRequest => ({
-  type: EmployeeActionTypes.CREATE_EMPLOYEE,
+  type: EmployeeActionType.CREATE_EMPLOYEE,
   payload,
 });
 
 export const createEmployeeSuccess = (): CreateEmployeeSuccess => ({
-  type: EmployeeActionTypes.CREATE_EMPLOYEE_SUCCESS,
+  type: EmployeeActionType.CREATE_EMPLOYEE_SUCCESS,
 });
 
 export const createEmployeeFail = (payload: Error): CreateEmployeeFail => ({
-  type: EmployeeActionTypes.CREATE_EMPLOYEE_FAIL,
+  type: EmployeeActionType.CREATE_EMPLOYEE_FAIL,
   payload,
   error: true,
 });
@@ -100,34 +100,34 @@ export const createEmployeeFail = (payload: Error): CreateEmployeeFail => ({
 //////////GET EMPLOYEES//////////////////////////////////
 
 export type GetEmployeeRequest = FSAAuto<
-  typeof EmployeeActionTypes.GET_EMPLOYEES
+  typeof EmployeeActionType.GET_EMPLOYEES
 >;
 
 export type GetEmployeesSuccess = FSAAuto<
-  typeof EmployeeActionTypes.GET_EMPLOYEES_SUCCESS,
+  typeof EmployeeActionType.GET_EMPLOYEES_SUCCESS,
   GetEmployeesSuccessResponse
 >;
 
 export type GetEmployeesFail = ErrorFSAAuto<
-  typeof EmployeeActionTypes.GET_EMPLOYEES_FAIL,
+  typeof EmployeeActionType.GET_EMPLOYEES_FAIL,
   Error
 >;
 
 export const getEmployeesAction = (): GetEmployeeRequest => ({
-  type: EmployeeActionTypes.GET_EMPLOYEES,
+  type: EmployeeActionType.GET_EMPLOYEES,
 });
 
 export const getEmployeesSuccess = (
   payload: GetEmployeesSuccessResponse
 ): GetEmployeesSuccess => ({
-  type: EmployeeActionTypes.GET_EMPLOYEES_SUCCESS,
+  type: EmployeeActionType.GET_EMPLOYEES_SUCCESS,
   payload,
 });
 
 export const getEmployeeFail = (
   payload: GetEmployeesFailResponse
 ): GetEmployeesFail => ({
-  type: EmployeeActionTypes.GET_EMPLOYEES_FAIL,
+  type: EmployeeActionType.GET_EMPLOYEES_FAIL,
   payload,
   error: true,
 });
@@ -135,16 +135,16 @@ export const getEmployeeFail = (
 
 ////////////EDIT EMPLOYEE////////////////////
 export type EditEmployeeRequest = FSAAuto<
-  typeof EmployeeActionTypes.EDIT_EMPLOYEE,
+  typeof EmployeeActionType.EDIT_EMPLOYEE,
   EmployeeResponse
 >;
 
 export type EditEmployeeSuccess = FSAAuto<
-  typeof EmployeeActionTypes.EDIT_EMPLOYEE_SUCCESS
+  typeof EmployeeActionType.EDIT_EMPLOYEE_SUCCESS
 >;
 
 export type EditEmployeeFail = ErrorFSAAuto<
-  typeof EmployeeActionTypes.EDIT_EMPLOYEE_FAIL,
+  typeof EmployeeActionType.EDIT_EMPLOYEE_FAIL,
   Error
 >;
 
@@ -152,18 +152,18 @@ export const editEmployeeAction = (
   editedEmployee: EmployeeResponse
 ): EditEmployeeRequest => {
   return {
-    type: EmployeeActionTypes.EDIT_EMPLOYEE,
+    type: EmployeeActionType.EDIT_EMPLOYEE,
     payload: editedEmployee,
   };
 };
 
 export const editEmployeeSuccess = (): EditEmployeeSuccess => ({
-  type: EmployeeActionTypes.EDIT_EMPLOYEE_SUCCESS,
+  type: EmployeeActionType.EDIT_EMPLOYEE_SUCCESS,
 });
 
 export const editEmployeeFail = (payload: Error): EditEmployeeFail => {
   return {
-    type: EmployeeActionTypes.EDIT_EMPLOYEE_FAIL,
+    type: EmployeeActionType.EDIT_EMPLOYEE_FAIL,
     payload,
     error: true,
   };
@@ -172,32 +172,32 @@ export const editEmployeeFail = (payload: Error): EditEmployeeFail => {
 
 /////DELETE EMPLOYEE///////////////////////
 export type DeleteEmployeeRequest = FSAAuto<
-  typeof EmployeeActionTypes.DELETE_EMPLOYEE,
+  typeof EmployeeActionType.DELETE_EMPLOYEE,
   DeleteEmployeePayload
 >;
 
 export type DeleteEmployeeSuccess = FSAAuto<
-  typeof EmployeeActionTypes.DELETE_EMPLOYEE_SUCCESS
+  typeof EmployeeActionType.DELETE_EMPLOYEE_SUCCESS
 >;
 
 export type DeleteEmployeeFail = ErrorFSAAuto<
-  typeof EmployeeActionTypes.DELETE_EMPLOYEE_FAIL,
+  typeof EmployeeActionType.DELETE_EMPLOYEE_FAIL,
   Error
 >;
 
 export const deleteEmployeeAction = (
   payload: DeleteEmployeePayload
 ): DeleteEmployeeRequest => ({
-  type: EmployeeActionTypes.DELETE_EMPLOYEE,
+  type: EmployeeActionType.DELETE_EMPLOYEE,
   payload,
 });
 
 export const deleteEmployeeSuccess = (): DeleteEmployeeSuccess => ({
-  type: EmployeeActionTypes.DELETE_EMPLOYEE_SUCCESS,
+  type: EmployeeActionType.DELETE_EMPLOYEE_SUCCESS,
 });
 
 export const deleteEmployeeFail = (payload: Error): DeleteEmployeeFail => ({
-  type: EmployeeActionTypes.DELETE_EMPLOYEE_FAIL,
+  type: EmployeeActionType.DELETE_EMPLOYEE_FAIL,
   payload,
   error: true,
 });

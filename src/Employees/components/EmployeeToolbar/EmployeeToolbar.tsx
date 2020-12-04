@@ -5,15 +5,10 @@ import { translations } from "@helpers";
 import EmployeesStyles from "../../Employees.module.scss";
 
 export const EmployeeToolbar: FC = (): ReactElement => {
-  const {
-    //TODO: rename
-    isCreateModalOpen,
-    handleClose,
-    handleOpen,
-  } = useCreateEmployeeManager();
+  const { isModalOpen, handleClose, handleOpen } = useCreateEmployeeManager();
 
   const {
-    button: { createText },
+    button: { textCreate },
   } = translations;
 
   return (
@@ -24,11 +19,11 @@ export const EmployeeToolbar: FC = (): ReactElement => {
         }
         onClick={handleOpen}
         type="button"
-        text={createText}
+        text={textCreate}
       />
       <CreateEmployeeModal
         handleClose={handleClose}
-        isCreateModalOpen={isCreateModalOpen}
+        isCreateModalOpen={isModalOpen}
       />
     </div>
   );

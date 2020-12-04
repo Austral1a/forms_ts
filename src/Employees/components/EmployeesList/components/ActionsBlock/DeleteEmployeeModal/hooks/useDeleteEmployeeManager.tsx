@@ -3,18 +3,15 @@ import { useDispatch } from "react-redux";
 import { useCallback } from "react";
 
 interface DeleteEmployeeManagerResult {
-  deleteEmployee: () => void;
+  deleteEmployee: (id: number) => void;
 }
 
-export const useDeleteEmployeeManager = (
-  id: number
-): DeleteEmployeeManagerResult => {
+export const useDeleteEmployeeManager = (): DeleteEmployeeManagerResult => {
   const dispatch = useDispatch();
 
   const deleteEmployee = useCallback(
-    // TODO: extract id
-    () => dispatch(deleteEmployeeAction({ id })),
-    [dispatch, id]
+    (id: number) => dispatch(deleteEmployeeAction({ id })),
+    [dispatch]
   );
 
   return { deleteEmployee };

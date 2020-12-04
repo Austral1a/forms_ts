@@ -1,5 +1,5 @@
 import { ErrorFSAAuto, FSAAuto } from "flux-standard-action";
-// TODO: rename
+
 export enum LoginActionType {
   LOGIN = "LOGIN",
   LOGIN_SUCCESS = "LOGIN_SUCCESS",
@@ -11,24 +11,18 @@ interface LoginPayload {
   password: string;
 }
 
-interface LoginSuccessPayload extends LoginPayload {}
-interface LoginSuccessResponse extends LoginPayload {}
-
 export type LoginRequest = FSAAuto<LoginActionType.LOGIN, LoginPayload>;
 
-export type LoginSuccess = FSAAuto<
-  LoginActionType.LOGIN_SUCCESS,
-  LoginSuccessResponse
->;
+export type LoginSuccess = FSAAuto<LoginActionType.LOGIN_SUCCESS, LoginPayload>;
 
 export type LoginFail = ErrorFSAAuto<LoginActionType.LOGIN_FAIL, Error>;
 
-export const loginAction = (payload: LoginSuccessPayload): LoginRequest => ({
+export const loginAction = (payload: LoginPayload): LoginRequest => ({
   type: LoginActionType.LOGIN,
   payload,
 });
 
-export const loginSuccess = (payload: LoginSuccessResponse): LoginSuccess => ({
+export const loginSuccess = (payload: LoginPayload): LoginSuccess => ({
   type: LoginActionType.LOGIN_SUCCESS,
   payload,
 });

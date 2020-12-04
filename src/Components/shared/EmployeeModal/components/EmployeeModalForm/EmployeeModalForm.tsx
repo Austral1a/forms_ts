@@ -5,6 +5,7 @@ import {
   SelectField,
   InputField,
   EmployeeModalFormFormikProps,
+  CustomModal,
 } from "@Components";
 import { useEmployeeFormFields } from "./hooks";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,13 +15,13 @@ import { EmployeeModalFormFields } from "@Employees";
 import { translations } from "@helpers";
 import classNames from "classnames";
 import Modal from "react-modal";
-import EmployeeModalFormStyles from "./EmployeeModalForm.module.scss";
+import classes from "../../../../common/Modal/Modal.module.scss";
 import {
   getEmployeePositionsAction,
   selectEmployeePositions,
 } from "@StoreEmployees";
 
-export enum EmployeeFormFields {
+export enum EmployeeFieldName {
   FIRST_NAME = "firstName",
   LAST_NAME = "lastName",
   EMAIL = "email",
@@ -32,14 +33,14 @@ interface EmployeeModalFormProps {
   isModalOpen: boolean;
   className?: string;
   submitBtnText: string;
-  dispatchAction: (props: EmployeeModalFormFormikProps) => void;
+  onSubmit: (props: EmployeeModalFormFormikProps) => void;
 }
 
 Modal.setAppElement("#root");
 
 export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
   handleClose,
-  dispatchAction,
+  onSubmit,
   submitBtnText,
   className,
   isModalOpen,
@@ -60,13 +61,13 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     button: { closeText },
   } = translations;
 
-  const onSubmit = useCallback(
+  const handleSubmit = useCallback(
     (e) => {
       e.preventDefault();
-      dispatchAction(formikContext);
+      onSubmit(formikContext);
       handleClose();
     },
-    [dispatchAction, formikContext, handleClose]
+    [onSubmit, formikContext, handleClose]
   );
 
   const onModalOpen = useCallback(() => {
@@ -77,34 +78,27 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
     !Object.values(formikContext.values).includes("") &&
     !Object.keys(formikContext.errors).length;
 
-  const customClasses = classNames(
-    EmployeeModalFormStyles["employee-modal__form"],
-    className
-  );
+  const customClasses = classNames(classes["employee-modal__form"], className);
 
   return (
     <>
       {isModalOpen && (
-        <Modal
-          onAfterOpen={onModalOpen}
-          isOpen={isModalOpen}
-          className={EmployeeModalFormStyles["employee-modal"]}
-        >
+        <CustomModal onModalOpen={onModalOpen} isOpen={isModalOpen}>
           <Form
-            onSubmit={onSubmit}
+            onSubmit={handleSubmit}
             isValid={isFormValid}
             className={customClasses}
           >
             <Button
               text={closeText}
               type="button"
-              className={EmployeeModalFormStyles["employee-modal__form_close"]}
+              className={classes["employee-modal__form_close"]}
               onClick={handleClose}
             />
             <InputField
               placeholder={firstNameText}
               icon={personIcon}
-              name={EmployeeFormFields.FIRST_NAME}
+              name={EmployeeFieldName.FIRST_NAME}
               value={firstNameField.value}
               touched={firstNameField.touched}
               error={firstNameField.error}
@@ -114,7 +108,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
             <InputField
               placeholder={lastNameText}
               icon={personIcon}
-              name={EmployeeFormFields.LAST_NAME}
+              name={EmployeeFieldName.LAST_NAME}
               value={lastNameField.value}
               touched={lastNameField.touched}
               error={lastNameField.error}
@@ -124,7 +118,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
             <InputField
               placeholder={emailText}
               icon={emailIcon}
-              name={EmployeeFormFields.EMAIL}
+              name={EmployeeFieldName.EMAIL}
               value={emailField.value}
               touched={emailField.touched}
               error={emailField.error}
@@ -132,7 +126,7 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
               onChange={emailField.onChange}
             />
             <SelectField
-              name={EmployeeFormFields.POSITION}
+              name={EmployeeFieldName.POSITION}
               value={positionField.value}
               touched={positionField.touched}
               error={positionField.error}
@@ -144,12 +138,10 @@ export const EmployeeModalForm: FC<EmployeeModalFormProps> = ({
               text={submitBtnText}
               type="submit"
               disabled={!isFormValid}
-              className={
-                EmployeeModalFormStyles["employee-modal__form_submit-btn"]
-              }
+              className={classes["employee-modal__form_submit-btn"]}
             />
           </Form>
-        </Modal>
+        </CustomModal>
       )}
     </>
   );

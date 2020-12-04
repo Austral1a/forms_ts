@@ -7,14 +7,14 @@ import { EmployeeModalFormFormikProps } from "@Components";
 interface CreateEmployeeManagerResult {
   createEmployee: (props: EmployeeModalFormFormikProps) => void;
   submitBtnText: string;
-  isCreateModalOpen: boolean;
+  isModalOpen: boolean;
   handleClose: () => void;
   handleOpen: () => void;
 }
 
 export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
   const dispatch = useDispatch();
-  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const createEmployee = useCallback(
     (props: EmployeeModalFormFormikProps) => {
@@ -28,6 +28,9 @@ export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
     [dispatch]
   );
 
+  const handleClose = useCallback(() => setIsModalOpen(false), []);
+  const handleOpen = useCallback(() => setIsModalOpen(true), []);
+
   const {
     button: { createText },
   } = translations;
@@ -35,8 +38,8 @@ export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
   return {
     createEmployee,
     submitBtnText: createText,
-    isCreateModalOpen,
-    handleClose: useCallback(() => setIsCreateModalOpen(false), []),
-    handleOpen: useCallback(() => setIsCreateModalOpen(true), []),
+    isModalOpen,
+    handleClose,
+    handleOpen,
   };
 };
