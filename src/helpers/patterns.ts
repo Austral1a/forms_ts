@@ -8,7 +8,7 @@ export const patterns: Patterns = {
   password: /\w{6,}/,
 };
 
-export enum patternNames {
+export enum patternName {
   name = "name",
   email = "email",
   password = "password",
