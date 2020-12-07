@@ -7,34 +7,40 @@ import { EmployeeModalFormFormikProps } from "@Components";
 interface CreateEmployeeManagerResult {
   createEmployee: (props: EmployeeModalFormFormikProps) => void;
   submitBtnText: string;
-  isCreateModalOpen: boolean;
-  handleCreateModalClose: () => void;
-  handleCreateModalOpen: () => void;
+  isModalOpen: boolean;
+  handleClose: () => void;
+  handleOpen: () => void;
 }
 
 export const useCreateEmployeeManager = (): CreateEmployeeManagerResult => {
   const dispatch = useDispatch();
-  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const createEmployee = useCallback(
     (props: EmployeeModalFormFormikProps) => {
       const { values } = props;
-      const employee = values;
-      dispatch(createEmployeeAction({ employee }));
+
+      dispatch(createEmployeeAction({ employee: values }));
+
       props.resetForm({
         values: { ...props.initialValues },
       });
     },
     [dispatch]
   );
+
+  const handleClose = useCallback(() => setIsModalOpen(false), []);
+  const handleOpen = useCallback(() => setIsModalOpen(true), []);
+
   const {
-    button: { createText },
+    button: { textCreate },
   } = translations;
+
   return {
     createEmployee,
-    submitBtnText: createText,
-    isCreateModalOpen,
-    handleCreateModalClose: useCallback(() => setIsCreateModalOpen(false), []),
-    handleCreateModalOpen: useCallback(() => setIsCreateModalOpen(true), []),
+    submitBtnText: textCreate,
+    isModalOpen,
+    handleClose,
+    handleOpen,
   };
 };

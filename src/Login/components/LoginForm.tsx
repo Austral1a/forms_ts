@@ -6,7 +6,7 @@ import { translations } from "@helpers";
 import { emailIcon, passwordIcon } from "@Assets";
 import LoginStyles from "./LoginForm.module.scss";
 
-export enum LoginFormFields {
+export enum LoginFieldName {
   PASSWORD = "password",
   EMAIL = "email",
 }
@@ -20,12 +20,12 @@ export interface LoginFormFieldsValues {
 
 export interface LoginFormProps {
   submitBtnText: string;
-  login: (props: LoginFormFormikProps) => void;
+  doLogin: (props: LoginFormFormikProps) => void;
 }
 
 export const LoginForm: FC<LoginFormProps> = ({
   submitBtnText,
-  login,
+  doLogin,
 }): ReactElement => {
   const formikContext = useFormikContext<LoginFormFieldsValues>();
 
@@ -38,17 +38,18 @@ export const LoginForm: FC<LoginFormProps> = ({
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
-      login(formikContext);
+      doLogin(formikContext);
     },
-    [login, formikContext]
+    [doLogin, formikContext]
   );
 
   const {
-    handlePswdVisibilityIconMouseDown,
-    handlePswdVisibilityIconMouseUp,
-    pswdInputType,
-    setPswdVisibilityIcon,
+    showPassword,
+    hidePassword,
+    passwordInputType,
+    passwordIconName,
   } = usePasswordIconManager();
+
   const isFormValid =
     !Object.values(formikContext.values).includes("") &&
     !Object.keys(formikContext.errors).length;
@@ -61,7 +62,7 @@ export const LoginForm: FC<LoginFormProps> = ({
     >
       <h3>Login</h3>
       <InputField
-        name={LoginFormFields.EMAIL}
+        name={LoginFieldName.EMAIL}
         touched={emailField.touched}
         error={emailField.error}
         value={emailField.value}
@@ -71,11 +72,11 @@ export const LoginForm: FC<LoginFormProps> = ({
         onBlur={emailField.onBlur}
       />
       <InputField
-        type={pswdInputType}
-        passwordVisibilityIcon={setPswdVisibilityIcon}
-        handlePswdVisibilityIconMouseDown={handlePswdVisibilityIconMouseDown}
-        handlePswdVisibilityIconMouseUp={handlePswdVisibilityIconMouseUp}
-        name={LoginFormFields.PASSWORD}
+        type={passwordInputType}
+        passwordVisibilityIcon={passwordIconName}
+        handlePasswordHide={hidePassword}
+        handlePasswordShow={showPassword}
+        name={LoginFieldName.PASSWORD}
         touched={passwordField.touched}
         error={passwordField.error}
         value={passwordField.value}

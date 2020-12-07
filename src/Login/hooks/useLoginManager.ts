@@ -5,8 +5,8 @@ import { translations } from "@helpers";
 import { LoginFormFormikProps } from "@Login";
 
 interface LoginManagerResult {
-  login: (props: LoginFormFormikProps) => void;
-  createText: string;
+  doLogin: (props: LoginFormFormikProps) => void;
+  textCreate: string;
   initialLoginFieldValues: {
     email: string;
     password: string;
@@ -15,23 +15,29 @@ interface LoginManagerResult {
 
 export const useLoginManager = (): LoginManagerResult => {
   const dispatch = useDispatch();
+
   const {
-    button: { createText },
+    button: { textCreate },
   } = translations;
-  return {
-    initialLoginFieldValues: {
-      email: "",
-      password: "",
+
+  const doLogin = useCallback(
+    (props) => {
+      const {
+        values: { email, password },
+      } = props;
+      dispatch(loginAction({ email, password }));
     },
-    createText,
-    login: useCallback(
-      (props) => {
-        const {
-          values: { email, password },
-        } = props;
-        dispatch(loginAction({ email, password }));
-      },
-      [dispatch]
-    ),
+    [dispatch]
+  );
+
+  const initialLoginFieldValues = {
+    email: "",
+    password: "",
+  };
+
+  return {
+    initialLoginFieldValues,
+    textCreate,
+    doLogin,
   };
 };

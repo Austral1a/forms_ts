@@ -1,5 +1,5 @@
 import {
-  EmployeeActionTypes,
+  EmployeeActionType,
   EmployeesState,
   EmployeesAction,
 } from "@StoreEmployees";
@@ -10,12 +10,13 @@ const employeeInitState: EmployeesState = {
   name: "",
   message: "",
 };
+
 export const employeesReducer = (
   state = employeeInitState,
   action: EmployeesAction
 ) => {
   switch (action.type) {
-    case EmployeeActionTypes.GET_EMPLOYEES_SUCCESS:
+    case EmployeeActionType.GET_EMPLOYEES_SUCCESS:
       const {
         payload: { employees },
       } = action;
@@ -23,7 +24,7 @@ export const employeesReducer = (
         ...state,
         employees,
       };
-    case EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_SUCCESS:
+    case EmployeeActionType.GET_EMPLOYEE_POSITIONS_SUCCESS:
       const {
         payload: { employeePositions },
       } = action;
@@ -31,7 +32,7 @@ export const employeesReducer = (
         ...state,
         employeePositions,
       };
-    case EmployeeActionTypes.GET_EMPLOYEES_FAIL: {
+    case EmployeeActionType.GET_EMPLOYEES_FAIL: {
       const {
         payload: { name, message },
       } = action;
@@ -41,7 +42,7 @@ export const employeesReducer = (
         message,
       };
     }
-    case EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_FAIL: {
+    case EmployeeActionType.GET_EMPLOYEE_POSITIONS_FAIL: {
       const {
         payload: { name, message },
       } = action;

@@ -11,14 +11,14 @@ interface EmployeeModalProps {
   className?: string;
   isModalOpen: boolean;
   handleClose: () => void;
-  dispatchAction: (props: EmployeeModalFormFormikProps) => void;
+  onSubmit: (props: EmployeeModalFormFormikProps) => void;
 }
 
 export const EmployeeModal: FC<EmployeeModalProps> = ({
   employeeFieldsValues,
   submitBtnText,
   handleClose,
-  dispatchAction,
+  onSubmit,
   isModalOpen,
   className,
 }) => {
@@ -28,6 +28,7 @@ export const EmployeeModal: FC<EmployeeModalProps> = ({
     email: employeeFieldsValues?.email || "",
     position: employeeFieldsValues?.position || "",
   };
+
   return (
     <Formik initialValues={employee} onSubmit={handleClose}>
       <EmployeeModalForm
@@ -35,7 +36,7 @@ export const EmployeeModal: FC<EmployeeModalProps> = ({
         className={className}
         submitBtnText={submitBtnText}
         handleClose={handleClose}
-        dispatchAction={dispatchAction}
+        onSubmit={onSubmit}
       />
     </Formik>
   );

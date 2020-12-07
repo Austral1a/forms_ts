@@ -5,7 +5,7 @@ import {
   nameValidationRule,
   positionsValidationRule,
 } from "@helpers";
-import { EmployeeFormFields } from "@Components";
+import { EmployeeFieldName } from "@Components";
 
 export interface EmployeeFormFieldValues {
   value: string;
@@ -28,25 +28,29 @@ export const useEmployeeFormFields = (): EmployeeFormFieldsResult => {
   const positionsValidator = useMemo(() => positionsValidationRule(), []);
 
   const [fieldEmail, metaEmail] = useField<string>({
-    id: EmployeeFormFields.EMAIL,
-    name: EmployeeFormFields.EMAIL,
+    id: EmployeeFieldName.EMAIL,
+    name: EmployeeFieldName.EMAIL,
     validate: emailValidator,
   });
+
   const [fieldPosition, metaPosition] = useField<string>({
-    id: EmployeeFormFields.POSITION,
-    name: EmployeeFormFields.POSITION,
+    id: EmployeeFieldName.POSITION,
+    name: EmployeeFieldName.POSITION,
     validate: positionsValidator,
   });
+
   const [fieldLastName, metaLastName] = useField<string>({
-    id: EmployeeFormFields.LAST_NAME,
-    name: EmployeeFormFields.LAST_NAME,
+    id: EmployeeFieldName.LAST_NAME,
+    name: EmployeeFieldName.LAST_NAME,
     validate: nameValidator,
   });
+
   const [fieldFirstName, metaFirstName] = useField<string>({
-    id: EmployeeFormFields.FIRST_NAME,
-    name: EmployeeFormFields.FIRST_NAME,
+    id: EmployeeFieldName.FIRST_NAME,
+    name: EmployeeFieldName.FIRST_NAME,
     validate: nameValidator,
   });
+
   return {
     firstNameField: {
       value: fieldFirstName.value,

@@ -1,12 +1,18 @@
 import {
   isInputValid,
   patterns,
-  patternNames,
+  patternName,
   ValidationMessages,
+  translations,
 } from "@helpers";
 
+const {
+  button: { chosePositionText },
+} = translations;
+
 export const emailValidationRule = () => {
-  const { email } = patternNames;
+  const { email } = patternName;
+
   return (emailVal: string) => {
     if (!isInputValid(patterns[email], emailVal)) {
       return ValidationMessages.invalidEmail;
@@ -16,7 +22,8 @@ export const emailValidationRule = () => {
 };
 
 export const nameValidationRule = () => {
-  const { name } = patternNames;
+  const { name } = patternName;
+
   return (nameVal: string) => {
     if (!isInputValid(patterns[name], nameVal)) {
       return ValidationMessages.invalidName;
@@ -26,7 +33,8 @@ export const nameValidationRule = () => {
 };
 
 export const passwordValidationRule = () => {
-  const { password } = patternNames;
+  const { password } = patternName;
+
   return (passwordVal: string) => {
     if (!isInputValid(patterns[password], passwordVal)) {
       return ValidationMessages.invalidPassword;
@@ -37,7 +45,7 @@ export const passwordValidationRule = () => {
 
 export const positionsValidationRule = () => {
   return (positionsVal: string) => {
-    if (positionsVal === "Chose position") {
+    if (!positionsVal) {
       return ValidationMessages.invalidPosition;
     }
     return;

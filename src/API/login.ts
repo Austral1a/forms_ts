@@ -25,6 +25,7 @@ export const login = async (loginValues: LoginParams) => {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
+
   if (!response.ok) {
     throw new Error("Failed to login");
   }

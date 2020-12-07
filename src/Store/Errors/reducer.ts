@@ -1,16 +1,12 @@
-import { ERROR_OCCURRED, ErrorOccurredCommit } from "./actions";
+import { ERROR_OCCURRED, ErrorOccurredAction } from "./actions";
+import { LoginInitState } from "./interfaces";
 
-interface InitState {
-  errorMessage: string;
-}
-
-type ErrorOccurredAction = ErrorOccurredCommit;
-
-const initState: InitState = {
+const loginInitState: LoginInitState = {
   errorMessage: "",
 };
+
 export const errorsReducer = (
-  state = initState,
+  state = loginInitState,
   action: ErrorOccurredAction
 ) => {
   switch (action.type) {

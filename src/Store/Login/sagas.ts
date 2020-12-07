@@ -1,10 +1,9 @@
 import { call, put, takeLatest } from "redux-saga/effects";
-
 import {
   loginSuccess,
   loginFail,
   LoginRequest,
-  LoginActionTypes,
+  LoginActionType,
 } from "./actions";
 import { login } from "@API";
 
@@ -19,5 +18,5 @@ export function* loginSaga(action: LoginRequest) {
 }
 
 export function* loginRootSaga() {
-  yield takeLatest(LoginActionTypes.LOGIN, loginSaga);
+  yield takeLatest(LoginActionType.LOGIN, loginSaga);
 }

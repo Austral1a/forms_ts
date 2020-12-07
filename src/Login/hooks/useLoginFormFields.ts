@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { FormikHandlers, useField } from "formik";
 import { emailValidationRule, passwordValidationRule } from "@helpers";
-import { LoginFormFields } from "@Login";
+import { LoginFieldName } from "@Login";
 
 export interface LoginFormFieldValues {
   value: string;
@@ -21,15 +21,17 @@ export const useLoginFormFields = (): LoginFormFieldsResult => {
   const passwordValidator = useMemo(() => passwordValidationRule(), []);
 
   const [fieldEmail, metaEmail] = useField<string>({
-    id: LoginFormFields.EMAIL,
-    name: LoginFormFields.EMAIL,
+    id: LoginFieldName.EMAIL,
+    name: LoginFieldName.EMAIL,
     validate: emailValidator,
   });
+
   const [fieldPassword, metaPassword] = useField<string>({
-    id: LoginFormFields.PASSWORD,
-    name: LoginFormFields.PASSWORD,
+    id: LoginFieldName.PASSWORD,
+    name: LoginFieldName.PASSWORD,
     validate: passwordValidator,
   });
+
   return {
     passwordField: {
       value: fieldPassword.value,

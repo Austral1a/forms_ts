@@ -1,22 +1,31 @@
-import { put, take } from "redux-saga/effects";
-import { EmployeeActionTypes } from "@StoreEmployees";
-import { LoginActionTypes } from "@StoreLogin";
+import { put, call, take } from "redux-saga/effects";
 import { errorOccurredAction } from "./actions";
 
-const fetchErrors = [
-  LoginActionTypes.LOGIN_FAIL,
-  EmployeeActionTypes.CREATE_EMPLOYEE_FAIL,
-  EmployeeActionTypes.DELETE_EMPLOYEE_FAIL,
-  EmployeeActionTypes.GET_EMPLOYEES_FAIL,
-  EmployeeActionTypes.GET_EMPLOYEE_POSITIONS_FAIL,
-];
+export function* takexSaga(pattern: RegExp) {
+  let action;
+
+  while (true) {
+    action = yield take("*");
+
+    if (pattern.test(action.type)) {
+      break;
+    }
+  }
+  return action;
+}
+
+export function takex(pattern: RegExp) {
+  return call(takexSaga, pattern);
+}
+
+const failedActionTypePattern = /FAIL$/;
 
 export function* watchErrors() {
   while (true) {
-    const action = yield take(fetchErrors);
+    const action = yield takex(failedActionTypePattern);
+
     if (action.error) {
-      const { payload } = action;
-      yield put(errorOccurredAction(payload));
+      yield put(errorOccurredAction({ errorMessage: action.payload.message }));
     }
   }
 }

@@ -4,11 +4,11 @@ import { LoginForm } from "./components";
 import { useLoginManager } from "./hooks";
 
 export const Login: FC = (): ReactElement => {
-  const { login, createText, initialLoginFieldValues } = useLoginManager();
+  const { doLogin, textCreate, initialLoginFieldValues } = useLoginManager();
 
   return (
     <Formik initialValues={initialLoginFieldValues} onSubmit={() => {}}>
-      <LoginForm login={login} submitBtnText={createText} />
+      <LoginForm doLogin={doLogin} submitBtnText={textCreate} />
     </Formik>
   );
 };

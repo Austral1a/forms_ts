@@ -1,6 +1,6 @@
 import React, { FormHTMLAttributes, FC, ReactNode } from "react";
 import classNames from "classnames";
-import FormStyles from "./Form.module.scss";
+import classes from "./Form.module.scss";
 
 interface FormHTMLElementProps extends FormHTMLAttributes<HTMLFormElement> {
   className?: string;
@@ -15,9 +15,11 @@ type FormProps = FormHTMLElementProps & FormMetaProps;
 
 export const Form: FC<FormProps> = ({ isValid, ...props }: FormProps) => {
   const { className, children } = props;
-  const customClasses = classNames(FormStyles["form"], className, {
+
+  const customClasses = classNames(classes["form"], className, {
     form_success: isValid,
   });
+
   return (
     <form {...props} className={customClasses}>
       {children}

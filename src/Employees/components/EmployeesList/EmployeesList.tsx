@@ -2,10 +2,11 @@ import React, { FC, ReactElement } from "react";
 import { useEmployeesManager } from "./hooks";
 import { ActionsBlock } from "./components";
 import { translations } from "@helpers";
-import EmployeesStyles from "../../Employees.module.scss";
+import classes from "../../Employees.module.scss";
 
 export const EmployeesList: FC = (): ReactElement => {
   const { employeesList } = useEmployeesManager();
+
   const {
     field: {
       lastNameText,
@@ -15,9 +16,10 @@ export const EmployeesList: FC = (): ReactElement => {
       actionsText,
     },
   } = translations;
+
   return (
-    <div className={EmployeesStyles["employees-container__body"]}>
-      <div className={EmployeesStyles["employees-container__body-header"]}>
+    <div className={classes["employees-container__body"]}>
+      <div className={classes["employees-container__body-header"]}>
         <h4>{firstNameText}</h4>
         <h4>{lastNameText}</h4>
         <h4>{emailText}</h4>
@@ -25,16 +27,15 @@ export const EmployeesList: FC = (): ReactElement => {
         <h4>{actionsText}</h4>
       </div>
       {employeesList.map((employee) => {
-        const { firstName, lastName, email, position, id } = employee;
         return (
           <div
-            key={id}
-            className={EmployeesStyles["employees-container__body-employee"]}
+            key={employee.id}
+            className={classes["employees-container__body-employee"]}
           >
-            <h4>{firstName}</h4>
-            <h4>{lastName}</h4>
-            <h4>{email}</h4>
-            <h4>{position}</h4>
+            <h4>{employee.firstName}</h4>
+            <h4>{employee.lastName}</h4>
+            <h4>{employee.email}</h4>
+            <h4>{employee.position}</h4>
             <ActionsBlock employeeValues={employee} />
           </div>
         );

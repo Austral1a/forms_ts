@@ -1,30 +1,34 @@
 import { useCallback, useState } from "react";
-import { pswd_visibility_offIcon, pswd_visibility_onIcon } from "@Assets";
+import { passwordInvisibleIcon, passwordVisibleIcon } from "@Assets";
 
-interface Result {
-  setPswdVisibilityIcon: string;
-  pswdInputType: string;
-  handlePswdVisibilityIconMouseDown: () => void;
-  handlePswdVisibilityIconMouseUp: () => void;
+interface PasswordIconManagerResult {
+  passwordIconName: string;
+  passwordInputType: string;
+  showPassword: () => void;
+  hidePassword: () => void;
 }
 
-export const usePasswordIconManager = (): Result => {
-  const [isPswdVisibilityMouseDown, setIsPsdwVisibilityMouseDown] = useState(
-    false
-  );
+export const usePasswordIconManager = (): PasswordIconManagerResult => {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const passwordIconName = isPasswordVisible
+    ? passwordVisibleIcon
+    : passwordInvisibleIcon;
+
+  const passwordInputType = isPasswordVisible ? "text" : "password";
+
+  const showPassword = useCallback(() => setIsPasswordVisible(true), [
+    setIsPasswordVisible,
+  ]);
+
+  const hidePassword = useCallback(() => setIsPasswordVisible(false), [
+    setIsPasswordVisible,
+  ]);
 
   return {
-    setPswdVisibilityIcon: isPswdVisibilityMouseDown
-      ? pswd_visibility_onIcon
-      : pswd_visibility_offIcon,
-    pswdInputType: isPswdVisibilityMouseDown ? "text" : "password",
-    handlePswdVisibilityIconMouseDown: useCallback(
-      () => setIsPsdwVisibilityMouseDown(true),
-      [setIsPsdwVisibilityMouseDown]
-    ),
-    handlePswdVisibilityIconMouseUp: useCallback(
-      () => setIsPsdwVisibilityMouseDown(false),
-      [setIsPsdwVisibilityMouseDown]
-    ),
+    passwordIconName,
+    passwordInputType,
+    showPassword,
+    hidePassword,
   };
 };

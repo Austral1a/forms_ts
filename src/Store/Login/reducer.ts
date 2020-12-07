@@ -1,6 +1,6 @@
-import { LoginAction, LoginActionTypes, LoginState } from "./index";
+import { LoginAction, LoginActionType, LoginState } from "./index";
 
-const initState: LoginState = {
+const loginInitState: LoginState = {
   isLogged: false,
   email: "",
   password: "",
@@ -8,9 +8,9 @@ const initState: LoginState = {
   message: "",
 };
 
-export const loginReducer = (state = initState, action: LoginAction) => {
+export const loginReducer = (state = loginInitState, action: LoginAction) => {
   switch (action.type) {
-    case LoginActionTypes.LOGIN_SUCCESS:
+    case LoginActionType.LOGIN_SUCCESS:
       const {
         payload: { email, password },
       } = action;
@@ -20,7 +20,7 @@ export const loginReducer = (state = initState, action: LoginAction) => {
         email,
         password,
       };
-    case LoginActionTypes.LOGIN_FAIL:
+    case LoginActionType.LOGIN_FAIL:
       const {
         payload: { name, message },
       } = action;

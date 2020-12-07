@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes, FC } from "react";
 import classNames from "classnames/dedupe";
-import ButtonStyles from "./Button.module.scss";
+import classes from "./Button.module.scss";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
@@ -9,7 +9,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const { text, className } = props;
-  const customClasses: string = classNames(ButtonStyles["button"], className);
+  const customClasses: string = classNames(classes["button"], className);
+
   return (
     <button {...props} className={customClasses}>
       {text}

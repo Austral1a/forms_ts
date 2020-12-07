@@ -12,12 +12,19 @@ interface ActionsBlockManagerResult {
 export const useActionsBlockManager = (): ActionsBlockManagerResult => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+
+  const onEditModalClose = useCallback(() => setIsEditModalOpen(false), []);
+  const onEditModalOpen = useCallback(() => setIsEditModalOpen(true), []);
+
+  const onDeleteModalClose = useCallback(() => setIsDeleteModalOpen(false), []);
+  const onDeleteModalOpen = useCallback(() => setIsDeleteModalOpen(true), []);
+
   return {
     isEditModalOpen,
-    onEditModalClose: useCallback(() => setIsEditModalOpen(false), []),
-    onEditModalOpen: useCallback(() => setIsEditModalOpen(true), []),
+    onEditModalClose,
+    onEditModalOpen,
     isDeleteModalOpen,
-    onDeleteModalClose: useCallback(() => setIsDeleteModalOpen(false), []),
-    onDeleteModalOpen: useCallback(() => setIsDeleteModalOpen(true), []),
+    onDeleteModalClose,
+    onDeleteModalOpen,
   };
 };

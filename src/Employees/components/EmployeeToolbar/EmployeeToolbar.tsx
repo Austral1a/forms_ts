@@ -2,30 +2,26 @@ import React, { FC, ReactElement } from "react";
 import { Button } from "@Components";
 import { CreateEmployeeModal, useCreateEmployeeManager } from "./components";
 import { translations } from "@helpers";
-import EmployeesStyles from "../../Employees.module.scss";
+import classes from "../../Employees.module.scss";
 
 export const EmployeeToolbar: FC = (): ReactElement => {
+  const { isModalOpen, handleClose, handleOpen } = useCreateEmployeeManager();
+
   const {
-    isCreateModalOpen,
-    handleCreateModalClose,
-    handleCreateModalOpen,
-  } = useCreateEmployeeManager();
-  const {
-    button: { createText },
+    button: { textCreate },
   } = translations;
+
   return (
-    <div className={EmployeesStyles["employees-container__toolbar"]}>
+    <div className={classes["employees-container__toolbar"]}>
       <Button
-        className={
-          EmployeesStyles["employees-container__toolbar_create-employee"]
-        }
-        onClick={handleCreateModalOpen}
+        className={classes["employees-container__toolbar_create-employee"]}
+        onClick={handleOpen}
         type="button"
-        text={createText}
+        text={textCreate}
       />
       <CreateEmployeeModal
-        handleClose={handleCreateModalClose}
-        isCreateModalOpen={isCreateModalOpen}
+        handleClose={handleClose}
+        isCreateModalOpen={isModalOpen}
       />
     </div>
   );
